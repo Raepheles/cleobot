@@ -1,0 +1,5225 @@
+[
+	{
+		"name": "Clause",
+		"title": "Knight of Iron Defense",
+		"class": "Knight",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 330,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Clauseico.png/70px-Clauseico.png",
+		"skills": [
+			{
+				"name": "Cut Ground",
+				"cost": 2,
+				"cooldown": 9,
+				"explanation": "Deal ??? P.DMG to enemies in range, stunning them for 3 seconds.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Lengthen Stun duration for 2 secs."
+				],
+				"perks": [
+					4,
+					"Cooldown is reduced by 2 seconds",
+					"In exchange for 1 additional mana cost, the skill has a 50% chance to draw the target in"
+				]
+			},
+			{
+				"name": "Shield Strike",
+				"cost": 1,
+				"cooldown": 8,
+				"explanation": "Deal ??? P.DMG based off P.DEF to enemies in range and knock them back. Hit enemies have their DEF reduced by 30%. Upon blocking an attack, cooldown is reduced by 0.5 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Decrease target's speed by 50%"
+				],
+				"perks": [
+					3,
+					"Target takes 25% increased P.DMG for 10 seconds",
+					"Stuns the enemy for 1 second"
+				]
+			},
+			{
+				"name": "Guardian Shield",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Increase P.DEF of all allies by ??? for 20 seconds. Also, reduce the possibility of being hit by critical by 30%.",
+				"attributes": [
+					"P.DEF increase rate is increased by 10%",
+					"P.DEF increase rate is increased by 15%",
+					"P.DEF increase rate is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Defense increase rate is boosted by 40%",
+					"Receive 25% reduced P.DMG for the duration"
+				]
+			},
+			{
+				"name": "Vow of Knights",
+				"cost": -1,
+				"cooldown": 1,
+				"explanation": "Deal ??? P.DMG to the front after blocking, and decrease ATK of hit enemies by 20% for 8 secs. Recovers 300 mana after hitting target.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Casting time is greatly boosted",
+					"Reduce an additional 10% ATK"
+				]
+			}
+		],
+		"uw": {
+			"name": "The Guardian, Exian",
+			"explanation": "When HP is reduced to below 35% of max HP, increase all allies P.DMG reduction by {1}. Also, gain Attack equal to {2}% of P.DEF and gain immunity to status effects.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/GuardianExian.png",
+			"effects": [
+					[200, 240, 280, 340, 410, 500],
+					[100, 120, 144, 173, 207, 250]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P.Block +200",
+			"When an ally other than this hero is hit by an attack, increase all allies P.DEF by 20% and P.Crit Resist by 20%. (10 seconds cooldown)"
+		]
+	},
+	{
+		"name": "Demia",
+		"title": "Fortress of Steel",
+		"class": "Knight",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 300,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Demiaico.png/70px-Demiaico.png",
+		"skills": [
+			{
+				"name": "Penetration",
+				"cost": 2,
+				"cooldown": 9,
+				"explanation": "Deal ??? P.DMG to the farthest enemy, and pull towards the hero. Then, deliver ??? P.DMG to nearby enemies, and stun them.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"In exchange for 1 additional Mana Cost, pull in 2 enemies.",
+					"All pulled enemies take 25% increased DMG from all sources for 10 sec."
+				]
+			},
+			{
+				"name": "Will to Win",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Blocking DMG within 15 seconds will trigger a shockwave that deals ??? P.DMG to enemies in the vicinity and decrease their ATK by 20%.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Enemy ATK reduction increase by 50%"
+				],
+				"perks": [
+					3,
+					"Deals extra P.DMG based on P.DEF.",
+					"Ally P.DEF is boosted by 20% for 10 sec after activation."
+				]
+			},
+			{
+				"name": "Steel Fortress",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Block all P.DMG attacks during casting. All enemies that dealt said P.DMG attacks are stunned and dealt ??? P.DMG. After casting is finished, jump into the air and deal ??? P.DMG and stun hit enemies for 4 sec. While this skill is in effect, gain immunity to status effects.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Upon jumping into the air, charge at the target with highest ATK.",
+					"In exchange for 1 additional Mana Cost, upon using Steel Fortress, take 30% of all P.DMG dealt to allies instead while skill is in effect."
+				]
+			},
+			{
+				"name": "Spearhead",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Increase player party's Physical Defense by ??? and increase Physical Block rate by 250.",
+				"attributes": [
+					"Defense Boost is increased by 10%",
+					"Defense Boost is increased by 15%",
+					"Defense Boost is increased by 25%"
+				],
+				"perks": [
+					3,
+					"P.DEF is increased by 20% and P.Block is boosted by 50%.",
+					"Recovers HP equal to 40% of P.DEF upon blocking."
+				]
+			}
+		],
+		"uw": {
+			"name": "The Blue Light, Arpheus",
+			"explanation": "Upon blocking an enemy attack, there is a {0}% chance all skill cooldowns will be reduced by 1 second.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Arpheus.png",
+			"effects": [
+					[10, 13, 16, 19, 22, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P. Block +200",
+			"At the beginning of every battle, for 10 sec, reduce the ATK of all enemies by 20%. This effect cannot be dispelled."
+		]
+	},
+	{
+		"name": "Phillop",
+		"title": "King of Dwarves",
+		"class": "Knight",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 275,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Phillopico.png/70px-Phillopico.png",
+		"skills": [
+			{
+				"name": "Collision",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Deal ??? P.DMG and knock down the enemy for 3 seconds.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Decrease hit enemy's Phys Defense by 50% for 10 seconds"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1",
+					"Cooldown is reduced by 10% per each enemies hit"
+				]
+			},
+			{
+				"name": "Headbutt",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Dash to the enemy and inflict ??? P.DMG. Reduce Attack Spd of damaged enemies by 20% for 10 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Reduce hit enemy's attack by 25%"
+				],
+				"perks": [
+					3,
+					"Deals extra P.DMG equal to 10% of max HP",
+					"Effect changes to a 3 sec Stun to nearby enemies"
+				]
+			},
+			{
+				"name": "Earth Incarnate",
+				"cost": 4,
+				"cooldown": 30,
+				"explanation": "Upon activation, increase DEF by ??? for 15 sec and gain status effect immunity. In addition, heal 15% HP.",
+				"attributes": [
+					"P.Def increase rate increases by 10%",
+					"P.Def increase rate increases by 15%",
+					"DMG Reduction increases by 25%"
+				],
+				"perks": [
+					4,
+					"Deals 1% of Max HP as DMG per sec to nearby enemies",
+					"Stuns nearby enemies for 3 sec"
+				]
+			},
+			{
+				"name": "Destroy Armor",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon attacking an enemy, weaken enemy P.DEF by ??? for 15 secs. Can be stacked up to 5 times max.",
+				"attributes": [
+					"Enemy P.DEF reduction rate increase by 10%",
+					"Enemy P.DEF reduction rate increase by 15%",
+					"Enemy P.Dodge is reduced by 10% per stack"
+				],
+				"perks": [
+					3,
+					"Enemies with 5 stacks take 1% extra P.DMG based off Max HP per attack",
+					"Upon attack, dispel all positive effects and target received 20% increased P.DMG for 20 sec. Has a cooldown of 20 sec"
+				]
+			}
+		],
+		"uw": {
+			"name": "Dragon's Ruins, Atein",
+			"explanation": "Upon receiving DMG, stacks Dragon Rage which lasts for 10 seconds. The Hero's ATK and Def rises by {0}%. Can be stacked up to 100 times max.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Atein.png",
+			"effects": [
+					[0.8, 1, 1.2, 1.4, 1.7, 2]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P.Block +200",
+			"When auto attacking, there is a 10% chance to Stun the target for 2 sec and deal extra DMG worth 10% of own HP"
+		]
+	},
+	{
+		"name": "Morrah",
+		"title": "Devil's Flame",
+		"class": "Knight",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 240,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Morrahico.png/70px-Morrahico.png",
+		"skills": [
+			{
+				"name": "Burning Power",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Inflict ??? M.DMG upon enemies in range and knock them down. Also, stack Flame 3 times. Afterwards, for 15 sec, auto-attacks deal ??? M.DMG and stack 1 Flame upon the enemy. Every stack of Flame increases Flame damage by 2%. Each Flame stack deals damage separately, and reduces Recovery by 1%.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"ATK SPD is increased by 200 for 15 seconds",
+					"Reduces cooldown by 3% per each enemy hit (0.18s each)"
+				]
+			},
+			{
+				"name": "Hellfire",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Increases M.DEF of all allies by ???, and also increase M.Block chance by 250. Additionally, stack Flame on nearby enemies every 1 sec.",
+				"attributes": [
+					"M.DEF increase rate is increased by 20%",
+					"M.DEF increase rate is increased by 30%",
+					"M.Block Chance increase rate is increased by 50%"
+				],
+				"perks": [
+					3,
+					"M.Block rate is boosted by 20% (25%/75% -> 45%/95%)",
+					"When Hellfire is active, deal DMG base on own M.DEF to nearby enemies"
+				]
+			},
+			{
+				"name": "Lava Eruption",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Deal ??? M.DMG to enemies in range and inflict knock down. Damage is increased by 2% for each stack of Flame.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40% (10%/15%/25% -> 50%/55%/65%)",
+					"Heals HP equals to 40% of DMG dealt"
+				]
+			},
+			{
+				"name": "Fire Smash",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon block, deal ??? M.DMG to enemies in range for a 100% chance, and stack 1 Flame.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Increase own M.DEF by 5% for each block. Max stack is 10",
+					"Enemies with 100 Flame stacks take 25% increased M.DMG"
+				]
+			}
+		],
+		"uw": {
+			"name": "Flame of Victory, Carprain",
+			"explanation": "Every 10 seconds, inflict M.DMG {0}% of ATK upon enemies that have Flame stacks. Each stack of Flame increases DMG by 2%. There is also a {1}% chance that enemies with Flame stacks may be knocked down.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Carprain.png",
+			"effects": [
+					[80, 96, 115, 138, 166, 200],
+					[14, 16, 20, 24, 29, 35]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / M.Block +200",
+			"When auto-attacking, there is a 30% chance to deal M.DMG equal to 20% of own M.DEF and stack 1 stack of Flame"
+		]
+	},
+	{
+		"name": "Jane",
+		"title": "Alabaster Corpse",
+		"class": "Knight",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 440,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Janeico.png/70px-Janeico.png",
+		"skills": [
+			{
+				"name": "Funeral Rites",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? M.DMG to enemies in range, stunning them for 3 seconds.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Lengthen Stun duration for 2 Sec"
+				],
+				"perks": [
+					4,
+					"Target takes 25% increased M.DMG for 10 sec",
+					"In exchange for 1 additional Mana cost, the skill has a 50% chance to draw the target in"
+				]
+			},
+			{
+				"name": "Mark of Death",
+				"cost": 2,
+				"cooldown": 7.5,
+				"explanation": "Engrave a mark on every enemy for 30 seconds and constantly deal ??? M.DMG. The enemy receives 25% more M.DMG when afflicted by this mark.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Duration is reduce to 10 sec and DMG is boosted by 250%",
+					"Mana cost is reduced by 1"
+				]
+			},
+			{
+				"name": "Day of Ruin",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Inflicts ??? M.DMG upon enemies every 15 seconds, and heal own HP with 100% of DMG. Gain immunity to status effect. DMG is increased if enemies are marked.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Recover 1% MP"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Has a 10% chance to Stun enemies for 1 sec"
+				]
+			},
+			{
+				"name": "Rest in Peace",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon taking fatal damage, Jane enter her coffin. Recovers ??? HP for 5 seconds. Immune to all DMG while inside coffin.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"Increase Recovery by 25%"
+				],
+				"perks": [
+					3,
+					"While inside the Coffin, deal DMG worth 5% of max HP to nearby enemies",
+					"Upon activation, stun all enemies for 3 sec"
+				]
+			}
+		],
+		"uw": {
+			"name": "Unchanging Mind, Erekura",
+			"explanation": "Every 4 seconds, deal M.DMG {0}% of ATK to nearby enemies and reduce their Attack by {1}%. When her passive activates, recover 30% Mana.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Erekura.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25],
+					[10, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / M.Block +200",
+			"Each hit of Jane's attacks increase her ATK and Recovery Rate by 1% each. (Maximum stack number is 50)"
+		]
+	},
+	{
+		"name": "Ricardo",
+		"title": "Lua's Judgment",
+		"class": "Knight",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 360,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Ricardoico.png/70px-Ricardoico.png",
+		"skills": [
+			{
+				"name": "Destruction",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deals ??? P.DMG to frontal enemies and knocks them over for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Gain CC Immunity while in use"
+				],
+				"perks": [
+					4,
+					"Target receives 25% increased P.DMG for 10 sec.",
+					"Deals extra P .DMG equal to 200% of M.DEF"
+				]
+			},
+			{
+				"name": "Divine Protection",
+				"cost": 2,
+				"cooldown": 7.5,
+				"explanation": "Deals ??? P.DMG to nearby enemies. Also, increases own M.DEF by ??? for 10 sec, and recieves 80% of M.DMG inflicted to allies in their stead.",
+				"attributes": [
+					"Defense Boost is increased by 10%",
+					"Defense Boost is increased by 15%",
+					"Recover 1% of own HP per sec for 10 sec"
+				],
+				"perks": [
+					3,
+					"In exchange for 1 additional mana cost, Ricardo gains 30% DMG resistance to DMG taken due to covering for allies.",
+					"This skill's effect cannot be dispelled."
+				]
+			},
+			{
+				"name": "Divine Judgment",
+				"cost": 4,
+				"cooldown": 23,
+				"explanation": "Attacks frontal enemies 3 times. The first 2 attacks deal ??? P.DMG to enemies and stuns them for 4 sec each, and the last attack has a 20% wider range and deals ??? P.DMG to enemies while stunning them for 4 sec. Each attack has a 50% chance of removing positive effects from the enemy.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Blocks all DMG while this skill is in use"
+				],
+				"perks": [
+					4,
+					"Stun duration is increased by 2 sec.",
+					"Heals all allies by 20% of DMG."
+				]
+			},
+			{
+				"name": "Divine Blessing",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "When any other ally takes M.DMG, increases their M.DEF by ??? for 5 sec. It can be stacked max 5 times and Ricardo is not subject to this effect.",
+				"attributes": [
+					"Defense Boost is increased by 10%",
+					"Defense Boost is increased by 10%",
+					"Duration is increased by 2 sec"
+				],
+				"perks": [
+					3,
+					"M.DEF increase rate is boosted by 40%.",
+					"Max stack count is boosted to 8."
+				]
+			}
+		],
+		"uw": {
+			"name": "Light of Judgment, Theoria",
+			"explanation": "When any other ally takes DMG, there is a {0}% chance to grant them a shield worth {1}% of Ricardo's ATK for 5 sec. This effect can only take place once every 5 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Theoria.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25],
+					[320, 384, 460, 552, 660, 800]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P.Block +200",
+			"The last attack of auto-attacks deals 10% of max HP as extra DMG and has a 30% chance to stun the enemy for 2 sec."
+		]
+	},
+	{
+		"name": "Kasel",
+		"title": "Warrior of the Holy Sword",
+		"class": "Warrior",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 275,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Kaselico.png/70px-Kaselico.png",
+		"skills": [
+			{
+				"name": "Judgement Blade",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Deal ??? P.DMG to enemies in range, knocking them down for 2.5 seconds.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1 (3 -> 2)",
+					"Ignores DEF if there is only 1 enemy"
+				]
+			},
+			{
+				"name": "Valiant Dash",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? P.DMG to enemies in range.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"Target takes 25% increased P.DMG."
+				]
+			},
+			{
+				"name": "Proxy of God",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Knock back nearby enemies and deal ??? P.DMG. Additionally, increase ATK by ??? for 20 sec, and increase Dodge rate by 250. Gain Immunity to CC. This status cannot be removed.",
+				"attributes": [
+					"Attack increase rate increases by 10%",
+					"Attack increase rate increases by 15%",
+					"Increase speed by 250 for duration"
+				],
+				"perks": [
+					4,
+					"Knock back effect is changed to 3 seconds stun.",
+					"ATK boost is increased by 40%."
+				]
+			},
+			{
+				"name": "Goddess Strike",
+				"cost": -1,
+				"cooldown": 3,
+				"explanation": "When dodging, deal ??? P.DMG to frontal enemies and reduce their ACC by 150 for 5 sec. After hitting the target, gain 300 mana.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"ACC reduction rate is changed to 250.",
+					"Casting is boosted and cooldown is reduced by 1 second (3s -> 2s)"
+				]
+			}
+		],
+		"uw": {
+			"name": "The Holy Sword, Aea",
+			"explanation": "Each attack has a 25% chance to inflict P.DMG on enemy {0}% of ATK.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Aea.png",
+			"effects": [
+					[160, 192, 230, 275, 331, 400]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P.Dodge +100",
+			"Upon attacking, attack 1 extra time, dealing 40% of ATK as DMG"
+		]
+	},
+	{
+		"name": "Gau",
+		"title": "Barbarian of Frozen Lands",
+		"class": "Warrior",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 340,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Gauico.png/70px-Gauico.png",
+		"skills": [
+			{
+				"name": "Smash",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? P.DMG to enemies in range, and the first attack knocks them down for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"Each use increases DMG by 15%. Stacks up to 10 times max"
+				]
+			},
+			{
+				"name": "Battle Roar",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "All allies gain ??? ATK for 15 sec. Upon activation, clear all negative effects from all allies.",
+				"attributes": [
+					"Attack increase rate increases by 10%",
+					"Attack increase rate increases by 15%",
+					"Attack increase rate increases by 25%%"
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"ATK SPD boost of 200 is added to the effect."
+				]
+			},
+			{
+				"name": "Vortex",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Inflict ??? P.DMG to all enemies in range. The last attack freezes enemies for 4 sec. Immune to all status effects while casting.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"While casting, gather all enemies within range"
+				],
+				"perks": [
+					4,
+					"Cooldown reduced by 3 sec.",
+					"Immune to all types of DMG while in use."
+				]
+			},
+			{
+				"name": "Enrage",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon attacking enemy, ATK increases by ??? for 5 sec. This can be stacked up to 10 times max.",
+				"attributes": [
+					"Attack rate increases by 10%",
+					"Attack rate increases by 15%",
+					"Debuff resistance increases by 5% with each stack"
+				],
+				"perks": [
+					3,
+					"ATK Boost is increased by 40%.",
+					"Takes 5% more damage per each stack, but gains a boost of 50 Crit Chance and Lifesteal per each stack as well."
+				]
+			}
+		],
+		"uw": {
+			"name": "Holy Bird, Numinu",
+			"explanation": "For every 1% of lost HP, Attack rises by {0}% of ATK and Attack Speed rises by {1}.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Numinu.png",
+			"effects": [
+					[0.8, 1.0, 1.2, 1.4, 1.7, 2],
+					[8, 10, 12, 14, 17, 20]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / P. Block +200",
+			"Heals HP worth 10% of ATK every second, and every 1% of HP lost reduces damage received by 0.6%."
+		]
+	},
+	{
+		"name": "Naila",
+		"title": "Wind's Fighter",
+		"class": "Warrior",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 235,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Nailaico.png/70px-Nailaico.png",
+		"skills": [
+			{
+				"name": "Fierce Winds",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Dash towards the enemy 2 times, dealing ??? P.DMG to enemies within range, knocking them down for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"In exchange for 1 additional mana cost, target changes to the enemy with the highest ATK."
+				]
+			},
+			{
+				"name": "Wind Reading",
+				"cost": 3,
+				"cooldown": 15,
+				"explanation": "P.Dodge Chance rises by 250 for 15 sec and ATK rises by ???.",
+				"attributes": [
+					"ATK increase rate is increased by 10%.",
+					"ATK increase rate is increased by 10%.",
+					"ATK increase rate is increased by 10%."
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"Increases own Crit Chance by 600."
+				]
+			},
+			{
+				"name": "Dive Bomb",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Fly high and strike the enemy below. Inflicts ??? P.DMG to enemies. 50% DMG increase to enemies that have been knocked down.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Inflict DMG upon the enemy and stun them for 3 sec"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Reduces cooldown by 10% per each enemy that takes Critical DMG."
+				]
+			},
+			{
+				"name": "Tornado Strike",
+				"cost": -1,
+				"cooldown": 0.5,
+				"explanation": "Upon auto-attacking, the 5th hit of the combo has a 30% chance to inflict ??? additional P.DMG upon the enemy and knock them down.",
+				"attributes": [
+					"Increase DMG by 10%.",
+					"Increase DMG by 15%.",
+					"Increase DMG by 25%."
+				],
+				"perks": [
+					3,
+					"Activation chance is boosted by 10%.",
+					"Atk Spd is boosted by 300 when effect takes place."
+				]
+			}
+		],
+		"uw": {
+			"name": "Cursed Claws, Baroro",
+			"explanation": "Upon dealing a Critical Hit, deal constant P.DMG {0}% of ATK for 10 seconds. Enemy receives {1}% increased P.DMG for the duration.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Baroru.png",
+			"effects": [
+					[100, 120, 144, 172, 207, 250],
+					[20, 24, 28, 34, 41, 50]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP+10% / P.Dodge +100",
+			"Upon dodging, All skill cooldowns are reduced by 2%. Also, ATK is boosted by 3%, and Atk Spd is boosted by 30. The ATK and Atk Spd boost can stack up to 10 times."
+		]
+	},
+	{
+		"name": "Viska",
+		"title": "Demon Eater",
+		"class": "Warrior",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 325,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Viskaico.png/70px-Viskaico.png",
+		"skills": [
+			{
+				"name": "Meal Time!!",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deals ??? M.DMG to enemies within range, reduces their ATK by ??? % for 10 sec while raising own ATK by ??? for 10 sec. When holding 3 stacks of Souls, shackle the enemy for 3 sec.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 15%.",
+					"DMG increases by 25%."
+				],
+				"perks": [
+					4,
+					"In exchange for 1 additional Mana Cost, cooldown is reduced by 4 sec.",
+					"When holding 5 or more stacks of Souls, reduce 1 Mana Orb from hot enemies."
+				]
+			},
+			{
+				"name": "I'll slice you up!!",
+				"cost": 2,
+				"cooldown": 10,
+				"explanation": "Move behind the target enemy, dispelling positive buffs and dealing ??? M.DMG while inflicting knock down. When holding 3 stacks of Souls, reduce enemy M.DEF by ??? %.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 15%.",
+					"Enemy receives 25% more M.DMG for the duration."
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"When holding 5 or more stacks of Souls, deal additional DMG that ignores DEF."
+				]
+			},
+			{
+				"name": "I'll rip you to pieces!!",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Deals ??? M.DMG to enemies within a circular range and knock them over a large distance. When holding 5 stacks of Souls, use all 5 stacks to reset cooldown of this skill.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 15%.",
+					"Enemies nearby are drawn in right before the attack occurs."
+				],
+				"perks": [
+					4,
+					"The 5 Souls consuming effect no longer consumes Souls.",
+					"Knock back effect is changed to a 3 sec Stun."
+				]
+			},
+			{
+				"name": "Yummy Souls!",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Enemies attacked with Viska's skills lose Souls. Targets that lose their Souls take extra ??? M.DMG, and each soul heals Viska's HP by ???. Souls last until they are used, and can be stacked up a maximum of 5.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 15%.",
+					"Enemies that had their Souls stolen lose 300 mana."
+				],
+				"perks": [
+					3,
+					"Upon gaining a Soul, recover 500 mana.",
+					"Gain 50% ATK when holding 5 Souls."
+				]
+			}
+		],
+		"uw": {
+			"name": "Nightmare Fang, Kitrax",
+			"explanation": "Enemies that had their Souls stolen receive {0}% more M.DMG. Lasts for 10 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Kitrax.png",
+			"effects": [
+					[25, 30, 36, 43, 51, 60]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"When attacking, deal 20% of ATK as extra M.DMG per each Soul currently stacked"
+		]
+	},
+	{
+		"name": "Priscilla",
+		"title": "Maid of Steel",
+		"class": "Warrior",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 330,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Priscillaico.png/70px-Priscillaico.png",
+		"skills": [
+			{
+				"name": "Vital Strike",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deals ??? P.DMG to frontal enemies and stuns them for 1 sec. This attack always Critically hits.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 10%.",
+					"DMG increases by 25%."
+				],
+				"perks": [
+					4,
+					"Stun duration is increased by 2 sec.",
+					"No longer Crits unconditionally, and Crit DMG is increased by 150%"
+				]
+			},
+			{
+				"name": "Coordination",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Imbues a 'Co-op' state to this hero and the ally with the highest ATK for 20 sec. Priscilla's ATK rises by 15% + ???, and the ally's ATK rises by (the same) for the duration.",
+				"attributes": [
+					"ATK increasion rate is increased by 10%.",
+					"ATK increasion rate is increased by 15%.",
+					"ATK increasion rate is increased by 25%."
+				],
+				"perks": [
+					3,
+					"Crit DMG boosted by 80%",
+					"While in Co-op state, auto attacks increase the target's received DMG from all sources by 15%."
+				]
+			},
+			{
+				"name": "Turbulent Dance",
+				"cost": 3,
+				"cooldown": 22,
+				"explanation": "Deals ??? P.DMG to nearby enemies in a circular range and draws them towards herself. When activated under the effect of 'Co-op', enemies that are hit take 20% extra P. and M.DMG for 10 sec.",
+				"attributes": [
+					"DMG increases by 10%.",
+					"DMG increases by 15%.",
+					"DMG increases by 25%."
+				],
+				"perks": [
+					4,
+					"Upon a Crit hit, cooldown is reduced by 10%",
+					"When there is only 1 enemy, DMG is increased by 100%"
+				]
+			},
+			{
+				"name": "Weapon Mastery",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "This Hero's ATK rises by ???, and DEF Pen. rises by 100.",
+				"attributes": [
+					"TK increasion rate is increased by 10%.",
+					"TK increasion rate is increased by 15%.",
+					"Increases Crit DMG by 30%.%"
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%",
+					"Crit chance is boosted by 250."
+				]
+			}
+		],
+		"uw": {
+			"name": "Tumultuous Dance, Excilius",
+			"explanation": "When skills 'Vital Strike' and 'Turbulent Dance' hit the enemy, reduce the corresponding skill's cooldown by {0}s and increase ATK Spd by 50 per hit number of enemies. ATK Spd boost may be stacked up to 10 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Excilius.png",
+			"effects": [
+					[1, 1.2, 1.4, 1.7, 2, 2.5]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP + 10% / CC Resist +100",
+			"Increase all allies' ATK and P.DEF by 3% of own ATK and P.DEF."
+		]
+	},
+	{
+		"name": "Theo",
+		"title": "Knight of Loyalty",
+		"class": "Warrior",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 240,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Theoico.png/70px-Theoico.png",
+		"skills": [
+			{
+				"name": "Final Crash",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Attacks the enemy 16 times, dealing a total of ??? M.DMG. Upon each critical hit, increases Crit DMG by 3& for 10 sec, and there is a 30% chance to deal ??? additional M.DMG and inflict stun for 0.3 sec. Crit DMG increase effect can stack up to 30 times.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"When there is only 1 enemy, DMG is increased by 100%",
+					"Cooldown is reduced by 2 sec"
+				]
+			},
+			{
+				"name": "God of Lightning",
+				"cost": 2,
+				"cooldown": 20,
+				"explanation": "Upon activation, activate 'God of Lightning' state. Throw a spear of lightning at the enemy to inflict ??? M.DMG. The hit enemy will take 25% increased M.DMG for 10 sec. While in 'God of Lightning' state, mana will not recover for 10 sec, but 'For Jane' skill activation rate will be increased by 40% and ATK will be increased by ???.",
+				"attributes": [
+					"ATK and DMG boosts are increased by 10%",
+					"ATK and DMG boosts are increased by 15%",
+					"ATK and DMG boosts are increased by 25%"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1",
+					"DMG taken while in Lightning God state is increased by 30% but ATK increase rate is increased by 100%"
+				]
+			},
+			{
+				"name": "Lightning Explosion",
+				"cost": 3,
+				"cooldown": 22,
+				"explanation": "Jumps towards a forward enemy, striking with a spear thrust down to the ground. Hits the enemy 5 times and deals a total of ??? M.DMG to the target and nearby enemies. Also inflicts stun for 3 sec.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Stun duration is increased by 1 sec"
+				]
+			},
+			{
+				"name": "For Jane",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Each auto-attack, there is a 20% chance to deal ??? M.DMG and inflict stun for 0.7 sec.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%",
+					"Stun duration is increased by 1 sec"
+				]
+			}
+		],
+		"uw": {
+			"name": "Lightning Bolt, Legios",
+			"explanation": "Each auto attack and skill attack stacks 'Lightning' on self. Upon gaining 50 stacks, 'Lightning Strike, Legios' will activate, increasing ATK Spd by {0}, Crit DMG by {1}%, and DEF Pen by {2} for 10 sec. While in this state, Lightning will not stack. This effect cannot be dispelled.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/TheoLightningBoltLegios.png",
+			"effects": [
+					[300, 360, 430, 520, 620, 750],
+					[100, 120, 144, 173, 208, 250],
+					[300, 360, 430, 520, 620, 750]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"ATK is boosted by 50% for 10 sec after mana is maxed out. This effect only takes place 1 time in every 20 sec"
+		]
+	},
+	{
+		"name": "Selene",
+		"title": "Wind-Piercing Arrow",
+		"class": "Archer",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 846664,
+			"atk": 22112,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 500,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 250,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Seleneico.png/70px-Seleneico.png",
+		"skills": [
+			{
+				"name": "Arrow Rain",
+				"cost": 3,
+				"cooldown": 8,
+				"explanation": "Shoots 12 arrows randomly and inflict ??? P.DMG upon the enemy.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"There is a 20% chance to inflict stun for 2 seconds"
+				]
+			},
+			{
+				"name": "Rush",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Summon 5 arrows that fly towards the enemy upon auto-attacking. Each arrow inflicts ??? P.DMG.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Crit DMG is boosted by 80%",
+					"Make the enemy flinch for 0.5s"
+				]
+			},
+			{
+				"name": "Moonlight Flash",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Fire an arrow in a straight line, dealing P.DMG to all enemies in range based off their current HP. Deals a maximum of ??? P.DMG and inflicts knock down.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Reduces cooldown by 3 seconds ",
+					"Ignores enemy block"
+				]
+			},
+			{
+				"name": "Moonlight Arrow",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon attacking, for 10 sec, ATK rises by ??? and Crit Chance rises by 100. Stacks up to 3 times.",
+				"attributes": [
+					"Increase DEF drop by 10%",
+					"Increase DEF drop by 15%",
+					"Each attack increases hero's Crit DMG by 10%"
+				],
+				"perks": [
+					3,
+					"Max stack number is changed to 5",
+					"Auto attack range is boosted by 20%"
+				]
+			}
+		],
+		"uw": {
+			"name": "Green Winds, Notos",
+			"explanation": "Upon inflicting Critical Hit, Attack Speed increases by {0} for 10 seconds. For the duration, auto-attacks will fire an additional arrow worth 100% P.DMG.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/GreenwindNotos.png",
+			"effects": [
+					[200, 240, 280, 340, 410, 500]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"Upon attacking, there is a 50% chance to deal 40% of ATK as extra P.DMG"
+		]
+	},
+	{
+		"name": "Dimael",
+		"title": "Shadow Hunter",
+		"class": "Archer",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 846664,
+			"atk": 22112,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 215,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 250,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Dimaelico.png/70px-Dimaelico.png",
+		"skills": [
+			{
+				"name": "Dark Rampage",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? M.DMG to the enemy.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Has a 25% chance of Blinding the enemy for 5 sec."
+				]
+			},
+			{
+				"name": "Black Shackle",
+				"cost": 3,
+				"cooldown": 15,
+				"explanation": "Inflict ??? M.DMG to the enemies in range and shackle for 6 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Enemy receives 30% more M.DMG for the duration"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"Hit enemies are drawn together."
+				]
+			},
+			{
+				"name": "Shadow Wave",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Inflicts ??? M.DMG upon the enemies in a straight line and blinds hit targets for 6 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Mana cost is increased by 1 and all enemies within range lose 1 orb of mana after their positive effects are dispelled."
+				]
+			},
+			{
+				"name": "Black Stain",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "While auto-attacking, the last hit of the combo deals ??? additional M.DMG that ignores the enemy M.DEF.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%",
+					"There is a 10% chance that Skill 1 is fired upon an auto-attack."
+				]
+			}
+		],
+		"uw": {
+			"name": "Tears of the Moon, Nerius",
+			"explanation": "Upon attacking an enemy, inflict M.DMG (100% of ATK) by a {0}% chance and reduce skill cooldowns by 10%.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Nerius.png",
+			"effects": [
+					[310, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / ATK.Spd +100",
+			"Upon auto attacking, deal extra M.DMG worth 20% of ATK and recover 100 mana. There is a 10% chance of dealing double DMG and recovering double mana."
+		]
+	},
+	{
+		"name": "Luna",
+		"title": "Child of Moonlight",
+		"class": "Archer",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 846664,
+			"atk": 22112,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 500,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 250,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lunaico.png/70px-Lunaico.png",
+		"skills": [
+			{
+				"name": "Pew!",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? M.DMG by shooting a bouncing projectile to the nearest enemy, which bounces 3 times. The further the enemy, the more DMG is inflicted.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"If there is 1 enemy, damage is increased by 100%.",
+					"Has a 20% chance to stun enemies for 2 sec."
+				]
+			},
+			{
+				"name": "Look Out Above!",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Deal ??? M.DMG within a small area centered on the furthest enemy. Stun targets for 1 sec. The further the enemy, the more DMG is inflicted.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"In exchange for 2 additional Mana Cost, attack random enemies 3 times.",
+					"There is a 30% chance to attack 2 enemies."
+				]
+			},
+			{
+				"name": "Twinkle Twinkle",
+				"cost": 1,
+				"cooldown": 15,
+				"explanation": "Deal ??? M.DMG to targets within range, and reduce their Crit. Chance by 100% for 7 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Reduces ACC of hit enemies by 150 for 7 secs.",
+					"In exchange for 1 additional Mana Cost, knock back the enemy over a long distance."
+				]
+			},
+			{
+				"name": "Gotcha",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 6 sec, deal ??? M.DMG to the furthest enemy for 5 sec. The further the enemy, the more DMG is inflicted.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"There is a 20% chance to knock back the enemy far awak and inflict knock over for 2 sec.",
+					"Number of targets changes to 2."
+				]
+			}
+		],
+		"uw": {
+			"name": "Flower of Eternity, Hyacinth",
+			"explanation": "When auto-attacking, deals {0}% additional M.DMG to a random enemy.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Hyacinth.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"When auto-attacking, there is a 10% chance to knock back the enemy across a long distance anf inflict Stun for 3 sec. Also increase ATK Spd by 500 for 3 sec."
+		]
+	},
+	{
+		"name": "Arch",
+		"title": "Arrow of Purity",
+		"class": "Archer",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 846664,
+			"atk": 22112,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 375,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 250,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Archico.png/70px-Archico.png",
+		"skills": [
+			{
+				"name": "Celestial Arrow",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Deal ??? M.DMG to up to 3 enemies and knock them back. Enemies hit will be inscribed with a Judgement Sigil for 15 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"If there is 1 enemy, DMG is increased by 100%",
+					"Stuns enemies with a Sigil for 1 sec"
+				]
+			},
+			{
+				"name": "Purifying Blaze",
+				"cost": 3,
+				"cooldown": 15,
+				"explanation": "Deals ??? M.DMG to all enemies in a straight line. Enemies with a Judgement Sigil receive ??? extra M.DMG that ignores M.DEF.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Crit Chance is boosted by 40%.",
+					"Cooldown is reduced by 3 sec."
+				]
+			},
+			{
+				"name": "Arbiter",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Deals ??? M.DMG to enemies in range and enemies with a Judgement Sigil will receive 50% more M.DMG from attacks and be silenced for 5 sec. All allies gain immunity to M.DMG for 5 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Inflicts a sigil upon damaged enemies",
+					"M.DMG increase and Silence occur to enemies with no Sigil as well"
+				]
+			},
+			{
+				"name": "The Last Judgment",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 15 sec, deal ??? M.DMG that ignoes M.DEF to enemies with a Judgement Sigil. During battle, upon receiving fatal DMG, deal ??? M.DMG that ignores M.DEF to enemies with a Judgement Sigil and all allies gain a shield that blocks up to ??? DMG for 15 sec.",
+				"attributes": [
+					"DMG and Shield are increased by 10%",
+					"DMG and Shield are increased by 15%",
+					"DMG and Shield are increased by 25%"
+				],
+				"perks": [
+					3,
+					"For 20 sec after activation, auto attacks target 2 enemies",
+					"Effect occurs 3 sec faster"
+				]
+			}
+		],
+		"uw": {
+			"name": "Clear Blue Sky, Sherrkyle",
+			"explanation": "Every 10 sec, inflict a Judgement Sigil upon a random enemy for 15 sec and deal {0}% of ATK as M.DMG.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Sherrkyle.png",
+			"effects": [
+					[168, 201.6, 241.5, 289.8, 348.6, 420]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Upon a Critical Hit, heal all ally HP by 4% of DMG dealt"
+		]
+	},
+	{
+		"name": "Yanne",
+		"title": "Dragon Slayer",
+		"class": "Archer",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 846664,
+			"atk": 22112,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 375,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 250,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Yanneico.png/70px-Yanneico.png",
+		"skills": [
+			{
+				"name": "Focus Shot!",
+				"cost": 2,
+				"cooldown": 9,
+				"explanation": "Taking up a stance, focus for a while and deal P.DMG to enemies in a straight line. If the target is a dragon, inflict stun for 3 sec. The longer she focuses, DMG and stun duration are increased.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Target takes additional 25% P.DMG for 10 sec."
+				]
+			},
+			{
+				"name": "Wipeout!",
+				"cost": 3,
+				"cooldown": 10,
+				"explanation": "Deals P.DMG to an enemy and other nearby enemies. If the target is a Dragon, deal additional DMG that ignores DEF.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 25%"
+				],
+				"perks": [
+					3,
+					"When there is one enemy, DMG is boosted by 100%.",
+					"Enemies hit are stunned for 2 sec."
+				]
+			},
+			{
+				"name": "No Holding Back!",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Remove all harmful effects on self and for 30 sec, increase ATK and DEF Pen. Also, for the duration, auto-attacks are changed. They consume 3% mana in exchange for the ability to do DMG to all enemies in a straight line. Also, deals additional P.DMG that ignores DEF to dragons.",
+				"attributes": [
+					"Attack increase 10%",
+					"Attack increase 15%",
+					"Attack increase 25%"
+				],
+				"perks": [
+					4,
+					"ATK Spd is boosted by 250 for the duration. ",
+					"For the duration, all DMG taken is reduced by 25%."
+				]
+			},
+			{
+				"name": "Dragon Slayer",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "ATK and Max HP are boosted. Also, DMG dealt to dragons is increased.",
+				"attributes": [
+					"Attack increase 10%",
+					"Attack increase 15%",
+					"Attack increase 25%"
+				],
+				"perks": [
+					3,
+					"All allies take 7% reduced DMG from dragons.",
+					"Deals 15% more DMG to dragons."
+				]
+			}
+		],
+		"uw": {
+			"name": "Dragonbane, Svelta",
+			"explanation": "Upon a Critical Hit, there is a 10% chance to deal P.DMG equal to {0}% of ATK and recover 5% Mana. If the target is a Dragon, inflict Stun for 1 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Svelta.png",
+			"effects": [
+					[200, 240, 290, 350, 420, 500]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP + 10% / Crit DMG +20%",
+			"Auto-attacks ignore enemy Block effects."
+		]
+	},
+	{
+		"name": "Roi",
+		"title": "Swift Assassin",
+		"class": "Assassin",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 290,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Roiico.png/70px-Roiico.png",
+		"skills": [
+			{
+				"name": "Merciless",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Attack 3 times at random, dealing ??? P.DMG to enemies and inflict Bleed, which deals constant P.DMG. Bleed stacks to a max of 3.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"Target takes 25% increased P. DMG for 10 sec."
+				]
+			},
+			{
+				"name": "Curtain of Darkness",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Attack rises by ??? for 10 sec and dodge all P.DMG attacks.",
+				"attributes": [
+					"ATK increase rate is increased by 10%",
+					"ATK increase rate is increased by 15%",
+					"Increase ATK Spd by 250 for the duration"
+				],
+				"perks": [
+					3,
+					"ATK Boost is increased by 40%.",
+					"Auto attack DMG is boosted by 100% for the duration."
+				]
+			},
+			{
+				"name": "Blade Claw",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Move behind the enemy with the lowest HP and deal ??? P.DMG. Each stack of Bleed on the enemy inflicts additional 50% DMG. All stacks of Bleed are removed afterwards. If Crit, recover 2 MP and reset skill cooldown.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					4,
+					"In exchange for 1 additional mana cost, DMG dealt is increased by 80%.",
+					"Recovers 1 extra mana orb when the target has 3 stacks of bleed."
+				]
+			},
+			{
+				"name": "Hack",
+				"cost": -1,
+				"cooldown": 4,
+				"explanation": "Upon a critical auto-attack, deal ??? additional P.DMG.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					3,
+					"Each attack recovers 100 mana.",
+					"Has a 20% chance to stack 1 stack of bleed."
+				]
+			}
+		],
+		"uw": {
+			"name": "Specter's Breath, Redeal",
+			"explanation": "Each auto-attack has a 25% chance to inflict P.DMG on enemy {0}% of the ATK and inflict Bleed.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Redeal.png",
+			"effects": [
+					[50, 60, 72, 86, 103, 125]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit. DMG +200",
+			"Upon using a skill, gain 300 ATK Spd and 60% Crit DMG for 10 sec."
+		]
+	},
+	{
+		"name": "Reina",
+		"title": "Lightning Flash",
+		"class": "Assassin",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 260,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Reinaico.png/70px-Reinaico.png",
+		"skills": [
+			{
+				"name": "Float Like A Butterfly",
+				"cost": 1,
+				"cooldown": 12,
+				"explanation": "Stabs through the enemy quickly, dealing ??? P.DMG. Upon a critical hit, leave a stack of Wounds and reset cooldown. Each stack of Wound increases DMG dealt by this skill by 20%. Gain immunity to all DMG while using this skill.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Mana cost is increased by 1 and Wound stack max is changed to 10. Deals 100% of ATK as extra DMG to enemies with 10 Wounds.",
+					"Cooldown is removed."
+				]
+			},
+			{
+				"name": "Sharp End",
+				"cost": 2,
+				"cooldown": 10,
+				"explanation": "Increase ??? of ATK for 10 sec, and increase Crit Hit chance by 500.",
+				"attributes": [
+					"Attack increase rate is increased by 10%",
+					"Attack increase rate is increased by 15%",
+					"Increase Crit Hit chance by 50%"
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"In exchange for 1 additional Mana Cost, Crit Change effect is changed to a 100% Crit DMG boost. Also gains a 25% DMG boost towards Bosses."
+				]
+			},
+			{
+				"name": "Shooting Star",
+				"cost": 3,
+				"cooldown": 25,
+				"explanation": "Inflicts ??? P.DMG upon enemy with a continuous attack. The last hit blows the enemy away..",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Each Critical Hit increases the last hit's DMG by 10%.",
+					"Gain immunity to all DMG while using skill."
+				]
+			},
+			{
+				"name": "Lucky Child",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "After a successful Crit Hit, ATK increases by ??? for 10 sec. Can be stacked up to 5 times max",
+				"attributes": [
+					"ATK increase rate is increased by 10%",
+					"ATK increase rate is increased by 15%",
+					"DEF Penetration is increased by 100 for the duration of this skill"
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"When holding 5 stacks, takes 20% reduced M.DMG."
+				]
+			}
+		],
+		"uw": {
+			"name": "Lightning Flash, Livatis",
+			"explanation": "After a successful Critical Hit, gain {0} Attack Spd and {1}% Crit DMG buff for 15 seconds. Can be stacked up to 5 times max.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Livatis.png",
+			"effects": [
+					[80, 90, 110, 130, 160, 200],
+					[20, 24, 28, 34, 41, 50]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"There is a 5% chance to inflict a Headshot while auto-attacking. Headshot deals a 600% of ATK as P.DMG"
+		]
+	},
+	{
+		"name": "Epis",
+		"title": "Captivating Demon",
+		"class": "Assassin",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 300,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Episico.png/70px-Episico.png",
+		"skills": [
+			{
+				"name": "Absorbing Blow",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Deal ??? M.DMG that ignores enemy defense and recover HP based off 100% of the DMG inflicted.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"If there is only 1 enemy, damage is increased by 100%.",
+					"Ignores enemy block."
+				]
+			},
+			{
+				"name": "Nightmare",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Moves behind the furthest enemy dealing ??? M.DMG. Hit enemies gain a debuff that makes them receive 30% extra M.DMG for 10 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"In exchange for 1 additional mana cost, cast skill 1 right after this skill."
+				]
+			},
+			{
+				"name": "Devil's Prom",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Deal ??? M.DMG to all enemies in range. Resists CC while using this skill.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Upon dealing a Crit Hit, heal the hero for 100% of DMG"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"DMG taken is reduced by 50% while this skill is in use."
+				]
+			},
+			{
+				"name": "Harvest",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "When an enemy is killed by this hero, increase ATK by ??? for 12 sec and reduce all skill cooldowns by 30%.",
+				"attributes": [
+					"ATK increase rate increases by 10%",
+					"ATK increase rate increases by 15%",
+					"For each kill, recover 1 orb of Mana"
+				],
+				"perks": [
+					3,
+					"Each stack increases mana recovery per sec by 50%",
+					"While stack number is higher than 5, Mana is always at 100% and cooldowns are decreased by an additional 1 sec per each sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "The Seductress, Guillotine",
+			"explanation": "Upon auto-attacking, for a 25% chance, deal M.ATK of {0}% and increase attack by {1]%. Stacks up to 10 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Guillotine.png",
+			"effects": [
+					[80, 96, 115, 138, 165, 200],
+					[2, 2.4, 2.9, 3.5, 4.2, 5]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit. DMG +200",
+			"All of Epis' attacks decrease the M.DEF of hit enemies by 20% for 10 sec. ATK rises by 2% per each enemy hit. Maximum stack number is 10."
+		]
+	},
+	{
+		"name": "Fluss",
+		"title": "Fluttering Blade",
+		"class": "Assassin",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 180,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Flussico.png/70px-Flussico.png",
+		"skills": [
+			{
+				"name": "Tempest Blade",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Deals ??? P.DMG to target enemy and other enemies in the vicinity.",
+				"attributes": [
+					"Damage increases by 10%",
+					"Damage increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"DMG +40%",
+					"Upon Crit hit, CD reduce by 6%"
+				]
+			},
+			{
+				"name": "Flashstep",
+				"cost": 1,
+				"cooldown": 10,
+				"explanation": "Move towards the enemy with the highest ATK and inflict Silence for 2 sec. Reduce M.DMG inflicted by enemies by 300% for 5 sec. Inscribe the enemy with a mark for 10 sec, and every time the hero attacks the marked enemy, inflict ??? additional P.DMG.",
+				"attributes": [
+					"Damage increases by 10%",
+					"Damage increases by 15%",
+					"Damage increases by 25%"
+				],
+				"perks": [
+					3,
+					"Adds 1 mana cost, reduces CD by 5 sec",
+					"Dispels positive effects"
+				]
+			},
+			{
+				"name": "Bloody Petals",
+				"cost": 2,
+				"cooldown": 25,
+				"explanation": "Deal ??? P.DMG upon a single enemy, and restrict target for the duration.",
+				"attributes": [
+					"Damage increases by 10%",
+					"Damage increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Each Crit Hit increases last hit DMG by 10%%",
+					"While on CD, auto attack DMG +50%"
+				]
+			},
+			{
+				"name": "Spell Cutter",
+				"cost": -1,
+				"cooldown": 10,
+				"explanation": "Deal ??? P.DMG to enemies that dealt M.DMG to this hero once every 10 sec, and dodge all following M.DMG for 3 sec.",
+				"attributes": [
+					"Damage increases by 10%",
+					"Damage increases by 15%",
+					"Damage increases by 25%"
+				],
+				"perks": [
+					3,
+					"Upon dodging, raise own ATK by 3%, stacks up to 10 times",
+					"30% chance to stun enemies for 3 seconds"
+				]
+			}
+		],
+		"uw": {
+			"name": "Twinswords of Fury, Veralta",
+			"explanation": "Gain {0}% of Attack and {1} Attack Spd every 10 seconds. Stacks up to 3 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Veralta.png",
+			"effects": [
+					[12, 14, 17, 20, 25, 30],
+					[120, 140, 170, 200, 250, 300]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10%/M. Dodge +100",
+			"When attacking, deal 20% of ATK as P.Dmg. 10% chance of dealing double damage and dispelling positive effects"
+		]
+	},
+	{
+		"name": "Tanya",
+		"title": "The Silencing Blade",
+		"class": "Assassin",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 285,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Tanyaico.png/70px-Tanyaico.png",
+		"skills": [
+			{
+				"name": "Target Sighted",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Appear behind enemy with the least PDEF and increase their Physical damage taken by 30%. Knockdown and deals damage. If Tanya is stealthed, also stun for 6 seconds, otherwise, enter stealth mode for 10 seconds.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Stacks 3 stacks of Bleed upon a Crit Hit."
+				]
+			},
+			{
+				"name": "Blade Tornado",
+				"cost": 2,
+				"cooldown": 14,
+				"explanation": "Attack enemies in a small area 3 times and apply 1 bleed per hit. Deals damage. If Tanya is stealthed, also reduce recovery rate by 70%, otherwise, enter stealth mode for 10 seconds.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"If there is 1 enemy, DMG is increased by 100%.",
+					"Recover 200 mana upon a Crit hit."
+				]
+			},
+			{
+				"name": "Whisper of Death",
+				"cost": 3,
+				"cooldown": 25,
+				"explanation": "Attack 6 random enemies and then one last time for another damage. If Tanya is stealthed, also remove buffs, otherwise, enter stealth mode for 10 seconds.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Stacks Bleed upon a Crit Hit. ",
+					"Cooldown is reduced by 5 sec."
+				]
+			},
+			{
+				"name": "Silent Ambush",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Deals extra damage when a skill crits and silence for 1 second.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Silence duration increases by 0.5 sec"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%. ",
+					"Silence duration is increased by 2 sec when there is only 1 enemy."
+				]
+			}
+		],
+		"uw": {
+			"name": "Demon of the Calm, Caethasis",
+			"explanation": "Upon auto-attacking, there is a {0}% chance that the hero deals {1}% additional P.DMG to target and gains Stealth for 10 sec. Has a cooldown of 10 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Caethasis.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25],
+					[140, 170, 200, 240, 290, 350]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%.",
+			"Auto attack damage is boosted by 50% while in Stealth mode."
+		]
+	},
+	{
+		"name": "Gladi",
+		"title": "Beast of the Arena",
+		"class": "Assassin",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 210,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Gladiico.png/70px-Gladiico.png",
+		"skills": [
+			{
+				"name": "Quick Strikes",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Strikes the target 7 times,dealing a total of ??? P.DMG. The last hit increases the target's P.DAMG taken by 25% for 10 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG increases by 100% when there is only 1 enemy.",
+					"P.DMG taken increases effect amount is changed to 50%."
+				]
+			},
+			{
+				"name": "Advent of the War God",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Dispel all harmful effects on self and deal ??? P.DMG to nearby enemies within a small radius, gaining the status 'War God' for 10 sec. While in War God mode, ATK is boosted by ??? and all auto attacks have a 30% chance to consume 5% mana to deal an exta attack of ??? extra P.DMG. Upon taking M.DMG, dodge all M.DMG for 1 sec. Dodge effect only activates 1 time in every 2 sec",
+				"attributes": [
+					"Increase ATK & DMG by 10%",
+					"Increase ATK & DMG by 15%",
+					"Increase ATK & DMG by 25%"
+				],
+				"perks": [
+					3,
+					"War God state lasts 5 seconds longer.",
+					"Additional DMG hit chance rises by 20%"
+				]
+			},
+			{
+				"name": "Ultimate Punch!",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Gather energy to charge forward through enemies, dealing ??? P.DMG to all enemies within range and stunning them for 3 sec. This effect deals double DMG and ignores DEF when the target is a boss.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Mana cost reduced by 1."
+				]
+			},
+			{
+				"name": "This will hurt!",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every time Gladi hits a single target with 4 auto attacks, deal ??? extra DMG that ignores DEF.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"DMG increases by 100% when there is only 1 enemy.",
+					"When activated in the Arena, deal 15% of the target's current HP as additional P.DMG that ignores DEF."
+				]
+			}
+		],
+		"uw": {
+			"name": "Beast Fist, Mastra",
+			"explanation": "Upon Crit Hit, increases Crit Hit DMG by {0}% for 5 sec upon Crit Hit. The effect stacks up to 10 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/GladiUWBeastFistMastra.png",
+			"effects": [
+					[20, 24, 29, 35, 42, 50]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / ATK SPD +100",
+			"Increases all DEF by 8% ATK."
+		]
+	},
+	{
+		"name": "Rodina",
+		"title": "Blizzard's Sniper",
+		"class": "Mechanic",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 675,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Rodinaico.png/70px-Rodinaico.png",
+		"skills": [
+			{
+				"name": "Penetration Shot",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Upon activation, character takes up a stance and starts casting. After casting ends, deal ??? P.DMG upon enemies in a straight line. DMG is increased by 150% in proportion to the total casting time. If casting progresses beyond the 3rd stage, knock over enemies.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					4,
+					"DMG increased by 40%.",
+					"In exchange for 1 additional Mana Cost, gain CC immunity while casting skill."
+				]
+			},
+			{
+				"name": "Target Aim",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Target receives 50% increased damage from this hero. In addition, increase ATK by ???.",
+				"attributes": [
+					"ATK increasion rate is increased by 10%",
+					"ATK increasion rate is increased by 15%",
+					"Increase Crit DMG by 50% for duration."
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"Duration increaded by 10 sec."
+				]
+			},
+			{
+				"name": "Focused Fire",
+				"cost": 3,
+				"cooldown": 25,
+				"explanation": "Fire 10 shots at random enemies. Deal ??? P.DMG and increases damage by 10% for each subsequent attack.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					4,
+					"Reduce cooldown by 3% when Critical Hits Occur ",
+					"Heals all allies by 20% of DMG."
+				]
+			},
+			{
+				"name": "Rapid Shot",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 10 seconds, do 2 consecutive attacks and deal ??? P.DMG.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit DMG by 50%"
+				],
+				"perks": [
+					3,
+					"If there 1 enemy, DMG increased by 100%.",
+					"Recovers 500 mana upon activation."
+				]
+			}
+		],
+		"uw": {
+			"name": "Rodina Custom Rifle Mod.0",
+			"explanation": "Upon attacking an enemy, inflict additional P.DMG amount to {0}% of Attack at a {1}% chance and knock back the enemy. Afterwards, ACC rises by 100 for 10 sec. This effect can stack up to 3 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/CustomRifle.png",
+			"effects": [
+					[100, 120, 144, 172, 207, 250],
+					[10, 11, 12, 13, 14, 15]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"There is 5% chance to inflict a Headshot while auto-attacking. Headshot deal 600% of ATK as P.DMG."
+		]
+	},
+	{
+		"name": "Lakrak",
+		"title": "Hunter of the Hand Cannon",
+		"class": "Mechanic",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 325,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lakrakico.png/70px-Lakrakico.png",
+		"skills": [
+			{
+				"name": "Rapid Fire",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? P.DMG to enemies in range and knock them back.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Stuns the enemy for 3 sec"
+				]
+			},
+			{
+				"name": "Smoke Bomb",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Deal ??? P.DMG to enemies in range and inflict Blind for 4 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Inflict an additional 1 second stun"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1",
+					"Blind duration is increased by 2 sec"
+				]
+			},
+			{
+				"name": "Glue Bomb",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Attach a sticky bomb to a random enemy. The bomb explodes, dealing P.DMG based off the enemy's current HP. Deals a maximum of ??? P.DMG to all enemies in range, and explodes 3 sec after activation. Also, stun the enemy for 3 seconds.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost is increased by 1 and attacks a random target 2 times.",
+					"Cooldown is decreased by 50% if it kills enemy."
+				]
+			},
+			{
+				"name": "Load Cannon",
+				"cost": -1,
+				"cooldown": 1.3,
+				"explanation": "Auto attacks have a 15% chance of firing a bomb that deals ??? P.DMG to targets within range and stuns them for 2 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Activation chance is boosted by 10%",
+					"Target takes 25% increased P.DMG"
+				]
+			}
+		],
+		"uw": {
+			"name": "Lakrak MK-1",
+			"explanation": "Upon auto-attacking, there is a 25% chance that Attack Speed will rise by {0} for 10 seconds. There is a 20 second cooldown for this effect.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/TheoLightningBoltLegios.png",
+			"effects": [
+					[300, 360, 420, 510, 615, 750]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"Upon a Critical Hit, gain 5% Crit DMG and 30 CC Accuracy. Stacks up to 10 times"
+		]
+	},
+	{
+		"name": "Miruru",
+		"title": "Cursed Pirate Empress",
+		"class": "Mechanic",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 450,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Miruruico.png/70px-Miruruico.png",
+		"skills": [
+			{
+				"name": "Baaaam!",
+				"cost": 2,
+				"cooldown": 7,
+				"explanation": "Deal ??? P.DMG to enemies in range and inflict knock back.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"Upon activation, ATK is increased by 35% for 10 seconds."
+				]
+			},
+			{
+				"name": "Roll Over",
+				"cost": 2,
+				"cooldown": 13,
+				"explanation": "Inflict ??? P.DMG 3 times to enemies in range. Each attack has a 100% chance to knock down enemy for 2 seconds.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%",
+					"Reduces cooldown by 8% upon attacking."
+				]
+			},
+			{
+				"name": "Miruru Pirates!",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Deal ??? P.DMG to enemies in range for 2 seconds, decreasing their speed by 400.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Removes ATK Spd debuff effect and adds a 3 sec Stun."
+				]
+			},
+			{
+				"name": "Boooooom!",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon attacking an enemy, there is a 50% chance to shoot additional bullets and inflict ??? P.DMG to 3 random enemies.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%.",
+					"Has a 10% chance to Stun hit enemies for 1 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "Ultimate Weapon, Leviathan",
+			"explanation": "Deal P.DMG equal to {0}% of Attack every 5 seconds to enemies in a random range every 5 seconds. Enemies hit by this effect take 20% additional P.DMG",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Leviathan.png",
+			"effects": [
+					[100, 120, 144, 172, 207, 250]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Miruru stacks Darkness depending on the number of enemies she hit. When she reaches 50 stacks, she goes berserk, boosting her ATK Spd by 800 and her ATK by 20%."
+		]
+	},
+	{
+		"name": "Annette",
+		"title": "Royal Technomagi",
+		"class": "Mechanic",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 425,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Annetteico.png/70px-Annetteico.png",
+		"skills": [
+			{
+				"name": "Blasting Ray",
+				"cost": 2,
+				"cooldown": 11,
+				"explanation": "Attacks enemies in a straight line, dealing ??? M.DMG to targets and increasing their M.DMG taken by 25%. While Overcharged, deal ??? additional M.DMG and increases M.DMG taken by 25%.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Upon use, the amount of Charge gained is increased by 30%"
+				],
+				"perks": [
+					4,
+					"Area of Effect is boosted by 40%.",
+					"Charge amount is boosted by 40% upon use."
+				]
+			},
+			{
+				"name": "Emergency Treatment",
+				"cost": 2,
+				"cooldown": 17,
+				"explanation": "Clear all negative effects from allies and heal for ??? HP for 10 sec while increasing Debuff Resistances by 250. While Overcharged, all allies gain 250 Crit Chance and are immune to status effects.",
+				"attributes": [
+					"Recovery is increased by 10%",
+					"Recovery is increased by 15%",
+					"Upon use, the amount of Charge gained is increased by 30%"
+				],
+				"perks": [
+					3,
+					"Cooldown is reduced by 3 sec.",
+					"Charge amount is boosted by 40% upon use."
+				]
+			},
+			{
+				"name": "Process of Elimination",
+				"cost": 3,
+				"cooldown": 25,
+				"explanation": "Target a random enemy, firing an energy ball that explodes, dealing ??? M.DMG to nearby enemies. When Overcharged, deal ??? M.DMG and stun enemies for 5 sec when the ball explodes.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Upon use, the amount of Charge gained is increased by 30%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Target takes 25% increased M.DMG."
+				]
+			},
+			{
+				"name": "Charge",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 0.5 sec, gain 1 Charge stack. Every 1 orb of mana used for skills, gain 10 Charge stacks. Upon 100 stacks enter Overcharged state, gaining ??? ATK for 15 seconds, while auto attacks reduce cooldowns by 10%. While Overcharged, cannot gain Charge.",
+				"attributes": [
+					"ATK increasion rate is increased by 10%",
+					"ATK increasion rate is increased by 15%",
+					"When Overcharged, ATK Spd rises by 250"
+				],
+				"perks": [
+					3,
+					"ATK is increased by 40%.",
+					"Overcharge duration is increased by 3 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "Crystallized Technomagic, Rascal",
+			"explanation": "Every {0} sec gain 1 stack of Magic Charge and recover 1% mana.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/CrystallizedTechnomagic.png",
+			"effects": [
+					[1.5, 1.4, 1.3, 1.2, 1.1, 1]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / ATK.Spd +100",
+			"When Overcharge activates, increase all allies Atk Spd by 200, and increase the ATK of all allies by 5% of Annette's ATK."
+		]
+	},
+	{
+		"name": "Mitra",
+		"title": "The Silver Battle Wolf",
+		"class": "Mechanic",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 175,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mitraico.png/70px-Mitraico.png",
+		"skills": [
+			{
+				"name": "Bang! Bang!!",
+				"cost": 1,
+				"cooldown": 6,
+				"explanation": "Attacks an enemy 2 times, dealing ??? P.DMG each. If the skill crits, an explosion occurs, dealing ??? extra P.DMG to nearby enemies.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					4,
+					"Dmg is increased by 100% when there is 1 enemy. ",
+					"Mark stacks 2 times."
+				]
+			},
+			{
+				"name": "Time to Die!!",
+				"cost": 3,
+				"cooldown": 15,
+				"explanation": "Increases own ATK by ??? and ACC by 300 for 20 sec. When auto-attacking, there is a 15% chance of using 'Bang! Bang!!'.",
+				"attributes": [
+					"ATK increasion rate is increased by 10%",
+					"ATK increasion rate is increased by 15%",
+					"ATK increasion rate is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Takes 20% more DMG from all sources in exchange for an extra 100% in ATK increase.",
+					"Bang! Bang! chance increased by 10%."
+				]
+			},
+			{
+				"name": "Dance with me!!",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Sprays his gun at a random enemy 12 times, dealing a total of ??? P.DMG. Every time DMG is dealt, leave a Mark of Death that cannot be removed. Every stack of the Mark of Death increases 'Shootouts DMG by 1%.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Stacks 2 more marks per hit."
+				]
+			},
+			{
+				"name": "You're Next!!",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Auto attacking leaves a Mark of Death that cannot be removed upon the enemy. Following auto-attacks and 'Bang! Bang!!' upon this this enemy deal ??? extra P.DMG. Every stack of this mark increases this skill's DMG upon this target by 1%. Maximum stack number is 100.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					3,
+					"Mark maximum is changed to 200.",
+					"All cooldowns are reduced by 0.3 when hitting a target with 100 stacks."
+				]
+			}
+		],
+		"uw": {
+			"name": "Roar of Madness, Velkinoth",
+			"explanation": "Auto-attacking increases DEF Pen. and ATK Spd by {0}. Stacks up to 30 times.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Velkinoth.png",
+			"effects": [
+					[8, 10, 12, 14, 17, 20]
+			]
+		},
+		"perks": [
+			"ATK,DEF,HP+10% / Crit Chance +100",
+			"Upon a Crit hit, increase Crit DMG by 0.5% and Atk Spd by 5. Max stack number is 100."
+		]
+	},
+	{
+		"name": "Oddy",
+		"title": "Clocksmith of Eternal Life",
+		"class": "Mechanic",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 918448,
+			"atk": 20176,
+			"pdef": 4264,
+			"mdef": 3488
+		},
+		"additional stats": {
+			"mp/atk": 550,
+			"crit": 150,
+			"cdmg": 500,
+			"penetration": 100,
+			"accuracy": 200,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Oddyico.png/70px-Oddyico.png",
+		"skills": [
+			{
+				"name": "Time Fracture",
+				"cost": 2,
+				"cooldown": 9,
+				"explanation": "Hits enemies in a straight line for ??? M.DMG and Petrify hit enemies for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Crit chance is increased by 250"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Cooldown is reduced by 1.5 sec."
+				]
+			},
+			{
+				"name": "Time Fragments",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Attack 6 random enemies, dealing a total ??? M.DMG. There is 50% chance that 'Time Fragments' will reset its cooldown and not require mana for the next use.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Crit chance is increased by 250"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%. ",
+					"While in cooldown, auto-attacks will reduce the cooldown of Time Fragments by 1 sec."
+				]
+			},
+			{
+				"name": "Time Distortion",
+				"cost": 4,
+				"cooldown": 45,
+				"explanation": "Deals ??? M.DMG to all enemies and increase ally ATK Spd by ???for 15 sec. Afterwards,Afterwards, all ally skills that are currently on coldown will have their cooldowns cut by 50%. This skill is not affected by itself and thus will not have its cooldown reduced.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Crit chance is increased by 250"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"While in use, gain immunity to CC."
+				]
+			},
+			{
+				"name": "Clock Magic",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "After skill use, 2 auto attacks will deal ??? additional M.DMG and have a 30% chance to Petrify the enemy for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Crit chance is increased by 250"
+				],
+				"perks": [
+					3,
+					"Additional DMG effect occurs 3 times.",
+					"Recover 5% of mana upon activation."
+				]
+			}
+		],
+		"uw": {
+			"name": "Moonshade Countdown, Tempodiana",
+			"explanation": "Upon using Time Distortion, all ally cooldowns are additionally reduced by {0} sec and their ATK is boosted by {1}% for 10 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Tempodiana.png",
+			"effects": [
+					[2, 3, 4, 5, 6, 7],
+					[14, 17, 20, 24, 30, 35]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Atk.spd +100",
+			"Every 10 sec, any skills on cooldown for 4 random allies have their cooldowns reduced by 1 sec."
+		]
+	},
+	{
+		"name": "Cleo",
+		"title": "Sorceress of Purgatory",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 475,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Cleoico.png/70px-Cleoico.png",
+		"skills": [
+			{
+				"name": "Fire Needle",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deal ??? M.DMG to up to 5 enemies and inflict an Ember that constantly deals M.DMG to hit enemies.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"Stacks 2 Embers each."
+				]
+			},
+			{
+				"name": "Fire Ball",
+				"cost": 2,
+				"cooldown": 10,
+				"explanation": "Deal ??? M.Damage upon enemies and stun for 2 seconds. Damage is increased by 20% for each stacked Ember.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 40%.",
+					"In exchange for 1 additional mana cost, the skill now targets 2 random enemies."
+				]
+			},
+			{
+				"name": "Fire Rain",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Each attack deals ??? M.DMG upon all enemies. DMG is increased by 20% for each stacked Ember.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Cooldown is reduced by 3 seconds.",
+					"Stuns enemies with 5 Embers or more for 1 sec."
+				]
+			},
+			{
+				"name": "Flame Diffusion",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Deal ??? M.DMG to 3 enemies, stacking 1 Ember to each. Embers reduce the enemy's M.DEF by 5% each.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Stack 2 Embers upon Crit hits"
+				],
+				"perks": [
+					3,
+					"Ember stack maximum is changed to 6.",
+					"Activates every 9 seconds."
+				]
+			}
+		],
+		"uw": {
+			"name": "Primal Flame, Flenos",
+			"explanation": "Embers explode every 4 seconds, dealing M.DMG of {0}% of Attack to enemies nearby.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Flenos.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Deals extra M.DMG worth 5% of ATK on every attack, based of the embers stacked on the enemy."
+		]
+	},
+	{
+		"name": "Pavel",
+		"title": "Wizard of Ice Dragon",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 425,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Pavelico.png/70px-Pavelico.png",
+		"skills": [
+			{
+				"name": "Wedge of Cold Snap",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Deal ??? M.DMG to the targeted enemy and inflict Freeze for 5 sec. if any enemies are inflicted with Chill of Early Dawn, deal DMG and inflict Freeze to them as well.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%.",
+					"In exchange for 1 additional Mana cost, Freeze duration is boosted by 5 sec."
+				]
+			},
+			{
+				"name": "Ice Spear",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Attack random enemies 5 times dealing ??? M.DMG, and inflict Chill of Early Dawn status. When an enemy inflicted by Chill of Early Dawn is attacked, attack with an additional Ice Spear that deals half DMG. These additional Ice Spear do not inflict Chill of Early Dawn status. Frozen enemies take 100% more DMG from this attack.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1",
+					"In exchange for 1 additional Mana cost, targets the enemy with the highest ATK."
+				]
+			},
+			{
+				"name": "Icy Conquest",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Deal ??? M.DMG to all enemies. Freeze enemies inflicted with Chill of Early Dawn for 5 sec, and increase dealt DMG by 100% if they already Frozen.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"If there is 1 enemy, DMG is increased by 100%.",
+					"Gain CC immunity while using said skill."
+				]
+			},
+			{
+				"name": "Chill of Early Dawn",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Deal ??? M.DMG to 3 enemies every 15 seconds and inflict Chill of Early Dawn",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Freeze the enemy for 5 sec if the enemy is alone.",
+					"Upon hitting an enemy, reduces target Mana recovery per sec by 50% for 10 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "Andarta Andraste, Dragon's Heart",
+			"explanation": "Every {0} sec, inflict Frost and deal M.DMG {1}% of ATK to 2 random enemies. Freeze the enemy for 5 seconds if they are already inflicted with Frost.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/AndartaAndraste.png",
+			"effects": [
+					[15, 14, 12.5, 11, 9.5, 8],
+					[40, 48, 57, 69, 83, 100]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"When mana is full, all skill cooldowns are constantly reduced by 1.5 sec."
+		]
+	},
+	{
+		"name": "Maria",
+		"title": "Fallen Witch",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 350,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mariaico.png/70px-Mariaico.png",
+		"skills": [
+			{
+				"name": "Raven Storm",
+				"cost": 3,
+				"cooldown": 9,
+				"explanation": "Deal ??? M.DMG to enemies within range and knock back. Also decrease M.DEF by 20% for 15 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Decrease speed of hit enemies by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40% (10%/15% -> 50%/55%)",
+					"Has a 20% chance of inflicting a 3 seconds shackle"
+				]
+			},
+			{
+				"name": "Claw of Restriction",
+				"cost": 2,
+				"cooldown": 13,
+				"explanation": "Inflict ??? M.DMG to up to 2 enemies and shackle them for 6 sec. Targeted enemies receive additional continuous M.DMG",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase M.DMG taken by the enemy by 30% while this skill is in effect"
+				],
+				"perks": [
+					3,
+					"Mana cost is increased by 1 (2 -> 3) and the skill targets 3 enemies",
+					"Shackle duration is increased by 1 second (6s -> 7s)"
+				]
+			},
+			{
+				"name": "Area of Darkness",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Draw enemies within range towards the center and deal 492355 M.DMG. The last attack stuns enemies for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40% (10%/15%/25% -> 50%/55%/65%)",
+					"DMG is decreased by 40% but stun duration is increased by 2 seconds (3s -> 5s) and all hit targets take 25% additional M.DMG for 10 seconds"
+				]
+			},
+			{
+				"name": "Black Wind",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Decrease ATK of enemies damaged by Maria by ??? for 10 seconds.",
+				"attributes": [
+					"Atk decrease rate is increased by 10%",
+					"Atk decrease rate is increased by 15%",
+					"Decrease the Crit Chance of the enemy by 25% for the duration"
+				],
+				"perks": [
+					3,
+					"ATK reduction is increased by 40% (10%/15% -> 50%/55%)",
+					"Reduces enemy M.Crit Resistance by 25% for 10 seconds"
+				]
+			}
+		],
+		"uw": {
+			"name": "Lea's Messenger, Cocytus",
+			"explanation": "Upon a Critical Hit, deal continuous M.DMG equal to {0}% of Attack to the enemy for 10 seconds and reduce their recovery rate by 50%.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Kokutos.png",
+			"effects": [
+					[120, 150, 180, 210, 250, 300]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Upon a Critical Hit, reduces target CC resist by 250 for 10 seconds. Also reduces self Skill Cooldown by 2%"
+		]
+	},
+	{
+		"name": "Lorraine",
+		"title": "Grand Elidoran Scholar",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 325,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lorraineico.png/70px-Lorraineico.png",
+		"skills": [
+			{
+				"name": "Thornbush Forest",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Attack random enemies within range 3 times and deal ??? M.DMG to enemies within range each time. Each attack stacks 1 stack of Poison.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Upon critical hit, stack 2 stacks of poison"
+				],
+				"perks": [
+					4,
+					"Hit count +1.",
+					"Enemies with 5 or more poison stacks are shackled for 2 sec."
+				]
+			},
+			{
+				"name": "Tangled Vine",
+				"cost": 3,
+				"cooldown": 10,
+				"explanation": "Deal ??? M.DMG to enemies in a straight line and stack 2 stacks of Poison. Also, shackle hit enemies for 4 sec. After a certain period of time, deal a large amount of DMG based on the number of Poison stacks.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase M.DMG taken by the enemy by 25% while this skill is in effect"
+				],
+				"perks": [
+					3,
+					"DMG +40%.",
+					"Enemies hit by the final explosion are stunned for 2 sec."
+				]
+			},
+			{
+				"name": "Wrath of the Forest",
+				"cost": 3,
+				"cooldown": 30,
+				"explanation": "Inflict ??? M.DMG and knocks down enemies in range. Increase DMG by 20% for each stack of poison.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 25%"
+				],
+				"perks": [
+					4,
+					"DMG +40%.",
+					"Removes positive buffs when poison stack 5 or more."
+				]
+			},
+			{
+				"name": "Blade Leaf",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 15 sec, attack enemies at random 3 times. Each attack deals ??? M.DMG and stacks 1 stack of Poison.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Maximum poison stacks becomes 6.",
+					"20% chance for enemies hit to be shackled for 2 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "World Tree's Will, Roburu",
+			"explanation": "Every 10 seconds, deal M.DMG equal to {0}% of Attack to enemies afflicted with poison and reduce M.DEF by {1}% Every stack of poison increase this DMG by 20%.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Roburu.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100],
+					[10, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Every 10 sec, attack enemies with Thornbush Forest(Skill 1)."
+		]
+	},
+	{
+		"name": "Aisha",
+		"title": "The Violet Princess",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 525,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Aishaico.png/70px-Aishaico.png",
+		"skills": [
+			{
+				"name": "Mystic Barrage",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Deals ??? M.DMG to enemies within a small area. Upon critical hit, reduce cooldown by 1 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Crit Chance increased by 250"
+				],
+				"perks": [
+					4,
+					"If there is 1 enemy, damage is increased by 100%.",
+					"Cooldown reduction effect is doubled."
+				]
+			},
+			{
+				"name": "Destruction Ray",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Deals ??? M.DMG to enemies in a straight line every 0.5 sec. After 5 seconds, use 3% mana every 0.5 seconds while DMG is increased by 100%.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Crit Chance increased by 250"
+				],
+				"perks": [
+					3,
+					"Reduces mana cost of Boosted Ray by half.",
+					"Doubles mana cost, increases Boosted Ray damage from 100% to 200%."
+				]
+			},
+			{
+				"name": "Torrential Rainfall",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Deals ??? M.DMG to random enemies for 3 sec. and reduces enemy M.DEF by 5%. M.DEF reduction stacks up to 5 times.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Crit Chance increased by 250"
+				],
+				"perks": [
+					4,
+					"Deals AoE damage.",
+					"Magic Defense reduction stacks increased from 5 -> 10."
+				]
+			},
+			{
+				"name": "Mystic Boost",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon a critical hit, deal ??? additional M.DMG to the enemy.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Damage +40%",
+					"Ignores block."
+				]
+			}
+		],
+		"uw": {
+			"name": "Noble Fate, Mahitra",
+			"explanation": "Upon an attack, there is a 25% chance to deal extra DMG worth {0}% of ATK",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Mahitra.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100]
+			]
+		},
+		"perks": [
+			"Attack +10%, Defense +10%, HP +10%, Crit +100.",
+			"For each skill used, Aisha gains 1 stack of Darkness. Each stack gives +6% Mana Regen and 1% Crit Damage. Max stacks is 50."
+		]
+	},
+	{
+		"name": "Lewisia",
+		"title": "The Royal Vermillion Blood",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 425,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lewisiaico.png/70px-Lewisiaico.png",
+		"skills": [
+			{
+				"name": "Blood Orb",
+				"cost": 1,
+				"cooldown": 6,
+				"explanation": "Deals ??? M.DMG to the enemy and inflicts 'Blood Curse' for 20 sec. Enemies inflicted by Blood Curse take a total of ??? M.DMG, and Lewisia recovers 30% of the DMG dealt from the Blood Curse effects. Blood Curse may stack up to 10 times. Uses 10% of current HP as cost.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					4,
+					"When there is only 1 enemy, DMG is increased by 100%.",
+					"Adds 1 mana cost, stacks 2 more Blood Curse."
+				]
+			},
+			{
+				"name": "Blood Zone",
+				"cost": 2,
+				"cooldown": 20,
+				"explanation": "Deals ??? M.DMG to the target enemy and creates a Blood Zone that lasts for 10 sec around the enemy. Enemies within the Blood Zone take 30% more M.DMG and receive ??? M.DMG ever 0.5 sec. When there are 5 or more Blood Curse stacks upon the enemy, the increased M.DMG effect is doubled. Uses 20% of current HP as cost.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					3,
+					"Damage +40%",
+					"Reduce enemy attack by 20% when standing in the Blood Zone."
+				]
+			},
+			{
+				"name": "Blood Banquet",
+				"cost": 2,
+				"cooldown": 12,
+				"explanation": "Deals ??? M.DMG 3 times to enemies in straight line. For every Blood Curse stack on hit enemies, skill DMG is increased by 30% and recover 2% of max HP. Uses 10% of current HP as cost.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					4,
+					"Adds 1 mana cost, 50% chance of inflicting 1 stack of Blood Curse with each attack.",
+					"Enemies inflicted are stunned for 3 seconds."
+				]
+			},
+			{
+				"name": "Blood Dominator",
+				"cost": -1,
+				"cooldown": 0.3,
+				"explanation": "When HP is below 50%, Recovery Rate is increased by 40%. Also, when attacking enemies inflicted by Blood Curse, deal ??? additional M.DMG.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"DMG increases by 25%"
+				],
+				"perks": [
+					3,
+					"If there's one enemy, damage +100%",
+					"When Lewisia's HP is below 50%, damage taken reduced by 20%."
+				]
+			}
+		],
+		"uw": {
+			"name": "Scarlet Ruler, Dominicia",
+			"explanation": "Every {0} sec deal {1}% of ATK as M.DMG to all enemies. There is a {2}% chance to inflict 'Blood Curse' for 15 sec. If there is only 1 enemy, DMG is doubled.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Dominicia.png",
+			"effects": [
+					[10, 9, 8, 7, 6, 5],
+					[40, 48, 58, 70, 84, 100],
+					[20, 24, 29, 35, 42, 50]
+			]
+		},
+		"perks": [
+			"Attack +10%, Defense +10%, HP +10%, Crit Chance +100",
+			"All skill HP consumption is increased by 50% but cooldowns are reduced by 20%."
+		]
+	},
+	{
+		"name": "Nyx",
+		"title": "Spatial Coordinator",
+		"class": "Wizard",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 160,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Nyxico.png/70px-Nyxico.png",
+		"skills": [
+			{
+				"name": "Dimension Blade",
+				"cost": 1,
+				"cooldown": 7,
+				"explanation": "Deals ??? P.DMG to targeted enemies. Each enemy provides a Blade Stack. The number of targets is equal to 1 + Blade stacks and the max number of stacks is 5.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"In exchange for 1 additional Mana Cost, cooldown is reduced by 3 sec.",
+					"Max Blade stack is increased by 1."
+				]
+			},
+			{
+				"name": "Dimension Cleaver",
+				"cost": 3,
+				"cooldown": 14,
+				"explanation": "Deals ??? P.DMG to targeted enemies and removes positive statuses. Hit enemies take ??? P.DMG over 10 sec and are knocked over for 3 sec. The number of targets is equal to 1 + Blade stacks.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"If there is 1 enemy, DMG is increased by 100%."
+				]
+			},
+			{
+				"name": "Infinity Blades",
+				"cost": 4,
+				"cooldown": 25,
+				"explanation": "Deals ??? P.DMG to frontal enemies and the final attack deals ??? P.DMG to one enemy, knocking over said enemy for 3 sec. The number of targets for the last attack is equal to 1 + Blade stacks.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Cooldown is reduced by 5 sec.",
+					"There is a 10% chance of knocking back the enemy."
+				]
+			},
+			{
+				"name": "Hidden Blade",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every auto attack, fire an additional blade and deal ??? P.DMG to target enemies. The number of targets is equal to 1 + Blade stacks.",
+				"attributes": [
+					"DMG increases by 10%",
+					"DMG increases by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					3,
+					"DMG is increased by 15% per each enemy on the field.",
+					"There is a 10% chance of dispelling enemy positive effects."
+				]
+			}
+		],
+		"uw": {
+			"name": "Dimensional Key, Magnus Fille",
+			"explanation": "Auto Attacks pierce through enemies in a straight line and gain {0}% additional DMG",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/MagnusFille.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit DMG +20%",
+			"When auto attacking, there is a 10% chance of stacking 1 stack of Blade. Nyx's ATK is boosted by 10% per each Blade Stack he holds."
+		]
+	},
+	{
+		"name": "Artemia",
+		"title": "Empress of Light",
+		"class": "Wizard",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 782056,
+			"atk": 23280,
+			"pdef": 3104,
+			"mdef": 4656
+		},
+		"additional stats": {
+			"mp/atk": 475,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 250,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Artemiaico.png/70px-Artemiaico.png",
+		"skills": [
+			{
+				"name": "Pillar of Light",
+				"cost": 2,
+				"cooldown": 7,
+				"explanation": "Places a Pillar of Light at where the enemy is, dealing a total of ??? M.DMG over 5 sec and decreasing enemy ATK by 20% for 10 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"DMG is increased by 40%",
+					"Each hit has a 25% chance to stun the enemy for 1 sec"
+				]
+			},
+			{
+				"name": "Critical Intensity",
+				"cost": 3,
+				"cooldown": 14,
+				"explanation": "Deals ??? M.DMG to enemies in a straight line. This attack adds an additional 100% to its Crit DMG modifier.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1",
+					"When Blessing of Light reaches 10 stacks, cooldown is reduced by 50%"
+				]
+			},
+			{
+				"name": "Light's Judgment",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Attacks the enemy 3 times, dealing ??? M.DMG and stunning the enemy for 5 sec. This skill's cooldown is reduced by 30% when it kills the enemy.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Cooldown is reduced by 3 sec",
+					"Mana cost is increased by 1 orb but DMG is boosted by 100%"
+				]
+			},
+			{
+				"name": "Blessing of Light",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Upon attacking, there is a 50% chance the targeted enemy and nearby enemies will take ??? M.DMG while Artemia gains 1 stack of Blessing of Light. This skill may stack up to 10 times. Each stack increases ATK by ???. Each stack also increases DMG dealt to non-hero enemies by 3% and reduces DMG received by non-hero enemies by 3%.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Activation chance is changed to 60%",
+					"Maximum stack count is increased to 12"
+				]
+			}
+		],
+		"uw": {
+			"name": "Brilliant Praise, Brauxio",
+			"explanation": "Every 15 sec, create a Shield worth {0}% of ATK that lasts for 10 sec, which also increases own ATK by {1}%. While the Shield is in effect, gain immunity to CC.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/ArtemiaBrauxio.png",
+			"effects": [
+					[200, 240, 290, 350, 420, 500],
+					[20, 24, 29, 35, 42, 50]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"When HP falls below 50%, gain 2 sec of immunity to all DMG. This effect activates only once every 30 sec."
+		]
+	},
+	{
+		"name": "Frey",
+		"title": "Priestess of Light",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 325,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Freyico.png/70px-Freyico.png",
+		"skills": [
+			{
+				"name": "Miraculous Light",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Heal the ally with the lowest HP for ??? HP.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"Remove harmful effects from the target"
+				],
+				"perks": [
+					4,
+					"Adds 1 mana cost, targets 2 heroes.",
+					"Healed ally takes 25% reduced Magic Damage."
+				]
+			},
+			{
+				"name": "Blessings of Light",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Cast a shield on all allies that absorbs ??? DMG for 12 seconds. While the shield is in effect, gain Immunity to CC.",
+				"attributes": [
+					"Increase Shield HP by 10%",
+					"Increase Shield HP by 15%",
+					"Increase the target's recovery rate by 50% for the duration of the skill"
+				],
+				"perks": [
+					3,
+					"Shield amount +40%.",
+					"Shielded allies gain +20% Attack."
+				]
+			},
+			{
+				"name": "Heaven's Vengeance",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Deal ??? M.DMG to enemies in range, blinding them for 6 seconds.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 25%"
+				],
+				"perks": [
+					4,
+					"Adds 1 mana cost, Damage +80%.",
+					"Blind duration is reduced by 2 sec and now targets random enemy."
+				]
+			},
+			{
+				"name": "Goddess Grace",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Increase M.DEF of 1 ally by ??? for 10 seconds.",
+				"attributes": [
+					"M.DEF increasion rate is increased by 10%",
+					"M.DEF increasion rate is increased by 15%",
+					"Restore the target's HP by 15% for the duration of the skill."
+				],
+				"perks": [
+					3,
+					"Target's Attack Speed +250.",
+					"Number of targets becomes 2."
+				]
+			}
+		],
+		"uw": {
+			"name": "God's Authority, Rosmerta",
+			"explanation": "While auto-attacking, for a 40% chance, heal the ally with the current lowest HP for {0}% of caster's Attack.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Rosmerta.png",
+			"effects": [
+					[42, 50.4, 58.8, 71.4, 86.1, 105]
+			]
+		},
+		"perks": [
+			"Attack +10%, Defense +10%, HP +10%, Magic Block +200.",
+			"Allies healed by Frey receive 5% of her Attack as an Attack buff."
+		]
+	},
+	{
+		"name": "Kaulah",
+		"title": "Shaman of Lightning",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 375,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Kaulahico.png/70px-Kaulahico.png",
+		"skills": [
+			{
+				"name": "Thunderbolt",
+				"cost": 3,
+				"cooldown": 10,
+				"explanation": "Drop 5 lightning bolts upon random enemies and inflict ??? M.DMG. In addition electrify hit enemies. When an electrified enemy is hit, stun for 3 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase Crit Chance by 250"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1 (3 -> 2)",
+					"Target takes 25% increased M.DMG for 10 seconds"
+				]
+			},
+			{
+				"name": "Healing Rain",
+				"cost": 2,
+				"cooldown": 11,
+				"explanation": "Restore ??? HP for all allies for 5 seconds.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"While casting, gain immunity to status effects and increase DMG Reduction by 500"
+				],
+				"perks": [
+					3,
+					"Allies take 25% less DMG while this skill is in effect",
+					"In exchange for 1 additional Mana Cost (2 -> 3), additionally heal allies by 5% of their Max HP"
+				]
+			},
+			{
+				"name": "Swift Wind",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "For 15 sec, increase ATK by ??? and ATK Spd by 350 for all allies.",
+				"attributes": [
+					"ATK increase rate increases by 10%",
+					"ATK increase rate increases by 15%",
+					"For the duration of this skill, Crit Rate is increased by 350"
+				],
+				"perks": [
+					4,
+					"ATK boost is increased by 40% (10%/15% -> 50%/55%)",
+					"Cooldown is reduced by 3 seconds (20s -> 17s)"
+				]
+			},
+			{
+				"name": "Chain Lightning",
+				"cost": -1,
+				"cooldown": 15,
+				"explanation": "Every 15 sec, inflict ??? M.DMG upon 4 enemies and electrify them for 20 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Upon a Crit Hit, hit enemies are stunned for 1 sec"
+				],
+				"perks": [
+					3,
+					"Crit Chance is boosted by 40%",
+					"If there is 1 enemy, Stun duration is increased by 3 seconds (1s -> 4s)"
+				]
+			}
+		],
+		"uw": {
+			"name": "The Bluewind, Coventina",
+			"explanation": "Electrified enemies receive M.DMG (50% of ATK) every 5 seconds and may be stunned for 2 seconds for a {0}% chance.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/BluewindCoventina.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit Chance +100",
+			"Gain stacks every time allies are hit. When 50 stacks are achieved, drop lightning upon a random enemy 3 times, dealing 240% of ATK as DMG and inflicting Stun for 3 seconds."
+		]
+	},
+	{
+		"name": "Rephy",
+		"title": "Spiritual Guide",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 375,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Rephyico.png/70px-Rephyico.png",
+		"skills": [
+			{
+				"name": "Healing Soul",
+				"cost": 2,
+				"cooldown": 10,
+				"explanation": "Heal 2 allies with the lowest HP for ??? HP for 10 sec. Cannot be dispelled. Upon activation, additionally heals 10% of Max HP.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"Increase 50% of MP Recovery per second"
+				],
+				"perks": [
+					4,
+					"Mana cost +2, heal 6 targets instead.",
+					"Each heal has 20% to remove negative effects."
+				]
+			},
+			{
+				"name": "Salvation",
+				"cost": 1,
+				"cooldown": 12,
+				"explanation": "Removes debuffs from all allies and increases M.DEF by ??? for 10 seconds.",
+				"attributes": [
+					"Increase M.DEF growth by 10%",
+					"Increase M.DEF growth by 15%",
+					"Increase 250 of Debuff Resistance for 25 sec"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"Increases M.Def buff by 10% of own M.Def."
+				]
+			},
+			{
+				"name": "Soulrush",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Inflict ??? M.DMG upon enemies in range for 2 sec, and slow their ATK Spd by 25%.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%.",
+					"Increase 25% of All DMG upon the enemy"
+				],
+				"perks": [
+					4,
+					"Each hit removes 250 mana from target.",
+					"Add 1 mana cost, silence enemies in range for 1 sec."
+				]
+			},
+			{
+				"name": "Spiritual Tuning",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 10 sec, the ally with the lowest HP recovers 1 MP and ??? HP.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"Increase 50% of MP Recovery"
+				],
+				"perks": [
+					3,
+					"Activates every 8 sec.",
+					"Supplies 1 mana orb to the ally with the highest ATK."
+				]
+			}
+		],
+		"uw": {
+			"name": "God's Lamp, Kurulati",
+			"explanation": "Every 20 seconds, the ally with the lowest HP turns invisible for {0} seconds. The ally becomes immune to any physical damage and HP won't drop below 1%. MP Recovery increased to 120% per second.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Kurulati.png",
+			"effects": [
+					[5, 6, 7, 8, 9, 10]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / M.dodge +100",
+			"When attacking, 10% chance to reduce target All Def by 20% & reduce all CD by 5%"
+		]
+	},
+	{
+		"name": "Baudouin",
+		"title": "Holy Ruffian",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 400,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Baudouinico.png/70px-Baudouinico.png",
+		"skills": [
+			{
+				"name": "Holy Nova",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Casts a holy explosion on the ally with the lowest HP, healing the ally and nearby allies for ??? HP. Nearby enemies take ??? M.DMG, and their Atk. Spd is reduced by 25% for 10 sec.",
+				"attributes": [
+					"Increase Recovery and DMG by 10%",
+					"Increase Recovery and DMG by 15%",
+					"Increase Recovery and DMG by 25%"
+				],
+				"perks": [
+					4,
+					"In exchange for 1 additional Mana Cost, DMG/Heal amount is boosted by 80%.",
+					"Damaged enemies have a 20% chance of being stunned for 2 sec."
+				]
+			},
+			{
+				"name": "Spear of Light",
+				"cost": 3,
+				"cooldown": 15,
+				"explanation": "Inflict ??? M.DMG upon 1 enemy and knock back. Shackles the enemy for 6 sec. Enemy also receives increased M.DMG for the duration. Upon eliminating the enemy with a spear on it, 'Spear of Light' cooldown is refreshed.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Mana cost is reduced by 1.",
+					"Number of targets changes to 2."
+				]
+			},
+			{
+				"name": "Holy Sanctuary",
+				"cost": 0,
+				"cooldown": 60,
+				"explanation": "Grant invincibility to all allies for 7 sec and recover ??? HP for the duration.",
+				"attributes": [
+					"Increase Recovery by 10%",
+					"Increase Recovery by 15%",
+					"Increase Attack Spd by 250 for the duration"
+				],
+				"perks": [
+					4,
+					"Invincibility duration is increased by 1.5 sec.",
+					"In exchange for 2 additional Mana Cost and a 3 sec reduction of invincibility duration, all allies gain 50% ATK."
+				]
+			},
+			{
+				"name": "Training of God",
+				"cost": -1,
+				"cooldown": 0.5,
+				"explanation": "Upon attacking an enemy, there is a 20% chance to inflict ??? M.DMG and inflict Stun status for 1.5 sec.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					3,
+					"Activation chance is boosted by 10%.",
+					"Attack range is boosted by 20%."
+				]
+			}
+		],
+		"uw": {
+			"name": "God's Book, Genesis",
+			"explanation": "Every 30 sec, increase the ATK of single random ally by {0}%. Also increase Crit Chance and ATK Spd by {1} for 10 sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Genesis.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100],
+					[400, 480, 570, 690, 830, 1000]
+			]
+		},
+		"perks": [
+			"TK, DEF, HP +10% / M.Block +200",
+			"When attacking with Holy Nova and Spear of Light, deal extra M.DMG equal to 100% of ATK and reduce the used skill's cooldown by 20%."
+		]
+	},
+	{
+		"name": "Leo",
+		"title": "Eternal Scribe",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 375,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Leoico.png/70px-Leoico.png",
+		"skills": [
+			{
+				"name": "Rune of Frailty",
+				"cost": 2,
+				"cooldown": 6,
+				"explanation": "Engraves a rune on the closest enemy, reducing 50% P.DEF for 8 sec. After 8 sec, in proportion to lost HP, deal ??? M.DMG.",
+				"attributes": [
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
+				],
+				"perks": [
+					4,
+					"Cooldown is reduced by 2 sec.",
+					"Target number increased to 2."
+				]
+			},
+			{
+				"name": "Rune of Healing",
+				"cost": 2,
+				"cooldown": 9,
+				"explanation": "Heals the entire party by ??? HP.",
+				"attributes": [
+					"Recovery rate increased by 10%",
+					"Recovery rate increased by 15%",
+					"Recovery rate increased by 25%"
+				],
+				"perks": [
+					3,
+					"Heal amount boosted by 40%.",
+					"Increase ally P.DEF for 25% for 10 sec after healing."
+				]
+			},
+			{
+				"name": "Rune of Silence",
+				"cost": 0,
+				"cooldown": 40,
+				"explanation": "Deals ??? M.DMG to the entire enemy team, and removes buffs. Also silences the enemy for 3 sec.",
+				"attributes": [
+					"Increased Silence duration by 0.25 sec",
+					"Increased Silence duration by 0.25 sec",
+					"Increased Silence duration by 0.5 sec"
+				],
+				"perks": [
+					4,
+					"Silence duration boosted by 1 sec.",
+					"DMG is increased by 200% and the enemy target receives 20% more DMG from all sources for 10 sec. Mana cost is increased by 2."
+				]
+			},
+			{
+				"name": "Rune of Protection",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every 20 sec, engrave a rune upon the ally with the lowest HP and for 10 sec, recover ??? HP.",
+				"attributes": [
+					"Recovery rate increased by 10%",
+					"Recovery rate increased by 15%",
+					"For the duration, increases debuff resistance by 250"
+				],
+				"perks": [
+					3,
+					"Heal amount boosted by 40%.",
+					"After healing an ally, increase target P.DEF for 40% for a duration of 10 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "Belisa, Phoenix Quill",
+			"explanation": "Upon auto-attacking, there is a {0}% chance to deal 100% extra M.DMG and erase positive status effects.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Belisa.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / Crit chance +100.",
+			"Upon attacking, there is 10% chance of dealing 100% of ATK as M.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec."
+		]
+	},
+	{
+		"name": "Laias",
+		"title": "Holy Priestess of Water",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 425,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Laiasico.png/70px-Laiasico.png",
+		"skills": [
+			{
+				"name": "Healing Droplets",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Heals all allies to a maximum of ??? HP, depending on their lost amount of health.",
+				"attributes": [
+					"Recovery rate increased by 10%",
+					"Recovery rate increased by 15%",
+					"Recovery rate increased by 25%"
+				],
+				"perks": [
+					4,
+					"Heal amount boosted by 40%.",
+					"Upon healing, M.Crit Resistance rise by 25%."
+				]
+			},
+			{
+				"name": "Bubble Shield",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Shields the ally with the lowest HP for 10 sec to block up to ???, and grant Status Immunity. While shield is in effect, recover 10064 HP every second.",
+				"attributes": [
+					"Shield is increased by 10%",
+					"Shield is increased by 15%",
+					"Shield is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Increases target ATK by 30%.",
+					"Target's M.CRIT Resistance is increased by 25%."
+				]
+			},
+			{
+				"name": "Festival of the Flow",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Deals ??? M.DMG to all nearby enemies and knock them down. For all allies (not including self), recover 2 orbs of mana. Afterwards, for 12 sec, random enemies will be hit by a whirlpool and take ??? M.DMG, as well as be knocked down for 2 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"DMG effect occurs every 3 sec.",
+					"Heal all allies by 15% of their max HP."
+				]
+			},
+			{
+				"name": "Blessing of the Water Dragon",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Increase M.DEF of all allies by ???, and gain resistance to Magic Critical Hits by 25%.",
+				"attributes": [
+					"Defense Boost is increased by 10%",
+					"Defense Boost is increased by 15%",
+					"Resistance to Magic Critical Hits is increased by 50%"
+				],
+				"perks": [
+					3,
+					"M.DEF increase rate increased by 20%, and M.Crit Resistance increases by 100.",
+					"Increase self CC Resist by 400."
+				]
+			}
+		],
+		"uw": {
+			"name": "Flowing Circle, Eltoirre",
+			"explanation": "Upon a Critical Hit, recover the ally with the lowest HP by {0}% of dealt DMG.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Eltoirre.png",
+			"effects": [
+					[80, 96, 115, 138, 166, 200]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / M. Block +200",
+			"Laias increases M.DEF equal of 5% of her ATK to all allies she heals, as well giving them 75 mana each."
+		]
+	},
+	{
+		"name": "Cassandra",
+		"title": "Tempting Winds",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 310,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Cassandraico.png/70px-Cassandraico.png",
+		"skills": [
+			{
+				"name": "Softly~",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Heal all allies by ??? HP and deals M.DMG equal to ??? to all enemies. Enemies hit by this skill are silenced for 2 sec.",
+				"attributes": [
+					"Heal and DMG amounts are increased by 10%",
+					"Heal and DMG amounts are increased by 15%",
+					"Silent duration increase by 0.5 sec"
+				],
+				"perks": [
+					4,
+					"Healed allies gain a 200 ATK Spd boost for 5 sec.",
+					"For 10 sec, hit enemies have their mana reduced by 100 every second."
+				]
+			},
+			{
+				"name": "Fiercely!",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Increase the ATK of all allies by ??? for 15 sec and increase their Crit Chance by ???.",
+				"attributes": [
+					"ATK increase amount is boosted by 10%",
+					"ATK increase amount is boosted by 15%",
+					"ATK increase amount is boosted by 25%"
+				],
+				"perks": [
+					3,
+					"ATK boost is increased by 40%.",
+					"HP is healed by 1% of Max HP every sec."
+				]
+			},
+			{
+				"name": "Tempting Wave",
+				"cost": 4,
+				"cooldown": 22,
+				"explanation": "Deals ??? M.DMG to an enemy with the highest ATK, and when the skill is used in Arena,charms the target for 7 sec. If the skill is casted out of the Arena, it will deal ??% additional M.DMG. Charmed enemies will hit their own allies with auto attacks and cannot use skills.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Time duration increased by 1 sec"
+				],
+				"perks": [
+					4,
+					"Charmed enemies have their ATK Spd boosted by 300.",
+					"While in cooldown, auto attacks upon heroes have a 5% chance to charm the target for 3 sec."
+				]
+			},
+			{
+				"name": "Gentle Touch",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Every battle, the first skill used will have a reduction of 2 mana from cost. Also, increase all allies DEF stats by ??? for 5 sec.",
+				"attributes": [
+					"DEF increase is boosted by 10%",
+					"DEF increase is boosted by 15%",
+					"DEF increase is boosted by 25%"
+				],
+				"perks": [
+					3,
+					"All DMG upon allies is reduced by 20% for 5 sec.",
+					"DEF increase effect has its duration increased by 5 sec."
+				]
+			}
+		],
+		"uw": {
+			"name": "Aurelian Whisper, Goldbreeze",
+			"explanation": "Every {0} sec heal the ally with the lowest HP by {1}% of ATK and dispel all harmful effects.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Goldbreeze.png",
+			"effects": [
+					[15, 14, 12.5, 11, 9.5, 8],
+					[200, 240, 290, 350, 420, 500]
+			]
+		},
+		"perks": [
+			"ATK,DEF,HP +10%/ATK Spd +100.",
+			"At the beginning of each battle, a random ally is immune to DMG for 3 sec."
+		]
+	},
+	{
+		"name": "May",
+		"title": "The Girl Dreamin of Riches",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 425,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mayico.png/70px-Mayico.png",
+		"skills": [
+			{
+				"name": "Take anything!",
+				"cost": 1,
+				"cooldown": 6,
+				"explanation": "Increase the ATK of 4 random allies by ??? for 20 sec, and randomly increase one of following: 1.Crit Chance : ??? 2.Atk speed : ??? 3.Mana  : ??? All effects other than Mana recovery can be stacked up to 5 times.",
+				"attributes": [
+					"ATK is increased by 10%",
+					"ATK is increased by 15%",
+					"ATK is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Random effects will now affect 5 allies.",
+					"Duration increased by 10 sec."
+				]
+			},
+			{
+				"name": "Cheer up!",
+				"cost": 2,
+				"cooldown": 11,
+				"explanation": "All allies are healed for ??? HP , and additionally recover ??% of their max HP each sec for 10 sec. There is a 10% chance that the effects are doubled.",
+				"attributes": [
+					"Recovery rate is increased by 10%",
+					"Recovery rate is increased by 15%",
+					"Recovery rate is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Increase allies CC resist by 250 for 10 sec.",
+					"Their is 15% chance to recover 1 orb of mana."
+				]
+			},
+			{
+				"name": "Not for sale!",
+				"cost": 4,
+				"cooldown": 20,
+				"explanation": "Attack a random target and other enemies around it 3 times, dealing ??? M.DMG and inflicting stun for 4 sec. There is a 10% chance that the AOE range and DMG are doubled.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"All attack will be focused on a single enemy."
+				]
+			},
+			{
+				"name": "Take this!",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Deal ??? M.DMG to 4 random enemies every 15 sec, and randomly inflict one of the following: 1.Constant M.DMG of ???(10 sec), 2.Stun (2 sec), 3.Freeze (5 sec).",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Random effects will now affect 5 enemies.",
+					"Increase target M.DMG taken by 25%."
+				]
+			}
+		],
+		"uw": {
+			"name": "The Box of Fragrance, Etelia",
+			"explanation": "Upon activating 'Take this!', apply the effects of 'Take anything!' to 4 random allies and reduce cooldown of all skills by {0}",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/Etelia.png",
+			"effects": [
+					[10, 12, 14, 17, 20, 25]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / CC Resist +100",
+			"Each auto-attack has a 30% chance of healing the ally with the lowest HP by 3% of their HP.Also provide 5% mana to the ally."
+		]
+	},
+	{
+		"name": "Mediana",
+		"title": "The Dangerous Doctor",
+		"class": "Priest",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 856896,
+			"atk": 18008,
+			"pdef": 3784,
+			"mdef": 4736
+		},
+		"additional stats": {
+			"mp/atk": 350,
+			"crit": 100,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 0,
+			"m.block": 500,
+			"p.tough": 0,
+			"m.tough": 150,
+			"m.block def": 250,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Medianaico.png/70px-Medianaico.png",
+		"skills": [
+			{
+				"name": "Healing Salve",
+				"cost": 2,
+				"cooldown": 15,
+				"explanation": "Heals all allies by ??? and makes them immune to the next single hit of DMG.",
+				"attributes": [
+					"Recovery 10%",
+					"Recovery 15%",
+					"Recovery 25%"
+				],
+				"perks": [
+					4,
+					"Boosts healed ally HP by 10% for 10 sec.",
+					"Mana cost is reduced by 1."
+				]
+			},
+			{
+				"name": "Special Water Cannon",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Fires off a water cannon in a straight direction, healing allies within range for ??? every 0.5 sec, while dealing ??? P.DMG to the enemy.",
+				"attributes": [
+					"Heal & DMG 10%",
+					"Heal & DMG 15%",
+					"Heal & DMG 25%"
+				],
+				"perks": [
+					3,
+					"Heal and DMG amounts are increased by 40%",
+					"While in use, gain immunity to CC"
+				]
+			},
+			{
+				"name": "Strengthening Potion",
+				"cost": 4,
+				"cooldown": 23,
+				"explanation": "Injects the ally with the highest ATK with a strengthening potion, increasing their ATK by 20% + ??? of Mediana's ATK and keeping their HP from falling below 5%.",
+				"attributes": [
+					"ATK increase rate is increased by 10%",
+					"ATK increase rate is increased by 15%",
+					"ATK increase rate is increased by 25%"
+				],
+				"perks": [
+					4,
+					"ATK boost is increased by 40% .",
+					"Target ATK SPD is boosted by 250."
+				]
+			},
+			{
+				"name": "Mediana's Special Poison",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "Increases all ally ATK by ??? and P.Crit Resistance by ???. Also, upon attacking a target, inject said enemy with a special poison that deals constant P.DMG equal to ??? for 5 sec while also reducing their P.Crit Resistance by 200.",
+				"attributes": [
+					"ATK increase rate is increased by 10%",
+					"ATK increase rate is increased by 15%",
+					"Increase P.Block of all allies by 150"
+				],
+				"perks": [
+					3,
+					"P.Crit Resistance amount is changed to 300",
+					"Target takes 20% increased P.DMG"
+				]
+			}
+		],
+		"uw": {
+			"name": "Merciful Threat, Phistonia",
+			"explanation": "Special Poison DMG is increased by {0}%, and inflicted targets take additional P.DMG equal to {1}% of Mediana's ATK when hit by allies other than Mediana. Additional P.DMG effect activates only 1 time per each sec.",
+			"thumbnail": "http://krw-img.s3.amazonaws.com/MedianaPhistonia.png",
+			"effects": [
+					[40, 48, 57, 69, 83, 100],
+					[30, 36, 43, 52, 62, 75]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP +10% / CC Resist +100",
+			"When taking DMG, all allies gain 2% ATK. This effect stacks 20 times."
+		]
+	},
+	{
+		"name": "Sonia",
+		"title": "The Blue Hurricane",
+		"class": "Knight",
+		"position": "Front",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1354584,
+			"atk": 15712,
+			"pdef": 6984,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 205,
+			"crit": 50,
+			"cdmg": 0,
+			"penetration": 0,
+			"accuracy": 0,
+			"p.dodge": 0,
+			"m.dodge": 0,
+			"p.block": 200,
+			"m.block": 0,
+			"p.tough": 250,
+			"m.tough": 250,
+			"m.block def": 0,
+			"cc resist": 0
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Soniaico.png/70px-Soniaico.png",
+		"skills": [
+			{
+				"name": "Lightning Strike!",
+				"cost": 2,
+				"cooldown": 8,
+				"explanation": "Causes an electric explosion ahead, dealing ??? M.DMG to enemies in range and placing an electric field for 3 seconds. The electric field deals a total of ??? M.DMG over 10 attacks and with 25% chance stuns the enemy for 0.5 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost is reduced by 1.",
+					"Stun chance is increased by 10%."
+				]
+			},
+			{
+				"name": "Power of Lightning!",
+				"cost": 2,
+				"cooldown": 20,
+				"explanation": "Consumes 20% of current HP to increase ATK by ??? and all DEF by ??? for 15 sec. While this skill is active with 20% chance deals additional ??? M.DMG during auto attack to 2 random targets and stuns them for 0.5 sec.",
+				"attributes": [
+					"ATK and DEF boosts are increased by 10%",
+					"ATK and DEF boosts are increased by 15%",
+					"ATK and DEF boosts are increased by 25%"
+				],
+				"perks": [
+					3,
+					"ATK and DEF boosts are increased by 40%.",
+					"ATK Spd is increased by 250 while duration."
+				]
+			},
+			{
+				"name": "Electric Explosion!",
+				"cost": 4,
+				"cooldown": 23,
+				"explanation": "Deals a total of ??? M.DMG over 3 attacks to nearby enemies in a circular range. Then causes an Electric Explosion, dealing a total of ??? M.DMG over 3 attacks and stunning them for 5 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"While in use, gain immunity to CC.",
+					"Recovers 1% of Max HP every time DMG is dealt to enemy."
+				]
+			},
+			{
+				"name": "Shock",
+				"cost": -1,
+				"cooldown": -1,
+				"explanation": "With every attack, injects Electricity to targets not inflicted by Shock and increases M.DMG taken by 0.5% for 10 sec. Electricity can be stacked up to 30 times and the 30th stack will consume all Electricity to deal ??? M.DMG and Shock the target for 7 sec. Enemies inflicted by Shock take 30% increased M.DMG and when they are inflicted by Stun, the duration is increased by 0.7 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Increased M.DMG taken changes to 40% for enemies inflicted by Shock.",
+					"Increased M.DMG taken' effect changes to 'Increased P. and M. DMG taken'."
+				]
+			}
+		],
+		"uw": {
+			"name": "Eye of the Storm, Yanadis",
+			"explanation": "Shock duration is increased by {0} sec. When auto attacking an enemy inflicted by Shoc, all cooldowns are reduced by {1}%.",
+			"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Yanadis.png/100px-Yanadis.png",
+			"effects": [
+					[2, 3, 4, 5, 6, 7],
+					[1, 1.2, 1.4, 1.7, 2.1, 2.5]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP+10% / ATK.Spd +100",
+			"Upon attack, with 15% chance deals extra M.DMG by 10% of Max HP and injects 1 extra stack of Electricity."
+		]
+	},	
+	{
+		"name": "Mirianne",
+		"title": "Servant of Blue",
+		"class": "Assassin",
+		"position": "Middle",
+		"type": "Magical",
+		"main stats" : {
+			"hp": 1099264,
+			"atk": 19592,
+			"pdef": 6208,
+			"mdef": 5432
+		},
+		"additional stats": {
+			"mp/atk": 155,
+			"crit": 200,
+			"cdmg": 300,
+			"penetration": 0,
+			"accuracy": 100,
+			"p.dodge": 200,
+			"m.dodge": 200,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 0,
+			"m.tough": 0,
+			"m.block def": 0,
+			"cc resist": 0,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mirianneico.png/70px-Mirianneico.png",
+		"skills": [
+			{
+				"name": "Target Lock On",
+				"cost": 1,
+				"cooldown": 6,
+				"explanation": "Attacks the enemy with the lowest M.DEF, dealing a total of ??? M.DMG over 3 attacks. The last attack inflicts 'Target Lock On' on the enemy for 5 sec. This effect cannot be dispelled.",
+				"attributes": [
+					"N/A",
+					"N/A",
+					"N/A"
+				],
+				"perks": [
+					4,
+					"N/A",
+					"N/A"
+				]
+			},
+			{
+				"name": "Restrain and Protect",
+				"cost": 3,
+				"cooldown": 12,
+				"explanation": "Deals ??? M.DMG to target enemy and other enemies in range, moves to an ally with the lowest P.DEF and creates a Shield for two that can block a total of ??? DMG for 5 sec. Shield will be ineffective when there is no ally. Protected ally and self become immune to CC while the Shield lasts.",
+				"attributes": [
+					"N/A",
+					"N/A",
+					"N/A"
+				],
+				"perks": [
+					3,
+					"N/A",
+					"N/A"
+				]
+			},
+			{
+				"name": "Blade Claw",
+				"cost": 3,
+				"cooldown": 20,
+				"explanation": "Move behind the enemy with the lowest HP and deal ??? P.DMG. Each stack of Bleed on the enemy inflicts additional 50% DMG. All stacks of Bleed are removed afterwards. If Crit, recover 2 MP and reset skill cooldown.",
+				"attributes": [
+					"N/A",
+					"N/A",
+					"N/A"
+				],
+				"perks": [
+					4,
+					"N/A",
+					"N/A"
+				]
+			},
+			{
+				"name": "Hack",
+				"cost": -1,
+				"cooldown": 4,
+				"explanation": "Upon a critical auto-attack, deal ??? additional P.DMG.",
+				"attributes": [
+					"N/A",
+					"N/A",
+					"N/A"
+				],
+				"perks": [
+					3,
+					"N/A",
+					"N/A"
+				]
+			}
+		],
+		"uw": {
+			"name": "Endless Acceleration, Riventina",
+			"explanation": "While auto-attacking, there is a {0}% chance to increase ATK Spd by {1} for 5 sec while attacking the enemy with the lowest M.DEF, dealing {2}% of ATK as extra M.DMG and inflicting 'Target Lock On' for 5 sec. This attack prioritizes a Locked On enemy.",
+			"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Riventina.png/100px-Riventina.png",
+			"effects": [
+					[10, 12, 14, 17, 21, 25],
+					[200, 240, 290, 350, 420, 500],
+					[100, 120, 140, 170, 210, 250]
+			]
+		},
+		"perks": [
+			"N/A",
+			"N/A"
+		]
+	},
+	{
+		"name": "Scarlet",
+		"title": "Faith of Silver",
+		"class": "Warrior",
+		"position": "Front",
+		"type": "Physical",
+		"main stats" : {
+			"hp": 1150488,
+			"atk": 17848,
+			"pdef": 5816,
+			"mdef": 6984
+		},
+		"additional stats": {
+			"mp/atk": 285,
+			"crit": 150,
+			"cdmg": 0,
+			"penetration": 150,
+			"accuracy": 100,
+			"p.dodge": 100,
+			"m.dodge": 100,
+			"p.block": 0,
+			"m.block": 0,
+			"p.tough": 100,
+			"m.tough": 100,
+			"m.block def": 0,
+			"cc resist": 150,
+		},
+		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Scarletico.png/70px-Scarletico.png",
+		"skills": [
+			{
+				"name": "Halt!",
+				"cost": 3,
+				"cooldown": 8,
+				"explanation": "Deals ??? P.DMG to frontal enemies in range, and knocks them down for 3 sec. Recovers HP proportional to 20% of DMG.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"Target takes 25% increased P.DMG for 10 sec"
+				],
+				"perks": [
+					4,
+					"Mana cost reduced by 1.",
+					"Dispels all harmful effects on oneself upon use."
+				]
+			},
+			{
+				"name": "Justice Served!",
+				"cost": 1,
+				"cooldown": 15,
+				"explanation": "Dispels harmful effects of all allies and dispels positive effects of all enemies, dealing ??? P.DMG and reducing their Mana by 500.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 10%",
+					"All allies gain Immunity to CC for 2 sec upon activation"
+				],
+				"perks": [
+					3,
+					"All allies take 15% reduced DMG for 10 sec.",
+					"Mana cost increases by 2 and all enemies are stunned for 3 sec."
+				]
+			},
+			{
+				"name": "Sword of Honor!!",
+				"cost": 4,
+				"cooldown": 22,
+				"explanation": "Attacks an enemy 3 times, dealing a total of ??? P.DMG. Fires an energy blast from the sword, dealing ??? P.DMG to enemies in a straight line, blinding them for 5 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					4,
+					"Mana cost reduced by 1.",
+					"Damaged enemies received 40% reduced heals for 10 sec."
+				]
+			},
+			{
+				"name": "Goddess of War",
+				"cost": -1,
+				"cooldown": 3,
+				"explanation": "All Crit Resistance increases by 250. With 10% chance, deals additional ??? P.DMG during auto attack and stuns target enemy for 1 sec.",
+				"attributes": [
+					"DMG is increased by 10%",
+					"DMG is increased by 15%",
+					"DMG is increased by 25%"
+				],
+				"perks": [
+					3,
+					"Crit Resistance increases to 400.",
+					"Stun duration lasts for 2 more sec when there is only one enemy."
+				]
+			}
+		],
+		"uw": {
+			"name": "Blade of Conviction, White Belona",
+			"explanation": "Per every skill in cooldown, DMG is increased by {0}%.",
+			"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/White_Belona.png/100px-White_Belona.png",
+			"effects": [
+				[8, 10, 12, 14, 17, 20]
+			]
+		},
+		"perks": [
+			"ATK, DEF, HP+10% / CC Resist +100",
+			"When receiving Critical DMG, there is a 5% chance the attacker is dispelled of all positive effects and is stunned for 1 sec. Skill cooldown is 8 sec."
+		]
+	}
+]
