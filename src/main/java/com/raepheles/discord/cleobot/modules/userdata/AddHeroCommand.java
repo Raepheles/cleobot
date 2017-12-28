@@ -115,6 +115,7 @@ public class AddHeroCommand {
                     accountIndex = j;
                     String name = accounts.getJSONObject(j).getString("name");
                     if(name.equalsIgnoreCase(accountName)) {
+                        accountName = name;
                         accountSaved = true;
                     }
                     JSONArray accountHeroes = accounts.getJSONObject(j).getJSONArray("heroes");
