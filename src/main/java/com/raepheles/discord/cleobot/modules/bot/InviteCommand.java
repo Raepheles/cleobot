@@ -21,7 +21,7 @@ public class InviteCommand {
             Logger.logCommand(command, "Arg count");
             return;
         }
-        command.replyWith("Invite link: <" + Utilities.getProperty("misc.inviteLink") + ">");
+        command.replyWith(Utilities.getProperty("misc.inviteLink"));
         Logger.logCommand(command);
     }
 }

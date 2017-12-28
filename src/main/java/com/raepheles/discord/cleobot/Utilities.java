@@ -1,6 +1,7 @@
 package com.raepheles.discord.cleobot;
 
 import com.discordbolt.api.command.CommandContext;
+import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import sx.blah.discord.api.IDiscordClient;
@@ -16,10 +17,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Properties;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.util.*;
 
 /**
  * Created by Rae on 19/12/2017.
@@ -33,6 +35,7 @@ public class Utilities {
     private static boolean whitelistStatus = false;
     private static Properties properties = null;
     private static String defaultPrefix;
+    private static List<RaidFinderEntry> raidFinderEntries = new ArrayList<>();
     public final static String CHANGELOG_URL = "https://gist.github.com/Raepheles/51f7623b7e87c5b4968e676590ee71f5";
     public final static String PLUG_CAFE_BASE_URL = "https://www.plug.game/kingsraid/1030449";
     public final static String PLUG_CAFE_NOTICES = "https://www.plug.game/kingsraid/1030449/posts?menuId=1#";
@@ -40,8 +43,66 @@ public class Utilities {
     public final static String PLUG_CAFE_PATCH_NOTES = "https://www.plug.game/kingsraid/1030449/posts?menuId=9#";
     public final static String PLUG_CAFE_GREEN_NOTES = "https://www.plug.game/kingsraid/1030449/posts?menuId=12#";
 
+    public static void addRaidFinderEntry(RaidFinderEntry entry) {
+        raidFinderEntries.add(entry);
+    }
+
+    public static List<RaidFinderEntry> getRaidFinderEntries() {
+        // Remove old logs
+        for(RaidFinderEntry entry: raidFinderEntries) {
+            if(entry.getTime() > 300) {
+                raidFinderEntries.remove(entry);
+            }
+        }
+        List<RaidFinderEntry> reversedList = new ArrayList<>(raidFinderEntries);
+        Collections.reverse(reversedList);
+        return reversedList;
+    }
+
+    public static boolean isBanned(CommandContext command, String bannedFrom) {
+        JSONArray banList = readJsonFromFile(getProperty("files.banlist"));
+        if(banList != null) {
+            for(int i = 0; i < banList.length(); i++) {
+                long userId = ((Number)banList.getJSONObject(i).get("id")).longValue();
+                // If user is banned for something check the ban condition
+                if(userId == command.getAuthor().getLongID()) {
+                    String tempBannedFrom = banList.getJSONObject(i).getString("banned from");
+                    String banReason = banList.getJSONObject(i).getString("reason");
+                    long bannedAt = ((Number)banList.getJSONObject(i).get("banned at")).longValue();
+                    long bannedFor = ((Number)banList.getJSONObject(i).get("banned for")).longValue();
+                    // If user is banned from what we are looking for check the ban condition
+                    // Else return false
+                    if(tempBannedFrom.equalsIgnoreCase(bannedFrom)) {
+                        // PERM BAN
+                        if(bannedFor == -1) {
+                            command.replyWith(String.format(Utilities.getProperty("banlist.bannedFrom"), bannedFrom, "for PERMENANTLY", banReason));
+                            return true;
+                        }
+                        // If temp ban is not over return true
+                        // Else delete ban from list return false
+                        if(ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond() < bannedFor + bannedAt) {
+                            String date = LocalDateTime.ofEpochSecond(bannedAt + bannedFor, 0, ZoneOffset.UTC).toString();
+                            date = date.replaceAll("-", "/").replace("T", " - ");
+                            date += " UTC";
+                            command.replyWith(String.format(Utilities.getProperty("banlist.bannedFrom"), bannedFrom, "until " + date, banReason));
+                            return true;
+                        } else {
+                            banList.remove(i);
+                            writeToJsonFile(banList, getProperty("files.banlist"));
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+        // If user is not at ban list or ban list cannot be read return false
+        return false;
+    }
+
     public static String getSimilarClass(String className) {
-        JSONArray heroes = readJsonFromFile(getProperty("files.heroes"));
+        JSONArray heroes = getHeroesArray();
         List<String> classes = new ArrayList<>();
         for(int i = 0; i < heroes.length(); i++) {
             String tempClass = heroes.getJSONObject(i).getString("class");
@@ -66,7 +127,7 @@ public class Utilities {
     }
 
     public static String getSimilarHero(String heroName) {
-        JSONArray heroes = readJsonFromFile(getProperty("files.heroes"));
+        JSONArray heroes = getHeroesArray();
         String similarHeroName = heroes.getJSONObject(0).getString("name");
         int distance = getLevenshteinDistance(heroName, similarHeroName);
         for(int i = 1; i < heroes.length(); i++) {

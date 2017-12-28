@@ -26,6 +26,10 @@ public class FeedbackCommand {
             Logger.logCommand(command, "Arg count");
             return;
         }
+        if(Utilities.isBanned(command, "Feedback")) {
+            Logger.logCommand(command, "BANNED");
+            return;
+        }
         if(!Utilities.isFeedbackActive()) {
             command.replyWith("Feedback feature is not active right now.");
             Logger.logCommand(command, "Feedback not active");

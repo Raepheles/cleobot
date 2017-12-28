@@ -24,6 +24,10 @@ public class BroadcastCommand {
             command.replyWith(Utilities.getProperty("administration.notAdmin"));
             return;
         }
+        if(command.getArgCount() < 2) {
+            command.sendUsage();
+            return;
+        }
         String msg = "";
         for(int i = 0; i < command.getArguments().size(); i++) {
             if(i == 0)

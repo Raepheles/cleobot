@@ -15,7 +15,6 @@ import java.util.List;
 public class ClassCommand {
 
     @BotCommand(command = "class",
-            aliases = "c",
             description = "List of heroes matches class name.",
             usage = "class *class_name*",
             module = "Heroes",
@@ -47,9 +46,9 @@ public class ClassCommand {
         if(heroes.isEmpty()) {
             String didYouMean = Utilities.getSimilarClass(arg);
             String reply = "Could not found any hero matches the class: `" + arg + "`.";
-            reply += didYouMean == null ? "" : " Did you mean: `" + didYouMean + "`.";
+            reply += didYouMean == null ? "" : " Did you mean: `" + didYouMean + "`?";
             command.replyWith(reply);
-            Logger.logCommand(command, "Invalid argument");
+            Logger.logCommand(command, "Illegal argument");
             return;
         }
 

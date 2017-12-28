@@ -17,7 +17,7 @@ import java.util.List;
 public class HeroSkillsCommand {
 
     @BotCommand(command = "skills",
-            aliases = {"s", "skill"},
+            aliases = "skill",
             description = "Get skill info of hero.",
             usage = "skills *hero_name*",
             module = "Heroes",
@@ -47,7 +47,7 @@ public class HeroSkillsCommand {
 
         if(heroObj == null) {
             String didYouMean = Utilities.getSimilarHero(arg);
-            String reply = didYouMean == null ? "Could not found hero: `" + arg + "`" : "Could not found hero: `" + arg + "`. Did you mean: `" + didYouMean + "`.";
+            String reply = didYouMean == null ? "Could not found hero: `" + arg + "`" : "Could not found hero: `" + arg + "`. Did you mean: `" + didYouMean + "`?";
             command.replyWith(reply);
             Logger.logCommand(command, "Illegal argument");
             return;
