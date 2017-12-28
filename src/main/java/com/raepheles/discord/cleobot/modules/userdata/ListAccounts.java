@@ -49,6 +49,9 @@ public class ListAccounts {
             }
             command.replyWith(reply);
             Logger.logCommand(command);
+        } else {
+            command.replyWith(Utilities.getProperty("userdata.noAccounts"));
+            Logger.logCommand(command, "No accounts");
         }
     }
 }
