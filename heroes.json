@@ -663,8 +663,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
-		
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Kaselico.png/70px-Kaselico.png",
 		"skills": [
@@ -770,7 +769,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Gauico.png/70px-Gauico.png",
 		"skills": [
@@ -877,7 +876,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Nailaico.png/70px-Nailaico.png",
 		"skills": [
@@ -984,7 +983,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Viskaico.png/70px-Viskaico.png",
 		"skills": [
@@ -1090,7 +1089,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Priscillaico.png/70px-Priscillaico.png",
 		"skills": [
@@ -1196,7 +1195,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Theoico.png/70px-Theoico.png",
 		"skills": [
@@ -1304,7 +1303,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Seleneico.png/70px-Seleneico.png",
 		"skills": [
@@ -1410,7 +1409,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Dimaelico.png/70px-Dimaelico.png",
 		"skills": [
@@ -1516,7 +1515,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lunaico.png/70px-Lunaico.png",
 		"skills": [
@@ -1622,7 +1621,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Archico.png/70px-Archico.png",
 		"skills": [
@@ -1728,7 +1727,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Yanneico.png/70px-Yanneico.png",
 		"skills": [
@@ -1834,7 +1833,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Roiico.png/70px-Roiico.png",
 		"skills": [
@@ -1940,7 +1939,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Reinaico.png/70px-Reinaico.png",
 		"skills": [
@@ -2047,7 +2046,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Episico.png/70px-Episico.png",
 		"skills": [
@@ -2154,7 +2153,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Flussico.png/70px-Flussico.png",
 		"skills": [
@@ -2261,7 +2260,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Tanyaico.png/70px-Tanyaico.png",
 		"skills": [
@@ -2368,7 +2367,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Gladiico.png/70px-Gladiico.png",
 		"skills": [
@@ -2474,7 +2473,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Rodinaico.png/70px-Rodinaico.png",
 		"skills": [
@@ -2581,7 +2580,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lakrakico.png/70px-Lakrakico.png",
 		"skills": [
@@ -2687,7 +2686,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Miruruico.png/70px-Miruruico.png",
 		"skills": [
@@ -2793,7 +2792,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Annetteico.png/70px-Annetteico.png",
 		"skills": [
@@ -2899,7 +2898,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mitraico.png/70px-Mitraico.png",
 		"skills": [
@@ -3005,7 +3004,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Oddyico.png/70px-Oddyico.png",
 		"skills": [
@@ -3112,7 +3111,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Cleoico.png/70px-Cleoico.png",
 		"skills": [
@@ -3218,7 +3217,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Pavelico.png/70px-Pavelico.png",
 		"skills": [
@@ -3325,7 +3324,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mariaico.png/70px-Mariaico.png",
 		"skills": [
@@ -3431,7 +3430,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lorraineico.png/70px-Lorraineico.png",
 		"skills": [
@@ -3538,7 +3537,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Aishaico.png/70px-Aishaico.png",
 		"skills": [
@@ -3644,7 +3643,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Lewisiaico.png/70px-Lewisiaico.png",
 		"skills": [
@@ -3752,7 +3751,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Nyxico.png/70px-Nyxico.png",
 		"skills": [
@@ -3858,7 +3857,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Artemiaico.png/70px-Artemiaico.png",
 		"skills": [
@@ -3965,7 +3964,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Freyico.png/70px-Freyico.png",
 		"skills": [
@@ -4071,7 +4070,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Kaulahico.png/70px-Kaulahico.png",
 		"skills": [
@@ -4177,7 +4176,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Rephyico.png/70px-Rephyico.png",
 		"skills": [
@@ -4283,7 +4282,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Baudouinico.png/70px-Baudouinico.png",
 		"skills": [
@@ -4390,7 +4389,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Leoico.png/70px-Leoico.png",
 		"skills": [
@@ -4496,7 +4495,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Laiasico.png/70px-Laiasico.png",
 		"skills": [
@@ -4602,7 +4601,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Cassandraico.png/70px-Cassandraico.png",
 		"skills": [
@@ -4709,7 +4708,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mayico.png/70px-Mayico.png",
 		"skills": [
@@ -4815,7 +4814,7 @@
 			"p.tough": 0,
 			"m.tough": 150,
 			"m.block def": 250,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Medianaico.png/70px-Medianaico.png",
 		"skills": [
@@ -5031,7 +5030,7 @@
 			"p.tough": 0,
 			"m.tough": 0,
 			"m.block def": 0,
-			"cc resist": 0,
+			"cc resist": 0
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Mirianneico.png/70px-Mirianneico.png",
 		"skills": [
@@ -5140,7 +5139,7 @@
 			"p.tough": 100,
 			"m.tough": 100,
 			"m.block def": 0,
-			"cc resist": 150,
+			"cc resist": 150
 		},
 		"thumbnail": "http://krw-img-thumb.s3.amazonaws.com/Scarletico.png/70px-Scarletico.png",
 		"skills": [

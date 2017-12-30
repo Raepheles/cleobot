@@ -1,0 +1,6 @@
+config.properties
+
+cleobot.iml
+*.json
+!heroes.json
+/.idea/
