@@ -3,6 +3,7 @@
 		"name": "Clause",
 		"title": "Knight of Iron Defense",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1354584,
@@ -110,6 +111,7 @@
 		"name": "Demia",
 		"title": "Fortress of Steel",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1354584,
@@ -216,6 +218,7 @@
 		"name": "Phillop",
 		"title": "King of Dwarves",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1354584,
@@ -322,6 +325,7 @@
 		"name": "Morrah",
 		"title": "Devil's Flame",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 1354584,
@@ -429,6 +433,7 @@
 		"name": "Jane",
 		"title": "Alabaster Corpse",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 1354584,
@@ -536,6 +541,7 @@
 		"name": "Ricardo",
 		"title": "Lua's Judgment",
 		"class": "Knight",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1354584,
@@ -643,6 +649,7 @@
 		"name": "Kasel",
 		"title": "Warrior of the Holy Sword",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1150488,
@@ -749,6 +756,7 @@
 		"name": "Gau",
 		"title": "Barbarian of Frozen Lands",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1150488,
@@ -856,6 +864,7 @@
 		"name": "Naila",
 		"title": "Wind's Fighter",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1150488,
@@ -963,6 +972,7 @@
 		"name": "Viska",
 		"title": "Demon Eater",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 1150488,
@@ -1069,6 +1079,7 @@
 		"name": "Priscilla",
 		"title": "Maid of Steel",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1150488,
@@ -1175,6 +1186,7 @@
 		"name": "Theo",
 		"title": "Knight of Loyalty",
 		"class": "Warrior",
+		"position": "Front",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 1150488,
@@ -1283,6 +1295,7 @@
 		"name": "Selene",
 		"title": "Wind-Piercing Arrow",
 		"class": "Archer",
+		"position": "Middle",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 846664,
@@ -1389,6 +1402,7 @@
 		"name": "Dimael",
 		"title": "Shadow Hunter",
 		"class": "Archer",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 846664,
@@ -1495,6 +1509,7 @@
 		"name": "Luna",
 		"title": "Child of Moonlight",
 		"class": "Archer",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 846664,
@@ -1601,6 +1616,7 @@
 		"name": "Arch",
 		"title": "Arrow of Purity",
 		"class": "Archer",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 846664,
@@ -1707,6 +1723,7 @@
 		"name": "Yanne",
 		"title": "Dragon Slayer",
 		"class": "Archer",
+		"position": "Middle",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 846664,
@@ -1813,6 +1830,7 @@
 		"name": "Roi",
 		"title": "Swift Assassin",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1099264,
@@ -1919,6 +1937,7 @@
 		"name": "Reina",
 		"title": "Lightning Flash",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1099264,
@@ -2026,6 +2045,7 @@
 		"name": "Epis",
 		"title": "Captivating Demon",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 1099264,
@@ -2133,6 +2153,7 @@
 		"name": "Fluss",
 		"title": "Fluttering Blade",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1099264,
@@ -2240,6 +2261,7 @@
 		"name": "Tanya",
 		"title": "The Silencing Blade",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1099264,
@@ -2347,6 +2369,7 @@
 		"name": "Gladi",
 		"title": "Beast of the Arena",
 		"class": "Assassin",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 1099264,
@@ -2453,6 +2476,7 @@
 		"name": "Rodina",
 		"title": "Blizzard's Sniper",
 		"class": "Mechanic",
+		"position": "Middle",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 918448,
@@ -2560,6 +2584,7 @@
 		"name": "Lakrak",
 		"title": "Hunter of the Hand Cannon",
 		"class": "Mechanic",
+		"position": "N/A",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 918448,
@@ -2666,6 +2691,7 @@
 		"name": "Miruru",
 		"title": "Cursed Pirate Empress",
 		"class": "Mechanic",
+		"position": "Middle",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 918448,
@@ -2772,6 +2798,7 @@
 		"name": "Annette",
 		"title": "Royal Technomagi",
 		"class": "Mechanic",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 918448,
@@ -2878,6 +2905,7 @@
 		"name": "Mitra",
 		"title": "The Silver Battle Wolf",
 		"class": "Mechanic",
+		"position": "Front",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 918448,
@@ -2984,6 +3012,7 @@
 		"name": "Oddy",
 		"title": "Clocksmith of Eternal Life",
 		"class": "Mechanic",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 918448,
@@ -3091,6 +3120,7 @@
 		"name": "Cleo",
 		"title": "Sorceress of Purgatory",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3197,6 +3227,7 @@
 		"name": "Pavel",
 		"title": "Wizard of Ice Dragon",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3304,6 +3335,7 @@
 		"name": "Maria",
 		"title": "Fallen Witch",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3410,6 +3442,7 @@
 		"name": "Lorraine",
 		"title": "Grand Elidoran Scholar",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3517,6 +3550,7 @@
 		"name": "Aisha",
 		"title": "The Violet Princess",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3623,6 +3657,7 @@
 		"name": "Lewisia",
 		"title": "The Royal Vermillion Blood",
 		"class": "Wizard",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3731,6 +3766,7 @@
 		"name": "Nyx",
 		"title": "Spatial Coordinator",
 		"class": "Wizard",
+		"position": "Back",
 		"type": "Physical",
 		"main stats" : {
 			"hp": 782056,
@@ -3837,6 +3873,7 @@
 		"name": "Artemia",
 		"title": "Empress of Light",
 		"class": "Wizard",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 782056,
@@ -3944,6 +3981,7 @@
 		"name": "Frey",
 		"title": "Priestess of Light",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4050,6 +4088,7 @@
 		"name": "Kaulah",
 		"title": "Shaman of Lightning",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4156,6 +4195,7 @@
 		"name": "Rephy",
 		"title": "Spiritual Guide",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4262,6 +4302,7 @@
 		"name": "Baudouin",
 		"title": "Holy Ruffian",
 		"class": "Priest",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4369,6 +4410,7 @@
 		"name": "Leo",
 		"title": "Eternal Scribe",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4475,6 +4517,7 @@
 		"name": "Laias",
 		"title": "Holy Priestess of Water",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4581,6 +4624,7 @@
 		"name": "Cassandra",
 		"title": "Tempting Winds",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4688,6 +4732,7 @@
 		"name": "May",
 		"title": "The Girl Dreamin of Riches",
 		"class": "Priest",
+		"position": "Middle",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
@@ -4794,6 +4839,7 @@
 		"name": "Mediana",
 		"title": "The Dangerous Doctor",
 		"class": "Priest",
+		"position": "Back",
 		"type": "Magical",
 		"main stats" : {
 			"hp": 856896,
