@@ -10,34 +10,45 @@ import sx.blah.discord.util.RequestBuffer;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Sends log messages to discord channel.
+ * Use setLogger(IChannel logChannel) method to set log channel.
  */
 public class Logger {
-    private static IChannel channel;
+    private static IChannel logChannel;
 
-    public static void setLogger(IChannel channel) {
-        Logger.channel = channel;
+    public static void setLogger(IChannel logChannel) {
+        Logger.logChannel = logChannel;
     }
 
     public static void logCommand(CommandContext command) {
-        String log = command.getAuthor().getName() + " used command `" +
-                String.join(" ", command.getArguments()) + "`. Channel: `" + command.getChannel().getName() + "` | Guild: `" + command.getGuild().getName() +
-                " (" + command.getGuild().getLongID() + ")` | SUCCESS!";
-        if(Logger.channel == null) {
+        String log = String.format("`%s (%d)` used command `%s`. Channel: `%s` | Guild: `%s (%d)` | SUCCESS!",
+                command.getAuthor().getName(),
+                command.getAuthor().getLongID(),
+                String.join(" ", command.getArguments()),
+                command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
+                command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
+                command.isPrivateMessage() ? 0 : command.getGuild().getLongID());
+        if(Logger.logChannel == null) {
             return;
         }
 
-        Utilities.sendMessage(channel, log);
+        Utilities.sendMessage(logChannel, log);
     }
 
     public static void logCommand(CommandContext command, String failReason) {
-        String log = command.getAuthor().getName() + " used command `" +
-                String.join(" ", command.getArguments()) + "`. Channel: `" + command.getChannel().getName() + "` | Guild: `" + command.getGuild().getName() +
-                " (" + command.getGuild().getLongID() + ")` | " + "FAIL with reason: `" + failReason + "`";
-        if(Logger.channel == null) {
+        String log = String.format("`%s (%d)` used command `%s`. Channel: `%s` | Guild: `%s (%d)` | FAIL with reason: `%s`",
+                command.getAuthor().getName(),
+                command.getAuthor().getLongID(),
+                String.join(" ", command.getArguments()),
+                command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
+                command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
+                command.isPrivateMessage() ? 0 : command.getGuild().getLongID(),
+                failReason);
+        if(Logger.logChannel == null) {
             return;
         }
 
-        Utilities.sendMessage(channel, log);
+        Utilities.sendMessage(logChannel, log);
     }
 
     public static void logGuildJoin(GuildCreateEvent event) {
@@ -50,19 +61,19 @@ public class Logger {
         if(Utilities.getWhitelistStatus()) {
             JSONArray whitelist = Utilities.readJsonFromFile(Utilities.getProperty("files.whitelist"));
             if(whitelist == null) {
-                Utilities.sendMessage(channel, log + " | `Cannot read whitelist file`"); // Error reading file
+                Utilities.sendMessage(logChannel, log + " | `Cannot read whitelist file`"); // Error reading file
                 return;
             }
             for(int i = 0; i < whitelist.length(); i++) {
                 long guildId = ((Number)whitelist.getJSONObject(i).get("id")).longValue();
                 if(guildId == event.getGuild().getLongID()) {
-                    Utilities.sendMessage(channel, log + " | `Not on whitelist`"); // Not whitelisted
+                    Utilities.sendMessage(logChannel, log + " | `Not on whitelist`"); // Not whitelisted
                     return;
                 }
             }
-            Utilities.sendMessage(channel, log + " | `SUCCESS`"); // Whitelisted
+            Utilities.sendMessage(logChannel, log + " | `SUCCESS`"); // Whitelisted
         } else {
-            Utilities.sendMessage(channel, log + " | `SUCCESS`"); // No whitelist Success
+            Utilities.sendMessage(logChannel, log + " | `SUCCESS`"); // No whitelist Success
         }
     }
 }

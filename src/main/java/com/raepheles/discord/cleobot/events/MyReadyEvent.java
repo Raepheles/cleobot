@@ -13,13 +13,11 @@ import sx.blah.discord.handle.impl.events.ReadyEvent;
 import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.handle.obj.IGuild;
 import sx.blah.discord.handle.obj.IUser;
-import sx.blah.discord.handle.obj.Permissions;
 import sx.blah.discord.util.EmbedBuilder;
 
 import java.io.IOException;
 import java.time.*;
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -27,20 +25,36 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Bot's ReadyEvent
  */
 public class MyReadyEvent {
     private CommandManager manager;
+    private long privateChannelListener;
 
-    public MyReadyEvent(CommandManager manager) {
+    public MyReadyEvent(CommandManager manager, long privateChannelListener) {
         this.manager = manager;
+        this.privateChannelListener = privateChannelListener;
     }
 
     @EventSubscriber
     public void onReady(ReadyEvent event) {
-        event.getClient().changePlayingText("Loading...");
         List<IGuild> guilds = event.getClient().getGuilds();
         JSONArray guildsJson = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guildsJson == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.guilds"));
+            event.getClient().logout();
+            // Return here is redundant since logout() method shuts the bot down. I only used it
+            // to get rid of the warning.
+            return;
+        }
         JSONArray whitelist = Utilities.readJsonFromFile(Utilities.getProperty("files.whitelist"));
+        if(whitelist == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.whitelist"));
+            event.getClient().logout();
+            // Return here is redundant since logout() method shuts the bot down. I only used it
+            // to get rid of the warning.
+            return;
+        }
 
         for(IGuild guild: guilds) {
             long guildId = guild.getLongID();
@@ -72,52 +86,19 @@ public class MyReadyEvent {
             }
         }
 
-        event.getClient().getDispatcher().registerListener(new MyGuildCreateEvent());
+        event.getClient().getDispatcher().registerListeners(new MyGuildCreateEvent(), new MyMessageReceivedEvent(privateChannelListener));
 
-        Runnable notificationCheck = new Runnable() {
-            @Override
-            public void run() {
-                sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, "last patch note");
-                sendNotification(event, Utilities.PLUG_CAFE_EVENTS, "last event");
-                sendNotification(event, Utilities.PLUG_CAFE_NOTICES, "last notice");
-            }
+        Runnable notificationCheck = () -> {
+            sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, "last patch note");
+            sendNotification(event, Utilities.PLUG_CAFE_EVENTS, "last event");
+            sendNotification(event, Utilities.PLUG_CAFE_NOTICES, "last notice");
         };
-        Runnable euNewDay = new Runnable() {
-            @Override
-            public void run() {
-                sendNewDayNotification(event, "EUROPE");
-            }
-        };
-        Runnable americaNewDay = new Runnable() {
-            @Override
-            public void run() {
-                sendNewDayNotification(event, "AMERICA");
-            }
-        };
-        Runnable asiaNewDay = new Runnable() {
-            @Override
-            public void run() {
-                sendNewDayNotification(event, "ASIA");
-            }
-        };
-        Runnable euHotTime = new Runnable() {
-            @Override
-            public void run() {
-                sendHotTimeNotification(event, "EUROPE");
-            }
-        };
-        Runnable americaHotTime = new Runnable() {
-            @Override
-            public void run() {
-                sendHotTimeNotification(event, "AMERICA");
-            }
-        };
-        Runnable asiaHotTime = new Runnable() {
-            @Override
-            public void run() {
-                sendHotTimeNotification(event, "ASIA");
-            }
-        };
+        Runnable euNewDay = () -> sendNewDayNotification(event, "EUROPE");
+        Runnable americaNewDay = () -> sendNewDayNotification(event, "AMERICA");
+        Runnable asiaNewDay = () -> sendNewDayNotification(event, "ASIA");
+        Runnable euHotTime = () -> sendHotTimeNotification(event, "EUROPE");
+        Runnable americaHotTime = () -> sendHotTimeNotification(event, "AMERICA");
+        Runnable asiaHotTime = () -> sendHotTimeNotification(event, "ASIA");
 
         /*
          * EU - UTC+1
@@ -231,6 +212,10 @@ public class MyReadyEvent {
 
     private void sendHotTimeNotification(ReadyEvent event, String server) {
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.guilds"));
+            return;
+        }
         IUser botUser = event.getClient().getOurUser();
 
         for(int i = 0; i < guilds.length(); i++) {
@@ -260,11 +245,11 @@ public class MyReadyEvent {
             //Check if bot has permission for channel
             if(!Utilities.hasPerms(channel, botUser)) {
                 Utilities.sendMessage(guildOwner.getOrCreatePMChannel(),
-                        String.format(String.format(Utilities.getProperty("notifications.privateNoPerm"),
+                        String.format(Utilities.getProperty("notifications.privateNoPerm"),
                                 botUser.getName(),
                                 "hot time",
                                 channel.mention(),
-                                guild.getName())));
+                                guild.getName()));
                 continue;
             }
 
@@ -282,6 +267,10 @@ public class MyReadyEvent {
 
     private void sendNewDayNotification(ReadyEvent event, String server) {
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.guilds"));
+            return;
+        }
         IUser botUser = event.getClient().getOurUser();
 
         for(int i = 0; i < guilds.length(); i++) {
@@ -311,11 +300,11 @@ public class MyReadyEvent {
             //Check if bot has permission for channel
             if(!Utilities.hasPerms(channel, botUser)) {
                 Utilities.sendMessage(guildOwner.getOrCreatePMChannel(),
-                        String.format(String.format(Utilities.getProperty("notifications.privateNoPerm"),
+                        String.format(Utilities.getProperty("notifications.privateNoPerm"),
                                 botUser.getName(),
                                 "new day",
                                 channel.mention(),
-                                guild.getName())));
+                                guild.getName()));
                 continue;
             }
 
@@ -333,6 +322,10 @@ public class MyReadyEvent {
 
     private void sendNotification(ReadyEvent event, String link, String idName) {
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.guilds"));
+            return;
+        }
         try {
             Document doc = Jsoup.connect(link).get();
             Elements elements = doc.getElementsByAttribute("data-articleid");

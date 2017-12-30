@@ -8,9 +8,13 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import sx.blah.discord.util.EmbedBuilder;
 
+import java.util.StringJoiner;
+
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting unique weapon information of hero.
  */
+@SuppressWarnings("unused")
 public class HeroUwCommand {
 
     @BotCommand(command = "uw",
@@ -20,7 +24,7 @@ public class HeroUwCommand {
             allowPM = true)
     public static void heroUwCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }
@@ -58,10 +62,10 @@ public class HeroUwCommand {
         String content = heroObj.getJSONObject("uw").getString("explanation");
         embed.appendField(name, content, false);
         for(int i = 0; i < effects; i++) {
-            String effectValues = "";
+            StringJoiner effectValues = new StringJoiner(", ");
             for(int j = 0; j < 6; j++)
-                effectValues = String.join(",", heroObj.getJSONObject("uw").getJSONArray("effects").getJSONArray(i).get(j).toString());
-            embed.appendField("{" + i + "}", effectValues, false);
+                effectValues.add(heroObj.getJSONObject("uw").getJSONArray("effects").getJSONArray(i).get(j).toString());
+            embed.appendField("{" + i + "}", effectValues.toString(), false);
         }
         embed.withThumbnail(heroObj.getJSONObject("uw").getString("thumbnail"));
         embed.withTitle(heroObj.getString("name") + ", " + heroObj.getString("title"));

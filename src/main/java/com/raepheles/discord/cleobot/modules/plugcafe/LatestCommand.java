@@ -16,7 +16,9 @@ import java.time.LocalDateTime;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting latest articles from plug cafe.
  */
+@SuppressWarnings("unused")
 public class LatestCommand {
 
     @BotCommand(command = {"plugcafe", "latest"},
@@ -36,6 +38,11 @@ public class LatestCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;
@@ -99,12 +106,12 @@ public class LatestCommand {
             if(mode == 0) {
                 Utilities.sendMessage(command.getClient().getChannelByID(channelId), embed.build());
             } else if(mode == 1) {
-                StringBuilder str = new StringBuilder();
-                str.append("Author: " + articleAuthor + "\n");
-                str.append("Title: " + articleTitle + "\n");
-                str.append("Link: <" + Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId + ">\n");
-                str.append(articleText + "\n");
-                Utilities.sendMessage(command.getClient().getChannelByID(channelId), str.toString());
+                String str = String.format("Author: %s\nTitle: %s\nLink: <%s>\n%s",
+                        articleAuthor,
+                        articleTitle,
+                        Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId,
+                        articleText);
+                Utilities.sendMessage(command.getClient().getChannelByID(channelId), str);
             } else if(mode == 2) {
                 String str = articleTitle + ": <" + Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId + ">\n";
                 Utilities.sendMessage(command.getClient().getChannelByID(channelId), embed.build(), str);

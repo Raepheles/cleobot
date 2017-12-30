@@ -13,7 +13,9 @@ import java.util.List;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting hero skills.
  */
+@SuppressWarnings("unused")
 public class HeroSkillsCommand {
 
     @BotCommand(command = "skills",
@@ -24,7 +26,7 @@ public class HeroSkillsCommand {
             allowPM = true)
     public static void heroSkillCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }

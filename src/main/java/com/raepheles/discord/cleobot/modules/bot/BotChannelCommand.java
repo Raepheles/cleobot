@@ -10,7 +10,10 @@ import sx.blah.discord.handle.obj.Permissions;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for setting bot channel.
+ * Command for checking bot channel status.
  */
+@SuppressWarnings("unused")
 public class BotChannelCommand {
 
 
@@ -26,6 +29,11 @@ public class BotChannelCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile("guilds.json");
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         int index = -1;
         long guildId = command.getGuild().getLongID();
         for(int i = 0; i < guilds.length(); i++) {
@@ -67,6 +75,11 @@ public class BotChannelCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile("guilds.json");
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long botchannel = -1;
         for(int i = 0; i < guilds.length(); i++) {

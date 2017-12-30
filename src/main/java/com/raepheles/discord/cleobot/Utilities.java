@@ -1,15 +1,11 @@
 package com.raepheles.discord.cleobot;
 
 import com.discordbolt.api.command.CommandContext;
-import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.api.internal.json.objects.EmbedObject;
-import sx.blah.discord.handle.obj.IChannel;
-import sx.blah.discord.handle.obj.IGuild;
-import sx.blah.discord.handle.obj.IUser;
-import sx.blah.discord.handle.obj.Permissions;
+import sx.blah.discord.handle.obj.*;
 import sx.blah.discord.util.DiscordException;
 import sx.blah.discord.util.RequestBuffer;
 
@@ -25,12 +21,12 @@ import java.util.*;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Utility methods.
  */
 public class Utilities {
     private static JSONArray heroesArray = null;
     private static long feedbackChannelId;
     private static long loggerChannelId;
-    private static long ownerId;
     private static boolean feedbackActive = true;
     private static boolean whitelistStatus = false;
     private static Properties properties = null;
@@ -178,12 +174,9 @@ public class Utilities {
     }
 
     public static boolean isAdmin(IUser user) {
-        JSONArray adminList;
-        try {
-            adminList = readJsonFromFile(getProperty("files.administrators"));
-        } catch(Exception e) {
+        JSONArray adminList = readJsonFromFile(getProperty("files.administrators"));
+        if(adminList == null)
             return false;
-        }
         for(int i = 0; i < adminList.length(); i++) {
             long id = ((Number)adminList.getJSONObject(i).get("id")).longValue();
             if(id == user.getLongID())
@@ -222,7 +215,7 @@ public class Utilities {
     }
 
     public static int getHeroColor(String heroName) {
-        /**
+        /*
          * assassin: 7539556
          * knight: 934528
          * priest: 157551
@@ -231,22 +224,23 @@ public class Utilities {
          * archer: 3829273
          * mechanic: 333165
          */
-        if(heroName.equals("assassin")) {
-            return 7539556;
-        } else if (heroName.equals("knight")) {
-            return 934528;
-        } else if (heroName.equals("priest")) {
-            return 157551;
-        } else if (heroName.equals("warrior")) {
-            return 7617796;
-        } else if (heroName.equals("wizard")) {
-            return 7930893;
-        } else if (heroName.equals("archer")) {
-            return 3829273;
-        } else if (heroName.equals("mechanic")) {
-            return 333165;
-        } else {
-            return 0;
+        switch (heroName) {
+            case "assassin":
+                return 7539556;
+            case "knight":
+                return 934528;
+            case "priest":
+                return 157551;
+            case "warrior":
+                return 7617796;
+            case "wizard":
+                return 7930893;
+            case "archer":
+                return 3829273;
+            case "mechanic":
+                return 333165;
+            default:
+                return 0;
         }
     }
 
@@ -328,6 +322,8 @@ public class Utilities {
         long guildId = command.getGuild().getLongID();
         IDiscordClient client = command.getClient();
         JSONArray guilds = readJsonFromFile("guilds.json");
+        if(guilds == null)
+            return false;
         long botChannel = -1;
         for(int i = 0; i < guilds.length(); i++) {
             long current = ((Number)guilds.getJSONObject(i).get("id")).longValue();
@@ -374,14 +370,6 @@ public class Utilities {
         Utilities.whitelistStatus = whitelistStatus;
     }
 
-    public static void setOwnerId(long id) {
-        ownerId = id;
-    }
-
-    public static long getOwnerId() {
-        return ownerId;
-    }
-
     public static long getFeedbackChannelId() {
         return feedbackChannelId;
     }
@@ -409,8 +397,7 @@ public class Utilities {
                 line = br.readLine();
             }
             data = sb.toString();
-            JSONArray array = new JSONArray(data);
-            return array;
+            return new JSONArray(data);
         } catch(Exception e) {
             e.printStackTrace();
         }

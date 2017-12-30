@@ -8,7 +8,9 @@ import org.json.JSONArray;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting plug cafe notifications status.
  */
+@SuppressWarnings("unused")
 public class StatusCommand {
 
     @BotCommand(command = {"plugcafe", "status"},
@@ -28,6 +30,11 @@ public class StatusCommand {
         }
 
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;

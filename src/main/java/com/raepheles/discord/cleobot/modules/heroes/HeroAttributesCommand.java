@@ -13,7 +13,9 @@ import java.util.List;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting hero attributes.
  */
+@SuppressWarnings("unused")
 public class HeroAttributesCommand {
 
     @BotCommand(command = "attributes",
@@ -24,7 +26,7 @@ public class HeroAttributesCommand {
             allowPM = true)
     public static void heroAttributesCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }
@@ -68,11 +70,10 @@ public class HeroAttributesCommand {
         EmbedBuilder embed = new EmbedBuilder();
         for(int i = 0; i < 4; i++) {
             String name = skillName.get(i);
-            StringBuilder attributes = new StringBuilder();
-            attributes.append(attributeExplanation.get(i*3) + "\n");
-            attributes.append(attributeExplanation.get((i*3)+1) + "\n");
-            attributes.append(attributeExplanation.get((i*3)+2) + "\n");
-            embed.appendField(name, attributes.toString(), false);
+            String attributes = attributeExplanation.get(i*3) + "\n";
+            attributes += attributeExplanation.get((i*3)+1) + "\n";
+            attributes += attributeExplanation.get((i*3)+2) + "\n";
+            embed.appendField(name, attributes, false);
         }
         embed.withThumbnail(heroObj.getString("thumbnail"));
         embed.withTitle(heroObj.getString("name") + ", " + heroObj.getString("title"));

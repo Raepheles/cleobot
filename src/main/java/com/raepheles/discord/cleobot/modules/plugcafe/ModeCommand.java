@@ -12,7 +12,9 @@ import java.time.LocalDateTime;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for changing plug cafe notifications mode.
  */
+@SuppressWarnings("unused")
 public class ModeCommand {
 
     @BotCommand(command = {"plugcafe", "mode"},
@@ -37,7 +39,7 @@ public class ModeCommand {
         2 - mixed
          */
         String arg = command.getArgument(2);
-        int mode = 0;
+        int mode;
         if(arg.equalsIgnoreCase("embed")) {
             mode = 0;
         } else if(arg.equalsIgnoreCase("text")) {
@@ -50,6 +52,11 @@ public class ModeCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;
@@ -79,7 +86,7 @@ public class ModeCommand {
         Logger.logCommand(command);
     }
 
-    public static void sendSampleNotification(CommandContext command, int mode) {
+    private static void sendSampleNotification(CommandContext command, int mode) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.withTimestamp(LocalDateTime.now());
         embed.withAuthorName(command.getClient().getOurUser().getName());
@@ -94,16 +101,14 @@ public class ModeCommand {
             command.replyWith(embed.build());
         }
         if(mode == 1) {
-            StringBuilder str = new StringBuilder();
-            str.append("Author: " + command.getClient().getOurUser().getName() + "\n");
-            str.append("Title: Title\n");
-            str.append("Link: <https://www.plug.game/kingsraid-en>\n");
-            str.append(Utilities.getProperty("misc.loremIpsum") + "\n");
-
-            command.replyWith(str.toString());
+            String str = String.format("Author: %s\nTitle: Sample Title\nLink: %s\n%s",
+                    command.getClient().getOurUser().getName(),
+                    Utilities.PLUG_CAFE_BASE_URL,
+                    Utilities.getProperty("misc.loremIpsum"));
+            command.replyWith(str);
         }
         if(mode == 2) {
-            String str = "Title: <https://www.plug.game/kingsraid-en>\n";
+            String str = String.format("Sample Title: %s", Utilities.PLUG_CAFE_BASE_URL);
             command.replyWith(str, embed.build());
         }
     }

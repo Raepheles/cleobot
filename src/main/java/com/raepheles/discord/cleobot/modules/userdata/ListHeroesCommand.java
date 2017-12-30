@@ -7,10 +7,43 @@ import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * Created by Rae on 28/12/2017.
  */
 public class ListHeroesCommand {
+
+    public static class Hero {
+        int level;
+        String rarity;
+        String name;
+
+        private Hero(String name, String rarity, int level) {
+            this.level = level;
+            this.rarity = rarity;
+            this.name = name;
+        }
+
+        private int getLevel() {
+            return level;
+        }
+
+        private String getRarity() {
+            if(rarity.equals("2")
+                    || rarity.equals("3")
+                    || rarity.equals("4")
+                    || rarity.equals("5"))
+                rarity += " Star";
+            return rarity;
+        }
+
+        private String getName() {
+            return name;
+        }
+    }
 
     @BotCommand(command = {"userdata", "list", "heroes"},
             aliases = {"data", "ud"},
@@ -95,9 +128,14 @@ public class ListHeroesCommand {
         String reply = "`" + accountName + "` at server `" + serverName.toUpperCase() + "` has the following heroes:\n```";
         reply += String.format("%-6s | %-5s | %-15s\n\n", "Rarity", "Level", "Hero Name");
         JSONArray heroes = userData.getJSONObject(userDataIndex).getJSONArray("accounts").getJSONObject(accountIndex).getJSONArray("heroes");
+        List<Hero> heroList = new ArrayList<>();
         for(int i = 0; i < heroes.length(); i++) {
             JSONObject hero = heroes.getJSONObject(i);
-            reply += String.format("%-6s | %-5s | %-15s\n", hero.get("rarity"), hero.get("level"), hero.get("name"));
+            heroList.add(new Hero(hero.getString("name"), hero.getString("rarity"), (int)hero.get("level")));
+        }
+        heroList.sort(Comparator.comparing(Hero::getRarity).thenComparing(Hero::getLevel).reversed());
+        for(Hero hero: heroList) {
+            reply += String.format("%-6s | %-5d | %-15s\n", hero.getRarity(), hero.getLevel(), hero.getName());
         }
         reply += "```";
 

@@ -9,7 +9,9 @@ import java.util.List;
 
 /**
  * Created by Rae on 26/12/2017.
+ * Command for listing connected guilds.
  */
+@SuppressWarnings("unused")
 public class ListCommand {
 
     @BotCommand(command = "guilds",

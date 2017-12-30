@@ -9,7 +9,10 @@ import sx.blah.discord.handle.obj.Permissions;
 
 /**
  * Created by Rae on 20/12/2017.
+ * Command for setting new day notifications channel.
+ * Commands for activating/deactivating new day notifications for servers.
  */
+@SuppressWarnings("unused")
 public class SetCommand {
 
     @BotCommand(command = {"newday", "set"},

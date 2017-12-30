@@ -2,16 +2,16 @@ package com.raepheles.discord.cleobot.modules.bot;
 
 import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
-import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
-import sx.blah.discord.util.EmbedBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command for getting command aliases.
  */
+@SuppressWarnings("unused")
 public class AliasesCommand {
 
     @BotCommand(command = "aliases",

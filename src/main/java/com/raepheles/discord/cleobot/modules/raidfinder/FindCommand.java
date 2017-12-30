@@ -10,20 +10,23 @@ import org.json.JSONArray;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command for adding an entry to raid finder list
  */
+@SuppressWarnings("unused")
 public class FindCommand {
 
     @BotCommand(command = {"raidfinder", "find"},
             aliases = {"raid", "rf"},
             description = "Adds your account to raid finder list.",
-            usage = "raidfinder find *server_name* *account_name* *raid_code* *raid_level*",
+            usage = "raidfinder find *server_name* *account_name* *raid_code* *raid_level* *user_note*",
             module = "Raid Finder",
             allowPM = true)
     public static void findCommand(CommandContext command) {
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }
@@ -31,7 +34,7 @@ public class FindCommand {
             Logger.logCommand(command, "BANNED");
             return;
         }
-        if(command.getArgCount() < 5 || command.getArgCount() > 6) {
+        if(command.getArgCount() < 5) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");
             return;
@@ -39,7 +42,18 @@ public class FindCommand {
         String serverName = command.getArgument(2).toUpperCase();
         String accountName = command.getArgument(3);
         String raidCode = command.getArgument(4);
-        String raidLevel = command.getArgCount() == 6 ? command.getArgument(5) : "";
+        String raidLevel = "";
+        if(!raidCode.equals("bdh")
+                && !raidCode.equals("rdh")
+                && !raidCode.equals("idh")
+                && !raidCode.equals("pdh")) {
+            raidLevel = command.getArgCount() > 5 ? command.getArgument(5) : "";
+        }
+        String userNote = "";
+        if(!raidLevel.isEmpty())
+            userNote += command.getArguments().stream().skip(6).collect(Collectors.joining(" "));
+        else
+            userNote += command.getArguments().stream().skip(5).collect(Collectors.joining(" "));
 
         // Check if serverName is valid
         if(!serverName.equalsIgnoreCase("eu") &&
@@ -67,6 +81,11 @@ public class FindCommand {
 
         // Check if accountName is saved
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "user data"));
+            return;
+        }
+
         boolean accountSaved = false;
         for(int i = 0; i < userData.length(); i++) {
             long id = ((Number) userData.getJSONObject(i).get("id")).longValue();
@@ -90,7 +109,7 @@ public class FindCommand {
 
         if(accountSaved) {
             long currentEpochTime = ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond();
-            RaidFinderEntry newEntry = new RaidFinderEntry(currentEpochTime, serverName, accountName, raidCode, raidLevel, command.getAuthor());
+            RaidFinderEntry newEntry = new RaidFinderEntry(currentEpochTime, serverName, accountName, raidCode, raidLevel, command.getAuthor(), userNote);
             if(!newEntry.isLegitEntry()) {
                 command.replyWith(Utilities.getProperty("raidfinder.notLegitEntry"));
                 Logger.logCommand(command, "Not legit entry");

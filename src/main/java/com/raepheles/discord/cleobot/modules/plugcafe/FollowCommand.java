@@ -8,7 +8,9 @@ import org.json.JSONArray;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Commands for following/unfollowing plug cafe notifications.
  */
+@SuppressWarnings("unused")
 public class FollowCommand {
 
     @BotCommand(command = {"plugcafe", "follow"},
@@ -27,6 +29,11 @@ public class FollowCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;
@@ -82,6 +89,11 @@ public class FollowCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;

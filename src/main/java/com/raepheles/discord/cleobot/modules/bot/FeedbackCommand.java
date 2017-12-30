@@ -4,6 +4,7 @@ import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
+import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.util.DiscordException;
 import sx.blah.discord.util.EmbedBuilder;
 
@@ -11,7 +12,9 @@ import java.time.LocalDateTime;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for sending feedback to bot owner
  */
+@SuppressWarnings("unused")
 public class FeedbackCommand {
 
     @BotCommand(command = "feedback",
@@ -31,7 +34,13 @@ public class FeedbackCommand {
             return;
         }
         if(!Utilities.isFeedbackActive()) {
-            command.replyWith("Feedback feature is not active right now.");
+            command.replyWith(Utilities.getProperty("misc.feedbackNotActive"));
+            Logger.logCommand(command, "Feedback not active");
+            return;
+        }
+        IChannel feedbackChannel = command.getClient().getChannelByID(Utilities.getFeedbackChannelId());
+        if(feedbackChannel == null) {
+            command.replyWith(Utilities.getProperty("misc.feedbackChannelNotSet"));
             Logger.logCommand(command, "Feedback not active");
             return;
         }

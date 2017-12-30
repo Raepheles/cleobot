@@ -18,7 +18,7 @@ public class UpdateAccountCommand {
             module = "User Data",
             allowPM = true)
     public static void updateAccountCommand(CommandContext command) {
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }

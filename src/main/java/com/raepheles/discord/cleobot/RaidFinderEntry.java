@@ -7,6 +7,7 @@ import java.time.ZonedDateTime;
 
 /**
  * Created by Rae on 27/12/2017.
+ * Raid Finder Entry class. Used for Raid Finder.
  */
 public class RaidFinderEntry {
     private long epochTime;
@@ -15,11 +16,18 @@ public class RaidFinderEntry {
     private String raidCode;
     private String raidName;
     private String raidLevel;
+    private String userNote;
     private boolean found;
     private IUser user;
 
 
-    public RaidFinderEntry(long epochTime, String serverName, String accountName, String raidCode, String raidLevel, IUser user) {
+    public RaidFinderEntry(long epochTime,
+                           String serverName,
+                           String accountName,
+                           String raidCode,
+                           String raidLevel,
+                           IUser user,
+                           String userNote) {
         this.epochTime = epochTime;
         this.accountName = accountName;
         this.serverName = serverName;
@@ -27,6 +35,7 @@ public class RaidFinderEntry {
         this.raidLevel = raidLevel;
         this.found = false;
         this.user = user;
+        this.userNote = userNote;
     }
 
     public IUser getUser() {
@@ -39,6 +48,10 @@ public class RaidFinderEntry {
 
     public String getRaidCode() {
         return raidCode;
+    }
+
+    public boolean isFound() {
+        return found;
     }
 
     public String getRaidLevel() {
@@ -125,11 +138,12 @@ public class RaidFinderEntry {
     public String toString() {
         long time = ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond() - epochTime;
         if(isLegitEntry())
-            return String.format("%-12s | %-12s | %-7s | %-25s",
+            return String.format("%-12s | %-12s | %-7s | %-25s | %-50s",
                     time == 1 ? time + " second" : time + " seconds",
                     accountName,
                     serverName.toUpperCase(),
-                    raidName + (raidLevel.isEmpty() ? "" : " " + raidLevel));
+                    raidName + (raidLevel.isEmpty() ? "" : " " + raidLevel),
+                    userNote.length() > 50 ? userNote.substring(0, 46) + "..." : userNote);
         else
             return "Not legit raid entry!";
     }

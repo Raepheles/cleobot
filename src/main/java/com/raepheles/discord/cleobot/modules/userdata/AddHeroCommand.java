@@ -19,7 +19,7 @@ public class AddHeroCommand {
             module = "User Data",
             allowPM = true)
     public static void addHeroCommand(CommandContext command) {
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }

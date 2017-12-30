@@ -7,7 +7,9 @@ import com.raepheles.discord.cleobot.logger.Logger;
 
 /**
  * Created by Rae on 27/12/2017.
+ * Command for invite link for the bot.
  */
+@SuppressWarnings("unused")
 public class InviteCommand {
 
     @BotCommand(command = "invite",

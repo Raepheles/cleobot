@@ -6,7 +6,7 @@
 
     <groupId>com.raepheles.discord</groupId>
     <artifactId>cleobot</artifactId>
-    <version>v0.6-beta</version>
+    <version>v0.61-beta</version>
     <properties>
         <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

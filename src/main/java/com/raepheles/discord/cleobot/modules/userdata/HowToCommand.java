@@ -23,7 +23,7 @@ public class HowToCommand {
             module = "User Data",
             allowPM = true)
     public static void howToCommand(CommandContext command) {
-        if (!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }

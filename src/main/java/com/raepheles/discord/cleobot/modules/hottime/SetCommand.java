@@ -9,7 +9,10 @@ import sx.blah.discord.handle.obj.Permissions;
 
 /**
  * Created by Rae on 23/12/2017.
+ * Command for setting hot time notifications channel.
+ * Commands for activating/deactivating hot time notifications for server.
  */
+@SuppressWarnings("unused")
 public class SetCommand {
 
     @BotCommand(command = {"hottime", "set"},
@@ -28,6 +31,11 @@ public class SetCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {
@@ -77,6 +85,11 @@ public class SetCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {
@@ -131,6 +144,11 @@ public class SetCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {

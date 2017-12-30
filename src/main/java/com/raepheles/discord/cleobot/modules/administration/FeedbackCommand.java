@@ -6,7 +6,9 @@ import com.raepheles.discord.cleobot.Utilities;
 
 /**
  * Created by Rae on 26/12/2017.
+ * Command for sending feedback to bot owner.
  */
+@SuppressWarnings("unused")
 public class FeedbackCommand {
 
     @BotCommand(command = "feedbackstatus",

@@ -9,7 +9,9 @@ import sx.blah.discord.handle.obj.IChannel;
 
 /**
  * Created by Rae on 23/12/2017.
+ * Commands for following/unfollowing hot time notifications.
  */
+@SuppressWarnings("unused")
 public class FollowCommand {
 
     @BotCommand(command = {"hottime", "follow"},
@@ -36,6 +38,11 @@ public class FollowCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {
@@ -104,6 +111,11 @@ public class FollowCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {

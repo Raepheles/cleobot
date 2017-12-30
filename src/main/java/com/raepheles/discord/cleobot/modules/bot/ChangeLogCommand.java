@@ -7,7 +7,9 @@ import com.raepheles.discord.cleobot.logger.Logger;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for changelog of the bot.
  */
+@SuppressWarnings("unused")
 public class ChangeLogCommand {
 
     @BotCommand(command = "changelog",

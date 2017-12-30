@@ -18,7 +18,7 @@ public class ListAccounts {
             module = "User Data",
             allowPM = true)
     public static void listAccounts(CommandContext command) {
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }

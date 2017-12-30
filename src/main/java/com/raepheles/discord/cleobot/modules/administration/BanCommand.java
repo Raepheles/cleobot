@@ -14,7 +14,9 @@ import java.time.ZonedDateTime;
 
 /**
  * Created by Rae on 27/12/2017.
+ * Command for banning a user.
  */
+@SuppressWarnings("unused")
 public class BanCommand {
 
     @BotCommand(command = "ban",
@@ -50,6 +52,11 @@ public class BanCommand {
         // Check if user is already banned from using same thing
         String fileName = Utilities.getProperty("files.banlist");
         JSONArray banList = Utilities.readJsonFromFile(fileName);
+        if(banList == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "ban list"));
+            return;
+        }
+
         for(int i = 0; i < banList.length(); i++) {
             long userId = ((Number)banList.getJSONObject(i).get("id")).longValue();
             if(userId == id) {
@@ -89,6 +96,11 @@ public class BanCommand {
 
         // Record this ban
         JSONArray banRecords = Utilities.readJsonFromFile(Utilities.getProperty("files.banlog"));
+        if(banRecords == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "ban records"));
+            return;
+        }
+
         JSONObject newBanRecord = new JSONObject();
         newBanRecord.put("reason", reason);
         newBanRecord.put("banned from", bannedFrom.toLowerCase());

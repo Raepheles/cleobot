@@ -6,7 +6,9 @@ import com.raepheles.discord.cleobot.Utilities;
 
 /**
  * Created by Rae on 26/12/2017.
+ * Command for sending message to a user.
  */
+@SuppressWarnings("unused")
 public class MessageCommand {
 
     @BotCommand(command = "message",
@@ -31,10 +33,11 @@ public class MessageCommand {
             return;
         }
         String msg = "";
-        for(int i = 0; i < command.getArguments().size(); i++) {
-            if(i == 0 || i == 1)
-                continue;
-            msg += command.getArgument(i);
+        for(int i = 2; i < command.getArguments().size(); i++) {
+            if(i == command.getArguments().size()-1)
+                msg += command.getArgument(i);
+            else
+                msg += command.getArgument(i) + " ";
         }
         Utilities.sendMessage(command.getClient().getUserByID(userId).getOrCreatePMChannel(), msg);
     }

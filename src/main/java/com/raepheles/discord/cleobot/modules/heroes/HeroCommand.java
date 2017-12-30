@@ -10,7 +10,9 @@ import sx.blah.discord.util.EmbedBuilder;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for basic hero info.
  */
+@SuppressWarnings("unused")
 public class HeroCommand {
 
     @BotCommand(command = "hero",
@@ -20,7 +22,7 @@ public class HeroCommand {
             allowPM = true)
     public static void heroCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }
@@ -60,7 +62,7 @@ public class HeroCommand {
                 "P.DEF: " + pdef + "\n" +
                 "M.DEF: " + mdef + "\n";
         //Getting additional stats
-        StringBuilder additionalStats = new StringBuilder();
+        String additionalStats = "";
         int mppa = heroObj.getJSONObject("additional stats").getInt("mp/atk");
         int crit = heroObj.getJSONObject("additional stats").getInt("crit");
         int cdmg = heroObj.getJSONObject("additional stats").getInt("cdmg");
@@ -74,31 +76,31 @@ public class HeroCommand {
         int mtough = heroObj.getJSONObject("additional stats").getInt("m.tough");
         int mblockdef = heroObj.getJSONObject("additional stats").getInt("m.block def");
         int ccres = heroObj.getJSONObject("additional stats").getInt("cc resist");
-        additionalStats.append("Mp/Atk: " + mppa + "\n");
+        additionalStats += "Mp/Atk: " + mppa + "\n";
         if(crit != 0)
-            additionalStats.append("Crit: " + crit + "\n");
+            additionalStats += "Crit: " + crit + "\n";
         if(cdmg != 0)
-            additionalStats.append("Crit DMG: " + cdmg + "\n");
+            additionalStats += "Crit DMG: " + cdmg + "\n";
         if(pen != 0)
-            additionalStats.append("Penetration: " + pen + "\n");
+            additionalStats += "Penetration: " + pen + "\n";
         if(acc != 0)
-            additionalStats.append("Accuracy: " + acc + "\n");
+            additionalStats += "Accuracy: " + acc + "\n";
         if(pdodge != 0)
-            additionalStats.append("P.Dodge: " + pdodge + "\n");
+            additionalStats += "P.Dodge: " + pdodge + "\n";
         if(mdodge != 0)
-            additionalStats.append("M.Dodge: " + mdodge + "\n");
+            additionalStats += "M.Dodge: " + mdodge + "\n";
         if(pblock != 0)
-            additionalStats.append("P.Block: " + pblock + "\n");
+            additionalStats += "P.Block: " + pblock + "\n";
         if(mblock != 0)
-            additionalStats.append("M.Block: " + mblock + "\n");
+            additionalStats += "M.Block: " + mblock + "\n";
         if(ptough != 0)
-            additionalStats.append("P.Tough: " + ptough + "\n");
+            additionalStats += "P.Tough: " + ptough + "\n";
         if(mtough != 0)
-            additionalStats.append("M.Tough: " + mtough + "\n");
+            additionalStats += "M.Tough: " + mtough + "\n";
         if(mblockdef != 0)
-            additionalStats.append("M.Block DEF: " + mblockdef + "\n");
+            additionalStats += "M.Block DEF: " + mblockdef + "\n";
         if(ccres != 0)
-            additionalStats.append("CC Resist: " + ccres + "\n");
+            additionalStats += "CC Resist: " + ccres + "\n";
 
         EmbedBuilder embed = new EmbedBuilder();
         String heroName = heroObj.getString("name");
@@ -106,14 +108,15 @@ public class HeroCommand {
         String heroClass = heroObj.getString("class");
         String thumbnail = heroObj.getString("thumbnail");
         String heroTitle = heroObj.getString("title");
+        String heroPosition = heroObj.getString("position");
 
         embed.withThumbnail(thumbnail);
         embed.withTitle(heroName + ", " + heroTitle);
         embed.withUrl("http://www.kingsraid.wiki/index.php?title=" + heroName);
         embed.appendField("Class", heroClass, true);
-        embed.appendField("Type", heroType, true);
+        embed.appendField("Type / Poisiton", heroType + " / " + heroPosition, true);
         embed.appendField("Main Stats", mainStats, true);
-        embed.appendField("Additional Stats", additionalStats.toString(), true);
+        embed.appendField("Additional Stats", additionalStats, true);
         String heroInfo = "Skills: `" + command.getPrefix() + "skills " + heroName + "`\n" +
                 "Skill Attributes: `" + command.getPrefix() + "attributes " + heroName + "`\n" +
                 "Transcendence Perks: `" + command.getPrefix() + "perks " + heroName + "`\n" +

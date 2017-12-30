@@ -11,7 +11,9 @@ import java.util.List;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for getting heroes matches with the searched class.
  */
+@SuppressWarnings("unused")
 public class ClassCommand {
 
     @BotCommand(command = "class",
@@ -21,7 +23,7 @@ public class ClassCommand {
             allowPM = true)
     public static void classCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
-        if(!Utilities.checkBotChannel(command)) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
             Logger.logCommand(command, "Bot channel not set");
             return;
         }
@@ -52,11 +54,11 @@ public class ClassCommand {
             return;
         }
 
-        StringBuilder sb = new StringBuilder("List of heroes matches with the class: " + heroClass + "\n\n");
+        String resultHeroes = "List of heroes matches with the class: " + heroClass + "\n\n";
         for(String hero: heroes)
-            sb.append("- " + hero + "\n");
+            resultHeroes += "- " + hero + "\n";
 
-        command.replyWith(sb.toString());
+        command.replyWith(resultHeroes);
         Logger.logCommand(command);
     }
 }

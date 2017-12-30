@@ -7,7 +7,9 @@ import com.raepheles.discord.cleobot.logger.Logger;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command for rules of the bot.
  */
+@SuppressWarnings("unused")
 public class RulesCommand {
 
     @BotCommand(command = "rules",

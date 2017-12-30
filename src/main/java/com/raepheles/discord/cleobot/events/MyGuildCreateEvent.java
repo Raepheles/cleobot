@@ -10,6 +10,9 @@ import sx.blah.discord.handle.obj.IGuild;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Bot's Guild Create Event.
+ * If whitelist is activated checks whether or not new guild is whitelisted first.
+ * Then creates new entry at guilds.json file.
  */
 public class MyGuildCreateEvent {
 
@@ -18,6 +21,13 @@ public class MyGuildCreateEvent {
         IGuild guild = event.getGuild();
         //Check if guild is saved inside guilds.json
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.guilds"));
+            event.getClient().logout();
+            // Return here is redundant since logout() method shuts the bot down. I only used it
+            // to get rid of the warning.
+            return;
+        }
         boolean isSavedGuild = false;
         for(int i = 0; i < guilds.length(); i++) {
             long currentId = (long)guilds.getJSONObject(i).get("id");
@@ -27,6 +37,13 @@ public class MyGuildCreateEvent {
         }
 
         JSONArray whitelist = Utilities.readJsonFromFile(Utilities.getProperty("files.whitelist"));
+        if(whitelist == null) {
+            System.err.println("Could not read " + Utilities.getProperty("files.whitelist"));
+            event.getClient().logout();
+            // Return here is redundant since logout() method shuts the bot down. I only used it
+            // to get rid of the warning.
+            return;
+        }
         if(Utilities.getWhitelistStatus()) {
             boolean whitelisted = false;
             for(int j = 0; j < whitelist.length(); j++) {

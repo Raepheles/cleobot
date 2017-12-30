@@ -9,7 +9,9 @@ import sx.blah.discord.handle.obj.IChannel;
 
 /**
  * Created by Rae on 23/12/2017.
+ * Command for getting new day notifications status
  */
+@SuppressWarnings("unused")
 public class StatusCommand {
 
     @BotCommand(command = {"newday", "status"},
@@ -27,6 +29,10 @@ public class StatusCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
         long guildId = command.getGuild().getLongID();
         int index = -1;
         for(int i = 0; i < guilds.length(); i++) {

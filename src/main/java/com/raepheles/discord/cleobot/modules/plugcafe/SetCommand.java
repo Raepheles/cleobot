@@ -9,7 +9,10 @@ import sx.blah.discord.handle.obj.Permissions;
 
 /**
  * Created by Rae on 19/12/2017.
+ * Command for setting plug cafe notifications channel.
+ * Command for deactivating plug cafe notifications channel. (Removing the channel)
  */
+@SuppressWarnings("unused")
 public class SetCommand {
 
     @BotCommand(command = {"plugcafe", "set"},
@@ -29,6 +32,11 @@ public class SetCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;
@@ -77,6 +85,11 @@ public class SetCommand {
             return;
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         long guildId = command.getGuild().getLongID();
         long channelId = -1;
         int index = -1;

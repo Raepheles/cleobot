@@ -10,7 +10,9 @@ import java.util.List;
 
 /**
  * Created by Rae on 26/12/2017.
+ * Command for sending broadcast message to bot channel in every server.
  */
+@SuppressWarnings("unused")
 public class BroadcastCommand {
 
     @BotCommand(command = "broadcast",
@@ -29,15 +31,19 @@ public class BroadcastCommand {
             return;
         }
         String msg = "";
-        for(int i = 0; i < command.getArguments().size(); i++) {
-            if(i == 0)
-                continue;
-            if(i != command.getArguments().size()-1)
-                msg += command.getArgument(i) + " ";
-            else
+        for(int i = 1; i < command.getArguments().size(); i++) {
+            if(i == command.getArguments().size()-1)
                 msg += command.getArgument(i);
+            else
+                msg += command.getArgument(i) + " ";
+
         }
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
         int success = 0;
         int fail = 0;
         List<Long> fails = new ArrayList<>();
