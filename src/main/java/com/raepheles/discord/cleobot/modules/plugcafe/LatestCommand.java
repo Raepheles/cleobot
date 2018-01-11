@@ -29,7 +29,6 @@ public class LatestCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void latestPlugCafe(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {

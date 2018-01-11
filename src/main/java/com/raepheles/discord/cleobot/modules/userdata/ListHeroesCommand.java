@@ -53,7 +53,6 @@ public class ListHeroesCommand {
             allowPM = true)
     public static void listHeroesCommand(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(Utilities.isBanned(command, "User Data Module")) {

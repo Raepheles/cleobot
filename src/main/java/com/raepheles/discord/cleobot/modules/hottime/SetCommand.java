@@ -22,7 +22,6 @@ public class SetCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void setHotTimeCommand(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {
@@ -64,7 +63,6 @@ public class SetCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void onHotTimeCommand(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() != 3) {
@@ -124,7 +122,6 @@ public class SetCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void offHotTimeCommand(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() != 3) {

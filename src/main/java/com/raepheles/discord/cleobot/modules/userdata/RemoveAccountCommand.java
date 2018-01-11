@@ -19,7 +19,6 @@ public class RemoveAccountCommand {
             allowPM = true)
     public static void removeAccountCommand(CommandContext command) {
         if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if (Utilities.isBanned(command, "User Data Module")) {

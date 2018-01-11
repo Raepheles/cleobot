@@ -24,7 +24,6 @@ public class HowToCommand {
             allowPM = true)
     public static void howToCommand(CommandContext command) {
         if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() != 2) {

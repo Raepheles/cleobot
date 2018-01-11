@@ -29,7 +29,6 @@ public class SetCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void plugCafeSet(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {
@@ -86,7 +85,6 @@ public class SetCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void plugCafeOff(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {

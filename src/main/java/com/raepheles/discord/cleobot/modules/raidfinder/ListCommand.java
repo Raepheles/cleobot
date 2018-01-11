@@ -24,7 +24,6 @@ public class ListCommand {
             allowPM = true)
     public static void findCommand(CommandContext command) {
         if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(Utilities.isBanned(command, "User Data Module")) {

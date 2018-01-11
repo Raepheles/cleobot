@@ -19,7 +19,6 @@ public class SettingsCommand {
             allowPM = true)
     public static void settingsViewCommand(CommandContext command) {
         if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if (Utilities.isBanned(command, "User Data Module")) {
@@ -57,7 +56,6 @@ public class SettingsCommand {
             allowPM = true)
     public static void settingsChangeHeroListCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if (Utilities.isBanned(command, "User Data Module")) {

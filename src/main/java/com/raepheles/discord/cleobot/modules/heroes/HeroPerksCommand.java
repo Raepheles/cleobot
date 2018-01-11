@@ -27,7 +27,6 @@ public class HeroPerksCommand {
     public static void heroPerksCommand(CommandContext command) {
         // Check if bot channel still exists and bot has permissions on it
         if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() <= 1) {

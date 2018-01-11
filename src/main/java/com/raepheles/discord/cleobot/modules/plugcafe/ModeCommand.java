@@ -25,7 +25,6 @@ public class ModeCommand {
             permissions = Permissions.MANAGE_CHANNELS)
     public static void modeCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if (command.getArgCount() != 3) {

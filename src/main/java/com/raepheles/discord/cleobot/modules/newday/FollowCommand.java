@@ -21,7 +21,6 @@ public class FollowCommand {
             module = "New Day")
     public static void followNewDayCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() != 3) {
@@ -96,7 +95,6 @@ public class FollowCommand {
             module = "New Day")
     public static void unfollowNewDayCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() != 3) {

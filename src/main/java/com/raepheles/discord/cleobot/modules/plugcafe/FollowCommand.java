@@ -20,7 +20,6 @@ public class FollowCommand {
             module = "Plug Cafe")
     public static void plugCafeFollow(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {
@@ -80,7 +79,6 @@ public class FollowCommand {
             module = "Plug Cafe")
     public static void plugCafeUnfollow(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {

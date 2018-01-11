@@ -20,7 +20,6 @@ public class StatusCommand {
             module = "New Day")
     public static void newDayStatusCommand(CommandContext command) {
         if(!Utilities.checkBotChannel(command)) {
-            Logger.logCommand(command, "Bot channel not set");
             return;
         }
         if(command.getArgCount() > 2) {
