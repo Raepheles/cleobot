@@ -121,7 +121,7 @@ public class FollowCommand {
         for(int i = 0; i < followersLength; i++) {
             if( ((Number)guilds.getJSONObject(index).getJSONArray(plugCafeFollowers).get(i)).longValue() == command.getAuthor().getLongID() ) {
                 // If follower then remove from the list, inform user and return
-                guilds.getJSONObject(index).getJSONArray(plugCafeFollowers).put(followersLength, command.getAuthor().getLongID());
+                guilds.getJSONObject(index).getJSONArray(plugCafeFollowers).remove(i);
                 Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
                 command.replyWith(String.format(Utilities.getProperty("notifications.unfollowSuccess"), "plug cafe", ""));
                 Logger.logCommand(command);
