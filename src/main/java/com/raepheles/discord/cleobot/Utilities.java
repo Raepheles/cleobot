@@ -27,6 +27,7 @@ public class Utilities {
     private static JSONArray heroesArray = null;
     private static long feedbackChannelId;
     private static long loggerChannelId;
+    private static int raidFinderTimeOut;
     private static boolean feedbackActive = true;
     private static boolean whitelistStatus = false;
     private static Properties properties = null;
@@ -37,7 +38,28 @@ public class Utilities {
     public final static String PLUG_CAFE_NOTICES = "https://www.plug.game/kingsraid/1030449/posts?menuId=1#";
     public final static String PLUG_CAFE_EVENTS = "https://www.plug.game/kingsraid/1030449/posts?menuId=2#";
     public final static String PLUG_CAFE_PATCH_NOTES = "https://www.plug.game/kingsraid/1030449/posts?menuId=9#";
-    public final static String PLUG_CAFE_GREEN_NOTES = "https://www.plug.game/kingsraid/1030449/posts?menuId=12#";
+
+    public static boolean flushGuilds(List<Long> guildIds) {
+        JSONArray guilds = readJsonFromFile(getProperty("files.guilds"));
+        if(guilds == null)
+            return false;
+        for(int i = 0; i < guilds.length(); i++) {
+            if(!guildIds.contains( ((Number)guilds.getJSONObject(i).get("id")).longValue() )) {
+                guilds.remove(i);
+                i--;
+            }
+        }
+        writeToJsonFile(guilds, getProperty("files.guilds"));
+        return true;
+    }
+
+    public static int getRaidFinderTimeOut() {
+        return raidFinderTimeOut;
+    }
+
+    public static void setRaidFinderTimeOut(int raidFinderTimeOut) {
+        Utilities.raidFinderTimeOut = raidFinderTimeOut;
+    }
 
     public static void addRaidFinderEntry(RaidFinderEntry entry) {
         raidFinderEntries.add(entry);
@@ -45,11 +67,8 @@ public class Utilities {
 
     public static List<RaidFinderEntry> getRaidFinderEntries() {
         // Remove old logs
-        for(RaidFinderEntry entry: raidFinderEntries) {
-            if(entry.getTime() > 300) {
-                raidFinderEntries.remove(entry);
-            }
-        }
+        raidFinderEntries.removeIf(entry -> entry.getTime() > raidFinderTimeOut);
+        // Copy the list and reverse it
         List<RaidFinderEntry> reversedList = new ArrayList<>(raidFinderEntries);
         Collections.reverse(reversedList);
         return reversedList;
@@ -71,7 +90,7 @@ public class Utilities {
                     if(tempBannedFrom.equalsIgnoreCase(bannedFrom)) {
                         // PERM BAN
                         if(bannedFor == -1) {
-                            command.replyWith(String.format(Utilities.getProperty("banlist.bannedFrom"), bannedFrom, "for PERMENANTLY", banReason));
+                            command.replyWith(String.format(getProperty("banlist.bannedFrom"), bannedFrom, "for PERMENANTLY", banReason));
                             return true;
                         }
                         // If temp ban is not over return true
@@ -80,7 +99,7 @@ public class Utilities {
                             String date = LocalDateTime.ofEpochSecond(bannedAt + bannedFor, 0, ZoneOffset.UTC).toString();
                             date = date.replaceAll("-", "/").replace("T", " - ");
                             date += " UTC";
-                            command.replyWith(String.format(Utilities.getProperty("banlist.bannedFrom"), bannedFrom, "until " + date, banReason));
+                            command.replyWith(String.format(getProperty("banlist.bannedFrom"), bannedFrom, "until " + date, banReason));
                             return true;
                         } else {
                             banList.remove(i);
@@ -328,7 +347,7 @@ public class Utilities {
         for(int i = 0; i < guilds.length(); i++) {
             long current = ((Number)guilds.getJSONObject(i).get("id")).longValue();
             if(current == guildId) {
-                botChannel = ((Number)guilds.getJSONObject(i).get(Utilities.getProperty("guilds.botchannel"))).longValue();
+                botChannel = ((Number)guilds.getJSONObject(i).get(getProperty("guilds.botchannel"))).longValue();
                 break;
             }
         }

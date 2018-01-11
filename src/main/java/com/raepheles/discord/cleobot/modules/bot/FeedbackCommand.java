@@ -38,10 +38,16 @@ public class FeedbackCommand {
             Logger.logCommand(command, "Feedback not active");
             return;
         }
-        IChannel feedbackChannel = command.getClient().getChannelByID(Utilities.getFeedbackChannelId());
-        if(feedbackChannel == null) {
+        long feedbackChannelId = Utilities.getFeedbackChannelId();
+        if(feedbackChannelId == -1) {
             command.replyWith(Utilities.getProperty("misc.feedbackChannelNotSet"));
             Logger.logCommand(command, "Feedback not active");
+            return;
+        }
+        IChannel feedbackChannel = command.getClient().getChannelByID(Utilities.getFeedbackChannelId());
+        if(feedbackChannel == null) {
+            command.replyWith(Utilities.getProperty("misc.feedbackChannelCannotConnect"));
+            Logger.logCommand(command, "Cannot connect feedback channel");
             return;
         }
         String arg = String.join(" ", command.getArguments());

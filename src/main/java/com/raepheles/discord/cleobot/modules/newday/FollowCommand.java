@@ -70,10 +70,7 @@ public class FollowCommand {
             return;
         }
         Logger.logCommand(command);
-        JSONObject obj = new JSONObject();
-        obj.put("name", command.getAuthor().getName());
-        obj.put("id", command.getAuthor().getLongID());
-        guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.newDayFollowers")).getJSONArray(serverName).put(obj);
+        guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.newDayFollowers")).getJSONArray(serverName).put(command.getAuthor().getLongID());
         Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
         long newDayChannel = ((Number)guilds.getJSONObject(index).get(Utilities.getProperty("guilds.newDayChannel"))).longValue();
         if(newDayChannel == -1) {

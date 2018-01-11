@@ -5,7 +5,13 @@ import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import sx.blah.discord.handle.obj.Permissions;
+
+import java.io.IOException;
 
 /**
  * Created by Rae on 19/12/2017.
@@ -61,6 +67,10 @@ public class SetCommand {
             return;
         }
 
+        if(!newNotificationChannel(guilds.getJSONObject(index))) {
+            command.replyWith(Utilities.getProperty("notifications.errorWritingFile"));
+            return;
+        }
         guilds.getJSONObject(index).put(Utilities.getProperty("guilds.plugCafeChannel"), command.getChannel().getLongID());
         Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
 
@@ -113,5 +123,37 @@ public class SetCommand {
         command.replyWith(String.format(Utilities.getProperty("notifications.successOff"), "Plug cafe"));
         Logger.logCommand(command);
 
+    }
+
+    private static boolean newNotificationChannel(JSONObject guild) {
+        Document patchNotes, notices, events;
+        try {
+            patchNotes = Jsoup.connect(Utilities.PLUG_CAFE_PATCH_NOTES).get();
+            notices = Jsoup.connect(Utilities.PLUG_CAFE_NOTICES).get();
+            events = Jsoup.connect(Utilities.PLUG_CAFE_EVENTS).get();
+        } catch(IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        Elements elementsPatchNotes = patchNotes.getElementsByAttribute("data-articleid");
+        String articleIdPatchNotes = elementsPatchNotes.get(0).attributes().get("data-articleid");
+        Elements elementsNotices = notices.getElementsByAttribute("data-articleid");
+        String articleIdNotices = elementsNotices.get(0).attributes().get("data-articleid");
+        Elements elementsEvents = events.getElementsByAttribute("data-articleid");
+        String articleIdEvents = elementsEvents.get(0).attributes().get("data-articleid");
+        long noticeId, eventId, patchNoteId;
+        try {
+            noticeId = Long.parseLong(articleIdNotices);
+            eventId = Long.parseLong(articleIdEvents);
+            patchNoteId = Long.parseLong(articleIdPatchNotes);
+        } catch(NumberFormatException nfe) {
+            nfe.printStackTrace();
+            return false;
+        }
+        guild.put(Utilities.getProperty("guilds.lastNotice"), noticeId);
+        guild.put(Utilities.getProperty("guilds.lastPatchNotes"), patchNoteId);
+        guild.put(Utilities.getProperty("guilds.lastEvents"), eventId);
+        guild.put(Utilities.getProperty("guilds.plugCafeMode"), 0);
+        return true;
     }
 }

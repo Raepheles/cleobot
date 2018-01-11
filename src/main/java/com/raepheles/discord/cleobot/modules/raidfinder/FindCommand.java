@@ -118,7 +118,7 @@ public class FindCommand {
                 List<RaidFinderEntry> entries = Utilities.getRaidFinderEntries();
                 for(RaidFinderEntry entry: entries) {
                     if(entry.getUser().equals(command.getAuthor())) {
-                        command.replyWith(String.format(Utilities.getProperty("raidfinder.alreadyHasEntry"), 300-entry.getTime()));
+                        command.replyWith(String.format(Utilities.getProperty("raidfinder.alreadyHasEntry"), Utilities.getRaidFinderTimeOut()-entry.getTime()));
                         Logger.logCommand(command);
                         return;
                     }

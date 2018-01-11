@@ -64,10 +64,7 @@ public class FollowCommand {
             command.replyWith(String.format(Utilities.getProperty("notifications.followFail"), "hot time", " for server: `" + serverName + "`!"));
             return;
         }
-        JSONObject obj = new JSONObject();
-        obj.put("name", command.getAuthor().getName());
-        obj.put("id", command.getAuthor().getLongID());
-        guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(serverName).put(obj);
+        guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(serverName).put(command.getAuthor().getLongID());
         Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
         long hotTimeChannel = ((Number)guilds.getJSONObject(index).get(Utilities.getProperty("guilds.hotTimeChannel"))).longValue();
         if(hotTimeChannel == -1) {

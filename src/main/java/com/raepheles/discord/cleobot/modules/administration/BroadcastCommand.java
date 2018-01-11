@@ -4,9 +4,11 @@ import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
 import org.json.JSONArray;
+import sx.blah.discord.handle.obj.IIDLinkedObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Rae on 26/12/2017.
@@ -38,6 +40,8 @@ public class BroadcastCommand {
                 msg += command.getArgument(i) + " ";
 
         }
+        // Flush the list first.
+        Utilities.flushGuilds(command.getClient().getGuilds().stream().map(IIDLinkedObject::getLongID).collect(Collectors.toList()));
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
         if(guilds == null) {
             command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
@@ -63,6 +67,7 @@ public class BroadcastCommand {
                 fail++;
             }
         }
+
         String result = "Broadcast message has been sent to " + success + " guilds. Failed to sent " + fail + " guilds.\n" +
                 "Fail list:\n";
         if(fails.size() > 0)

@@ -130,16 +130,28 @@ public class RaidFinderEntry {
         return true;
     }
 
-    public long getTime() {
-        return ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond() - epochTime;
+    public int getTime() {
+        return (int)(ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond() - epochTime);
     }
 
     @Override
     public String toString() {
-        long time = ZonedDateTime.now(ZoneId.of("UTC")).toEpochSecond() - epochTime;
+        String time;
+        int seconds = getTime();
+        int hours, minutes;
+        minutes = seconds / 60;
+        seconds = seconds - minutes * 60;
+        hours = minutes / 60;
+        minutes = minutes - hours * 60;
+        if(hours != 0)
+            time = String.format("%dh %dm %ds", hours, minutes, seconds);
+        else if(minutes != 0)
+            time = String.format("%dm %ds", minutes, seconds);
+        else
+            time = String.format("%ds", seconds);
         if(isLegitEntry())
             return String.format("%-12s | %-12s | %-7s | %-25s | %-50s",
-                    time == 1 ? time + " second" : time + " seconds",
+                    time,
                     accountName,
                     serverName.toUpperCase(),
                     raidName + (raidLevel.isEmpty() ? "" : " " + raidLevel),

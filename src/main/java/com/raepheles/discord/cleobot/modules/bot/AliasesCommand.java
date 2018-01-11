@@ -33,7 +33,7 @@ public class AliasesCommand {
         aliases.add(String.format("%-20s | %-20s", "skills", "skill"));
         aliases.add(String.format("%-20s | %-20s", "plugcafe", "plug"));
         aliases.add(String.format("%-20s | %-20s", "raidfinder", "raid, " + "rf"));
-        aliases.add(String.format("%-20s | %-20s", "userdata", "user, " + "ud"));
+        aliases.add(String.format("%-20s | %-20s", "userdata", "data, " + "ud"));
         command.replyWith("**Aliases**```" + String.join("\n", aliases) + "```");
         Logger.logCommand(command);
     }

@@ -21,20 +21,19 @@ public class CleoBot {
         String token = null;
         String prefix = null;
         long privateChannelListener = -1;
+        long feedbackChannel = -1;
+        long loggerChannel = -1;
+        int raidFinderTimeOut = 300;
         Properties prop = new Properties();
 
         try(InputStream input = new FileInputStream("config.properties")) {
             prop.load(input);
             token = prop.getProperty("token");
             prefix = prop.getProperty("prefix");
-            try {
-                privateChannelListener = Long.parseLong(prop.getProperty("private_channel_listener"));
-            } catch(NumberFormatException nfe) {
-                privateChannelListener = -1;
-            }
-            Utilities.setDefaultPrefix(prefix);
-            Utilities.setFeedbackChannelId(Long.parseLong(prop.getProperty("feedback_channel")));
-            Utilities.setLoggerChannelId(Long.parseLong(prop.getProperty("logger_channel")));
+            privateChannelListener = Long.parseLong(prop.getProperty("private_channel_listener"));
+            loggerChannel = Long.parseLong(prop.getProperty("logger_channel"));
+            feedbackChannel = Long.parseLong(prop.getProperty("feedback_channel"));
+            raidFinderTimeOut = Integer.parseInt(prop.getProperty("raid_finder_timeout"));
             Utilities.setWhitelistStatus(prop.getProperty("whitelist").equalsIgnoreCase("true"));
         } catch(IOException e) {
             System.out.println("Error reading \"config.properties\" file!");
@@ -47,6 +46,10 @@ public class CleoBot {
             System.out.println("Could not get prefix from config file.");
             System.exit(2);
         }
+        Utilities.setLoggerChannelId(loggerChannel);
+        Utilities.setFeedbackChannelId(feedbackChannel);
+        Utilities.setDefaultPrefix(prefix);
+        Utilities.setRaidFinderTimeOut(raidFinderTimeOut);
 
         IDiscordClient client = new ClientBuilder().withToken(token).build();
         CommandManager manager = new CommandManager(client, "com.raepheles.discord.cleobot", prefix);

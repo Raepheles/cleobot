@@ -89,9 +89,9 @@ public class MyReadyEvent {
         event.getClient().getDispatcher().registerListeners(new MyGuildCreateEvent(), new MyMessageReceivedEvent(privateChannelListener));
 
         Runnable notificationCheck = () -> {
-            sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, "last patch note");
-            sendNotification(event, Utilities.PLUG_CAFE_EVENTS, "last event");
-            sendNotification(event, Utilities.PLUG_CAFE_NOTICES, "last notice");
+            sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, Utilities.getProperty("guilds.lastPatchNote"));
+            sendNotification(event, Utilities.PLUG_CAFE_EVENTS, Utilities.getProperty("guilds.lastEvent"));
+            sendNotification(event, Utilities.PLUG_CAFE_NOTICES, Utilities.getProperty("guilds.lastNotice"));
         };
         Runnable euNewDay = () -> sendNewDayNotification(event, "EUROPE");
         Runnable americaNewDay = () -> sendNewDayNotification(event, "AMERICA");
@@ -223,6 +223,7 @@ public class MyReadyEvent {
             long guildId = ((Number)guilds.getJSONObject(i).get("id")).longValue();
             if(event.getClient().getGuildByID(guildId) == null) {
                 guilds.remove(i);
+                i--;
                 continue;
             }
             long id = ((Number)guilds.getJSONObject(i).get(Utilities.getProperty("guilds.hotTimeChannel"))).longValue();
@@ -256,7 +257,13 @@ public class MyReadyEvent {
             List<String> followList = new ArrayList<>();
             JSONArray followListJson = guilds.getJSONObject(i).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(server);
             for(int j = 0; j < followListJson.length(); j++) {
-                followList.add("<@" + followListJson.getJSONObject(j).get("id") + ">");
+                long userId = ((Number)followListJson.get(j)).longValue();
+                if(event.getClient().getUserByID(userId) != null) {
+                    followList.add("<@" + followListJson.get(j) + ">");
+                } else {
+                    followListJson.remove(j);
+                    j--;
+                }
             }
 
             Utilities.sendMessage(event.getClient().getChannelByID(id), "Hot time has started at server: `" + server + "`.\n" +
@@ -278,6 +285,7 @@ public class MyReadyEvent {
             long guildId = ((Number)guilds.getJSONObject(i).get("id")).longValue();
             if(event.getClient().getGuildByID(guildId) == null) {
                 guilds.remove(i);
+                i--;
                 continue;
             }
             long id = ((Number)guilds.getJSONObject(i).get(Utilities.getProperty("guilds.newDayChannel"))).longValue();
@@ -311,7 +319,13 @@ public class MyReadyEvent {
             List<String> followList = new ArrayList<>();
             JSONArray followListJson = guilds.getJSONObject(i).getJSONObject(Utilities.getProperty("guilds.newDayFollowers")).getJSONArray(server);
             for(int j = 0; j < followListJson.length(); j++) {
-                followList.add("<@" + followListJson.getJSONObject(j).get("id") + ">");
+                long userId = ((Number)followListJson.get(j)).longValue();
+                if(event.getClient().getUserByID(userId) != null) {
+                    followList.add("<@" + followListJson.get(j) + ">");
+                } else {
+                    followListJson.remove(j);
+                    j--;
+                }
             }
 
             Utilities.sendMessage(event.getClient().getChannelByID(id), "1 hour left to new day at server: `" + server + "`.\n" +
@@ -334,12 +348,16 @@ public class MyReadyEvent {
                 String articleId = elements.get(i).attributes().get("data-articleid");
                 String articleAuthor = elements.get(i).getElementsByAttributeValue("class", "desc_thumb").get(0).getElementsByAttribute("href").text();
                 String articleTitle = elements.get(i).getElementsByAttributeValue("class", "tit_feed").text();
-                String articleThumbnail = elements.get(i).getElementsByAttributeValue("class", "img").get(0).attributes().get("style");
+                String articleThumbnail = "";
+                if(elements.get(i).getElementsByAttributeValue("class", "img").size() != 0)
+                    articleThumbnail = elements.get(i).getElementsByAttributeValue("class", "img").get(0).attributes().get("style");
                 // Cleaning thumbnail (related to website design)
-                StringBuilder sb = new StringBuilder(articleThumbnail);
-                sb.delete(0, 21);
-                sb.deleteCharAt(sb.length()-1);
-                articleThumbnail = sb.toString();
+                if(!articleThumbnail.isEmpty()) {
+                    StringBuilder sb = new StringBuilder(articleThumbnail);
+                    sb.delete(0, 21);
+                    sb.deleteCharAt(sb.length() - 1);
+                    articleThumbnail = sb.toString();
+                }
                 String articleAuthorIcon = elements.get(i).getElementsByAttributeValue("class", "thumb").get(0).attributes().get("src");
                 String articleAuthorUrl = "https://www.plug.game" +
                         elements.get(i).getElementsByAttributeValue("class", "img_thumb").get(0).attributes().get("href");
@@ -350,6 +368,7 @@ public class MyReadyEvent {
                     // Check if guild exists
                     if(event.getClient().getGuildByID(guildId) == null) {
                         guilds.remove(j);
+                        j--;
                         continue;
                     }
                     long channelId = ((Number)guilds.getJSONObject(j).get(Utilities.getProperty("guilds.plugCafeChannel"))).longValue();
@@ -391,16 +410,23 @@ public class MyReadyEvent {
                         embed.withTitle(articleTitle);
                         embed.withAuthorName(articleAuthor);
                         embed.withTimestamp(LocalDateTime.now());
-                        embed.withThumbnail(articleThumbnail);
+                        if(!articleThumbnail.isEmpty())
+                            embed.withThumbnail(articleThumbnail);
                         embed.withAuthorIcon(articleAuthorIcon);
                         embed.withAuthorUrl(articleAuthorUrl);
                         embed.appendDesc(articleText);
                         embed.withUrl(Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId);
 
                         List<String> followList = new ArrayList<>();
-                        JSONArray followListJson = guilds.getJSONObject(i).getJSONArray(Utilities.getProperty("guilds.plugCafeFollowers"));
+                        JSONArray followListJson = guilds.getJSONObject(j).getJSONArray(Utilities.getProperty("guilds.plugCafeFollowers"));
                         for(int k = 0; k < followListJson.length(); k++) {
-                            followList.add("<@" + followListJson.getJSONObject(k).get("id") + ">");
+                            long userId = ((Number)followListJson.get(k)).longValue();
+                            if(event.getClient().getUserByID(userId) != null) {
+                                followList.add("<@" + followListJson.get(k) + ">");
+                            } else {
+                                followListJson.remove(k);
+                                k--;
+                            }
                         }
 
                         if(mode == 0) {
