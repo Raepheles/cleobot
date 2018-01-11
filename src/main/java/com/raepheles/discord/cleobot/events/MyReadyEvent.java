@@ -432,12 +432,12 @@ public class MyReadyEvent {
                         if(mode == 0) {
                             Utilities.sendMessage(channel, embed.build(), String.join(", ", followList));
                         } else if(mode == 1) {
-                            Utilities.sendMessage(channel, followList + "\n\nAuthor: " + articleAuthor +
+                            Utilities.sendMessage(channel, String.join(", ", followList) + "\n\nAuthor: " + articleAuthor +
                                     "\nTitle: " + articleTitle +
                                     "\nLink: <" + Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId + ">\n" +
                                     articleText + "\n");
                         } else if(mode == 2) {
-                            Utilities.sendMessage(channel, embed.build(), followList.toString() + "\n\n" +
+                            Utilities.sendMessage(channel, embed.build(), String.join(", ", followList) + "\n\n" +
                                     articleTitle + ": <" + Utilities.PLUG_CAFE_BASE_URL + "/posts/" + articleId + ">\n");
                         }
                         guilds.getJSONObject(j).put(idName, currentId);
