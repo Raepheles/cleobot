@@ -1,6 +1,7 @@
 package com.raepheles.discord.cleobot;
 
 import com.discordbolt.api.command.CommandContext;
+import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import sx.blah.discord.api.IDiscordClient;
@@ -354,16 +355,19 @@ public class Utilities {
         // Bot channel doesn't exist
         if(botChannel == -1) {
             command.replyWith(String.format(getProperty("botchannel.notExists"), command.getPrefix() + getProperty("botchannel.setCommand")));
+            Logger.logCommand(command, "Bot channel doesn't exist");
             return false;
         }
         // Bot channel was set but then deleted
         if(client.getChannelByID(botChannel) == null) {
             command.replyWith(String.format(getProperty("botchannel.deleted"), command.getPrefix() + getProperty("botchannel.setCommand")));
+            Logger.logCommand(command, "Bot channel is deleted");
             return false;
         }
         // Bot doesn't have required perms on bot channel
         if(!hasPerms(client.getChannelByID(botChannel), client.getOurUser())) {
             command.replyWith(String.format(getProperty("botchannel.noPerms"), client.getChannelByID(botChannel).mention()));
+            Logger.logCommand(command, "Bot doesn't have perms");
             return false;
         }
         return true;

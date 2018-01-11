@@ -17,7 +17,7 @@ public class FollowCommand {
 
     @BotCommand(command = {"newday", "follow"},
             description = "Adds user to new day notifications follow list.",
-            usage = "newday follow",
+            usage = "newday follow *server_name*",
             module = "New Day")
     public static void followNewDayCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
@@ -92,7 +92,7 @@ public class FollowCommand {
 
     @BotCommand(command = {"newday", "unfollow"},
             description = "Removes user from new day notifications follow list.",
-            usage = "newday unfollow",
+            usage = "newday unfollow *server_name*",
             module = "New Day")
     public static void unfollowNewDayCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {

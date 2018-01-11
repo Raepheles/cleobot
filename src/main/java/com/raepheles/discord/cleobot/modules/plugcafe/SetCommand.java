@@ -151,8 +151,8 @@ public class SetCommand {
             return false;
         }
         guild.put(Utilities.getProperty("guilds.lastNotice"), noticeId);
-        guild.put(Utilities.getProperty("guilds.lastPatchNotes"), patchNoteId);
-        guild.put(Utilities.getProperty("guilds.lastEvents"), eventId);
+        guild.put(Utilities.getProperty("guilds.lastPatchNote"), patchNoteId);
+        guild.put(Utilities.getProperty("guilds.lastEvent"), eventId);
         guild.put(Utilities.getProperty("guilds.plugCafeMode"), 0);
         return true;
     }

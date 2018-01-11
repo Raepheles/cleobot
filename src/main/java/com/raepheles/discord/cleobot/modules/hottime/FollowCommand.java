@@ -16,7 +16,7 @@ public class FollowCommand {
 
     @BotCommand(command = {"hottime", "follow"},
             description = "Adds user to hot time notifications follow list.",
-            usage = "hottime follow",
+            usage = "hottime follow *server_name*",
             module = "Hot Time")
     public static void followHotTimeCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
@@ -86,7 +86,7 @@ public class FollowCommand {
 
     @BotCommand(command = {"hottime", "unfollow"},
             description = "Removes user from hot time notifications follow list.",
-            usage = "hottime unfollow",
+            usage = "hottime unfollow *server_name*",
             module = "Hot Time")
     public static void unfollowHotTimeCommand(CommandContext command) {
         if (!Utilities.checkBotChannel(command)) {
