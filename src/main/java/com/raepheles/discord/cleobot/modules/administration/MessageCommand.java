@@ -3,6 +3,7 @@ package com.raepheles.discord.cleobot.modules.administration;
 import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
+import com.raepheles.discord.cleobot.logger.Logger;
 
 /**
  * Created by Rae on 26/12/2017.
@@ -21,6 +22,7 @@ public class MessageCommand {
     public static void messageCommand(CommandContext command) {
         if(!Utilities.isAdmin(command.getAuthor())) {
             command.replyWith(Utilities.getProperty("administration.notAdmin"));
+            Logger.logCommand(command, "NOT ADMIN");
             return;
         }
         if(command.getArgCount() <= 2) {

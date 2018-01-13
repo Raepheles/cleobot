@@ -3,6 +3,7 @@ package com.raepheles.discord.cleobot.modules.administration;
 import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
+import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
 import sx.blah.discord.handle.obj.IIDLinkedObject;
 
@@ -26,6 +27,7 @@ public class BroadcastCommand {
     public static void broadcastCommand(CommandContext command) {
         if(!Utilities.isAdmin(command.getAuthor())) {
             command.replyWith(Utilities.getProperty("administration.notAdmin"));
+            Logger.logCommand(command, "NOT ADMIN");
             return;
         }
         if(command.getArgCount() < 2) {

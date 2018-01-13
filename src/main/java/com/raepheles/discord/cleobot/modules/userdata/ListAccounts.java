@@ -8,7 +8,9 @@ import org.json.JSONArray;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command for listing user's accounts
  */
+@SuppressWarnings("unused")
 public class ListAccounts {
 
     @BotCommand(command = {"userdata", "list", "accounts"},
@@ -33,6 +35,10 @@ public class ListAccounts {
 
         // Find user data
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "user data"));
+            return;
+        }
         JSONArray accounts = null;
         for(int i = 0; i < userData.length(); i++) {
             long id = ((Number) userData.getJSONObject(i).get("id")).longValue();

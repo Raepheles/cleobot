@@ -6,7 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.api.internal.json.objects.EmbedObject;
-import sx.blah.discord.handle.obj.*;
+import sx.blah.discord.handle.obj.IChannel;
+import sx.blah.discord.handle.obj.IGuild;
+import sx.blah.discord.handle.obj.IUser;
+import sx.blah.discord.handle.obj.Permissions;
 import sx.blah.discord.util.DiscordException;
 import sx.blah.discord.util.RequestBuffer;
 
@@ -28,6 +31,7 @@ public class Utilities {
     private static JSONArray heroesArray = null;
     private static long feedbackChannelId;
     private static long loggerChannelId;
+    private static long privateChannelListenerId;
     private static int raidFinderTimeOut;
     private static boolean feedbackActive = true;
     private static boolean whitelistStatus = false;
@@ -39,6 +43,14 @@ public class Utilities {
     public final static String PLUG_CAFE_NOTICES = "https://www.plug.game/kingsraid/1030449/posts?menuId=1#";
     public final static String PLUG_CAFE_EVENTS = "https://www.plug.game/kingsraid/1030449/posts?menuId=2#";
     public final static String PLUG_CAFE_PATCH_NOTES = "https://www.plug.game/kingsraid/1030449/posts?menuId=9#";
+
+    public static void setPrivateChannelListenerId(long privateChannelListenerId) {
+        Utilities.privateChannelListenerId = privateChannelListenerId;
+    }
+
+    public static long getPrivateChannelListenerId() {
+        return privateChannelListenerId;
+    }
 
     public static boolean flushGuilds(List<Long> guildIds) {
         JSONArray guilds = readJsonFromFile(getProperty("files.guilds"));

@@ -9,7 +9,9 @@ import org.json.JSONObject;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command to add hero to user's account.
  */
+@SuppressWarnings("unused")
 public class AddHeroCommand {
 
     @BotCommand(command = {"userdata", "add", "hero"},
@@ -99,6 +101,11 @@ public class AddHeroCommand {
 
         // Check if user has the accountName in serverName and doesn't have the hero
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         int index = -1;
         int accountIndex = -1;
         boolean accountSaved = false;

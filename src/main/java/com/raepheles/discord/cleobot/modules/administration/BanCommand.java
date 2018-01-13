@@ -28,7 +28,7 @@ public class BanCommand {
     public static void banCommand(CommandContext command) {
         if(!Utilities.isAdmin(command.getAuthor())) {
             command.replyWith(Utilities.getProperty("administration.notAdmin"));
-            Logger.logCommand(command, "Not ADMIN");
+            Logger.logCommand(command, "NOT ADMIN");
             return;
         }
         if(command.getArgCount() < 5) {

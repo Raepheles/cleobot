@@ -13,10 +13,12 @@ import java.util.List;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command for listing user's heroes.
  */
+@SuppressWarnings("unused")
 public class ListHeroesCommand {
 
-    public static class Hero {
+    private static class Hero {
         int level;
         String rarity;
         String name;
@@ -78,6 +80,11 @@ public class ListHeroesCommand {
 
         // Check if accountName is saved under the server
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "user data"));
+            return;
+        }
+
         boolean accountSaved = false;
         boolean accountBelongsToAuthor = false;
         boolean allowHeroList = false;
@@ -85,8 +92,6 @@ public class ListHeroesCommand {
         int accountIndex = -1;
         for(int i = 0; i < userData.length(); i++) {
             long id = ((Number)userData.getJSONObject(i).get("id")).longValue();
-            if(id == command.getAuthor().getLongID())
-                accountBelongsToAuthor = true;
             JSONArray accounts = userData.getJSONObject(i).getJSONArray("accounts");
             for(int j = 0; j < accounts.length(); j++) {
                 String tempServerName = accounts.getJSONObject(j).getString("server");
@@ -96,6 +101,8 @@ public class ListHeroesCommand {
                 if(accountName.equalsIgnoreCase(tempAccountName)) {
                     accountIndex = j;
                     userDataIndex = i;
+                    if(id == command.getAuthor().getLongID())
+                        accountBelongsToAuthor = true;
                     accountName = tempAccountName;
                     accountSaved = true;
                     break;

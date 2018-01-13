@@ -3,7 +3,9 @@ package com.raepheles.discord.cleobot.modules.administration;
 import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
+import com.raepheles.discord.cleobot.logger.Logger;
 import sx.blah.discord.handle.obj.IGuild;
+import sx.blah.discord.handle.obj.IUser;
 
 import java.util.List;
 
@@ -23,15 +25,21 @@ public class ListCommand {
     public static void listCommand(CommandContext command) {
         if(!Utilities.isAdmin(command.getAuthor())) {
             command.replyWith(Utilities.getProperty("administration.notAdmin"));
+            Logger.logCommand(command, "NOT ADMIN");
             return;
         }
         List<IGuild> guilds = command.getClient().getGuilds();
-        int usersCount = 0;
+        List<IUser> users = command.getClient().getUsers();
+        long usersCount = 0;
         for(IGuild guild: guilds) {
             usersCount += guild.getUsers().stream().filter(user -> !user.isBot()).count();
         }
-        String result = "Connected guilds: " + guilds.size() + "\n" +
-                "Total users: " + usersCount + "\n```";
+        long uniqueUsersCount = command.getClient().getUsers().stream().filter(u -> !u.isBot()).count();
+
+
+        String result = "Connected Guilds: " + guilds.size() + "\n" +
+                "Total Users: " + usersCount + "\n" +
+                "Total Unique Users: " + uniqueUsersCount + "```";
         int counter = 0;
         for(IGuild guild: guilds) {
             result += String.format("%-50s | %-20s | %-15s\n", guild.getName().length() > 50 ? guild.getName().substring(0, 46) + "..." : guild.getName(),

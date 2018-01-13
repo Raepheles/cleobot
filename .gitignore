@@ -1,6 +1,7 @@
 config.properties
 
-cleobot.iml
+*.log
+*.iml
 *.json
 !heroes.json
 /.idea/

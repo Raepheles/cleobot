@@ -5086,14 +5086,14 @@
 				"cooldown": 6,
 				"explanation": "Attacks the enemy with the lowest M.DEF, dealing a total of ??? M.DMG over 3 attacks. The last attack inflicts 'Target Lock On' on the enemy for 5 sec. This effect cannot be dispelled.",
 				"attributes": [
-					"N/A",
-					"N/A",
-					"N/A"
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
 				],
 				"perks": [
 					4,
-					"N/A",
-					"N/A"
+					"When there is 1 enemy, DMG is boosted by 100%.",
+					"With 30% chance, stuns enemy for 1 sec."
 				]
 			},
 			{
@@ -5102,46 +5102,46 @@
 				"cooldown": 12,
 				"explanation": "Deals ??? M.DMG to target enemy and other enemies in range, moves to an ally with the lowest P.DEF and creates a Shield for two that can block a total of ??? DMG for 5 sec. Shield will be ineffective when there is no ally. Protected ally and self become immune to CC while the Shield lasts.",
 				"attributes": [
-					"N/A",
-					"N/A",
-					"N/A"
+					"Increase DMG and Shield by 10%",
+					"Increase DMG and Shield by 15%",
+					"Increase DMG and Shield by 25%"
 				],
 				"perks": [
 					3,
-					"N/A",
-					"N/A"
+					"DMG and Shield are increased by 40%.",
+					"Mana cost is reduced by 1."
 				]
 			},
 			{
-				"name": "Blade Claw",
+				"name": "Assassination",
 				"cost": 3,
 				"cooldown": 20,
-				"explanation": "Move behind the enemy with the lowest HP and deal ??? P.DMG. Each stack of Bleed on the enemy inflicts additional 50% DMG. All stacks of Bleed are removed afterwards. If Crit, recover 2 MP and reset skill cooldown.",
+				"explanation": "Moves to an enemy with the lowest HP, deals ??? M.DMG then returns to the furthest ally. If the enemy is a Boss, deals ??? additional M.DMG that ignores DEF. Defeating a target with this skill instantly triggers 'Restrain and Protect'.",
 				"attributes": [
-					"N/A",
-					"N/A",
-					"N/A"
+					"Increase DMG by 10%",
+					"Increase DMG by 15%",
+					"Increase DMG by 25%"
 				],
 				"perks": [
 					4,
-					"N/A",
-					"N/A"
+					"Mana cost is reduced by 1.",
+					"Cooldown is reduced by 50% when enemy is killed."
 				]
 			},
 			{
-				"name": "Hack",
+				"name": "Target Eliminated",
 				"cost": -1,
 				"cooldown": 4,
-				"explanation": "Upon a critical auto-attack, deal ??? additional P.DMG.",
+				"explanation": "If an enemy is inflicted by 'Target Lock On', ATK increases by ??? and all skills prioritize the Locked On Enemy.",
 				"attributes": [
-					"N/A",
-					"N/A",
-					"N/A"
+					"ATK increase amount is boosted by 10%",
+					"ATK increase amount is boosted by 15%",
+					"ATK increase amount is boosted by 25%"
 				],
 				"perks": [
 					3,
-					"N/A",
-					"N/A"
+					"All 'Target Lock On' durations increase by 2 sec.",
+					"Receives 30% reduced DMG when enemy is inflicted by 'Target Lock On'."
 				]
 			}
 		],
@@ -5156,8 +5156,8 @@
 			]
 		},
 		"perks": [
-			"N/A",
-			"N/A"
+			"ATK, DEF, HP+10% / Crit Chance +100.",
+			"Upon using 'Assassination', dispels target's positive effects and stuns them for 5 sec."
 		]
 	},
 	{

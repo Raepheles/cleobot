@@ -8,7 +8,9 @@ import org.json.JSONArray;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command to remove an account.
  */
+@SuppressWarnings("unused")
 public class RemoveAccountCommand {
 
     @BotCommand(command = {"userdata", "remove", "account"},
@@ -44,6 +46,11 @@ public class RemoveAccountCommand {
 
         // Check if accountName exists under serverName
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         for(int i = 0; i < userData.length(); i++) {
             long id = ((Number) userData.getJSONObject(i).get("id")).longValue();
             if (id == command.getAuthor().getLongID()) {

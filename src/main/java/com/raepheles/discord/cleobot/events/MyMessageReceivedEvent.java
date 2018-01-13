@@ -11,17 +11,12 @@ import sx.blah.discord.handle.obj.IChannel;
  * Only using to listen to bot's private channel.
  */
 public class MyMessageReceivedEvent {
-    private long privateChannelListener;
-
-    public MyMessageReceivedEvent(long privateChannelListener) {
-        this.privateChannelListener = privateChannelListener;
-    }
 
     @EventSubscriber
     public void onMessageReceive(MessageReceivedEvent event) {
-        if(event.getChannel().isPrivate() && privateChannelListener != -1 && !event.getMessage().getContent().startsWith(Utilities.getDefaultPrefix())) {
-            System.out.println(Utilities.getDefaultPrefix());
-            IChannel privateChannelLogsChannel = event.getClient().getChannelByID(privateChannelListener);
+        long privateChannelListenerId = Utilities.getPrivateChannelListenerId();
+        if(event.getChannel().isPrivate() && privateChannelListenerId != -1 && !event.getMessage().getContent().startsWith(Utilities.getDefaultPrefix())) {
+            IChannel privateChannelLogsChannel = event.getClient().getChannelByID(privateChannelListenerId);
             if(privateChannelLogsChannel != null) {
                 String reply = String.format("User `%s` with id `%d` have sent the following message to Cleo on private channel:\n%s",
                         event.getAuthor().getName(),

@@ -8,7 +8,9 @@ import org.json.JSONArray;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command to change user data settings for user.
  */
+@SuppressWarnings("unused")
 public class SettingsCommand {
 
     @BotCommand(command = {"userdata", "settings", "view"},
@@ -31,6 +33,11 @@ public class SettingsCommand {
             return;
         }
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         boolean allowHeroList = false;
         for (int i = 0; i < userData.length(); i++) {
             long id = ((Number) userData.getJSONObject(i).get("id")).longValue();
@@ -74,6 +81,11 @@ public class SettingsCommand {
             return;
         }
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         boolean allowHeroList = false;
         int index = -1;
         for (int i = 0; i < userData.length(); i++) {

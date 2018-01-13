@@ -5,8 +5,6 @@ import com.raepheles.discord.cleobot.Utilities;
 import org.json.JSONArray;
 import sx.blah.discord.handle.impl.events.guild.GuildCreateEvent;
 import sx.blah.discord.handle.obj.IChannel;
-import sx.blah.discord.util.DiscordException;
-import sx.blah.discord.util.RequestBuffer;
 
 /**
  * Created by Rae on 19/12/2017.
@@ -21,6 +19,9 @@ public class Logger {
     }
 
     public static void logCommand(CommandContext command) {
+        if(Logger.logChannel == null) {
+            return;
+        }
         String log = String.format("`%s (%d)` used command `%s`. Channel: `%s` | Guild: `%s (%d)` | SUCCESS!",
                 command.getAuthor().getName(),
                 command.getAuthor().getLongID(),
@@ -28,14 +29,14 @@ public class Logger {
                 command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
                 command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
                 command.isPrivateMessage() ? 0 : command.getGuild().getLongID());
-        if(Logger.logChannel == null) {
-            return;
-        }
 
         Utilities.sendMessage(logChannel, log);
     }
 
     public static void logCommand(CommandContext command, String failReason) {
+        if(Logger.logChannel == null) {
+            return;
+        }
         String log = String.format("`%s (%d)` used command `%s`. Channel: `%s` | Guild: `%s (%d)` | FAIL with reason: `%s`",
                 command.getAuthor().getName(),
                 command.getAuthor().getLongID(),
@@ -44,14 +45,14 @@ public class Logger {
                 command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
                 command.isPrivateMessage() ? 0 : command.getGuild().getLongID(),
                 failReason);
-        if(Logger.logChannel == null) {
-            return;
-        }
 
         Utilities.sendMessage(logChannel, log);
     }
 
     public static void logGuildJoin(GuildCreateEvent event) {
+        if(Logger.logChannel == null) {
+            return;
+        }
         String log = String.format("%s tried to join guild. Name: `%s`, ID: `%s`, Owner Name: `%s`, Owner ID: `%s`",
                 event.getClient().getOurUser().getName(),
                 event.getGuild().getName(),

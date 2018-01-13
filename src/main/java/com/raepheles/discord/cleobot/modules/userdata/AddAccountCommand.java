@@ -9,7 +9,9 @@ import org.json.JSONObject;
 
 /**
  * Created by Rae on 27/12/2017.
+ * Command to add an account.
  */
+@SuppressWarnings("unused")
 public class AddAccountCommand {
 
     @BotCommand(command = {"userdata", "add", "account"},
@@ -40,15 +42,20 @@ public class AddAccountCommand {
             Logger.logCommand(command, "Illegal Argument");
             return;
         }
-        JSONArray myinfo = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         int index = -1;
         boolean accountExists = false;
         boolean hasAccountAtSameServer = false;
-        for(int i = 0; i < myinfo.length(); i++) {
-            long userId = ((Number)myinfo.getJSONObject(i).get("id")).longValue();
+        for(int i = 0; i < userData.length(); i++) {
+            long userId = ((Number)userData.getJSONObject(i).get("id")).longValue();
             if(command.getAuthor().getLongID() == userId)
                 index = i;
-            JSONArray accounts = myinfo.getJSONObject(i).getJSONArray("accounts");
+            JSONArray accounts = userData.getJSONObject(i).getJSONArray("accounts");
             for(int j = 0; j < accounts.length(); j++) {
                 // Check if user has an account under same server
                 if(command.getAuthor().getLongID() == userId) {
@@ -99,16 +106,16 @@ public class AddAccountCommand {
             account.put("heroes", new JSONArray());
             accounts.put(account);
             newEntry.put("accounts", accounts);
-            myinfo.put(newEntry);
+            userData.put(newEntry);
         } else {
-            JSONObject userData = myinfo.getJSONObject(index);
+            JSONObject userDataObject = userData.getJSONObject(index);
             JSONObject newAccount = new JSONObject();
             newAccount.put("server", serverName.toLowerCase());
             newAccount.put("name", accountNameArg);
             newAccount.put("heroes", new JSONArray());
-            userData.getJSONArray("accounts").put(newAccount);
+            userDataObject.getJSONArray("accounts").put(newAccount);
         }
         command.replyWith(String.format(Utilities.getProperty("userdata.addAccountSuccess"), accountNameArg, serverName));
-        Utilities.writeToJsonFile(myinfo, Utilities.getProperty("files.userdata"));
+        Utilities.writeToJsonFile(userData, Utilities.getProperty("files.userdata"));
     }
 }

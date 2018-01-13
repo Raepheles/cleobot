@@ -1,6 +1,5 @@
 package com.raepheles.discord.cleobot.events;
 
-import com.discordbolt.api.command.CommandManager;
 import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
@@ -28,13 +27,6 @@ import java.util.concurrent.TimeUnit;
  * Bot's ReadyEvent
  */
 public class MyReadyEvent {
-    private CommandManager manager;
-    private long privateChannelListener;
-
-    public MyReadyEvent(CommandManager manager, long privateChannelListener) {
-        this.manager = manager;
-        this.privateChannelListener = privateChannelListener;
-    }
 
     @EventSubscriber
     public void onReady(ReadyEvent event) {
@@ -82,11 +74,9 @@ public class MyReadyEvent {
                 JSONObject newGuild = Utilities.newGuildEntry(guildId);
                 guildsJson.put(newGuild);
                 Utilities.writeToJsonFile(guildsJson, Utilities.getProperty("files.guilds"));
-                Utilities.sendMessage(guild.getOwner().getOrCreatePMChannel(), String.join(Utilities.getProperty("join.success"), manager.getCommandPrefix(guild)));
+                Utilities.sendMessage(guild.getOwner().getOrCreatePMChannel(), Utilities.getProperty("join.success"));
             }
         }
-
-        event.getClient().getDispatcher().registerListeners(new MyGuildCreateEvent(), new MyMessageReceivedEvent(privateChannelListener));
 
         Runnable notificationCheck = () -> {
             sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, Utilities.getProperty("guilds.lastPatchNote"));
@@ -206,8 +196,14 @@ public class MyReadyEvent {
         if(event.getClient().getChannelByID(Utilities.getLoggerChannelId()) == null) {
             Logger.setLogger(null);
         } else {
-            Logger.setLogger(event.getClient().getChannelByID(Utilities.getLoggerChannelId()));
+            IChannel logChannel = event.getClient().getChannelByID(Utilities.getLoggerChannelId());
+            if(!logChannel.isPrivate())
+                Logger.setLogger(event.getClient().getChannelByID(Utilities.getLoggerChannelId()));
+            else
+                Logger.setLogger(null);
         }
+
+        event.getClient().getDispatcher().registerListeners(new MyGuildCreateEvent(), new MyMessageReceivedEvent());
     }
 
     private void sendHotTimeNotification(ReadyEvent event, String server) {
@@ -388,7 +384,6 @@ public class MyReadyEvent {
                         Utilities.sendMessage(owner.getOrCreatePMChannel(),
                                 String.format(Utilities.getProperty("notifications.statusDeleted"),
                                         "Plug cafe",
-                                        manager.getCommandPrefix(event.getClient().getGuildByID(guildId)),
                                         "plugcafe"));
                         continue;
                     }

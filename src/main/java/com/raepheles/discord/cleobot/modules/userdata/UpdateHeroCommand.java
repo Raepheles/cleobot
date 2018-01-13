@@ -9,7 +9,9 @@ import org.json.JSONObject;
 
 /**
  * Created by Rae on 28/12/2017.
+ * Command to update user's hero.
  */
+@SuppressWarnings("unused")
 public class UpdateHeroCommand {
 
     @BotCommand(command = {"userdata", "update", "hero"},
@@ -89,6 +91,11 @@ public class UpdateHeroCommand {
 
         // Check if user has the accountName in serverName and doesn't have the hero
         JSONArray userData = Utilities.readJsonFromFile(Utilities.getProperty("files.userdata"));
+        if(userData == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "userdata"));
+            return;
+        }
+
         int index = -1;
         int accountIndex = -1;
         int heroIndex = -1;

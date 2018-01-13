@@ -4,7 +4,6 @@ import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import sx.blah.discord.handle.obj.IChannel;
 
 /**
@@ -55,7 +54,7 @@ public class FollowCommand {
         JSONArray followers = guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(serverName);
         boolean isFollower = false;
         for(int i = 0; i < followers.length(); i++) {
-            long userId = ((Number)followers.getJSONObject(i).get("id")).longValue();
+            long userId = ((Number)followers.get(i)).longValue();
             if(userId == command.getAuthor().getLongID()) {
                 isFollower = true;
             }
@@ -125,7 +124,7 @@ public class FollowCommand {
         JSONArray followers = guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(serverName);
         boolean wasFollower = false;
         for(int i = 0; i < followers.length(); i++) {
-            long userId = ((Number)followers.getJSONObject(i).get("id")).longValue();
+            long userId = ((Number)followers.get(i)).longValue();
             if(userId == command.getAuthor().getLongID()) {
                 guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeFollowers")).getJSONArray(serverName).remove(i);
                 Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
