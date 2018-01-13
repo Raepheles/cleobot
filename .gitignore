@@ -1,10 +1,4 @@
-*.properties
-
-*.log
 *.iml
-*.json
-!heroes.json
 /.idea/
-/archived logs/
 /modules/
 /target/
