@@ -17,7 +17,7 @@ public class UpdateHeroCommand {
     @BotCommand(command = {"userdata", "update", "hero"},
             aliases = {"data", "ud"},
             description = "Updates a hero in your acount.",
-            usage = "userdata update hero *server_name* *account_name* *hero_name* *hero_rarity* *hero_level*",
+            usage = "userdata update hero *server_name* *account_name* *hero_name* *hero_rarity* *hero_level* *uw_level*",
             module = "User Data",
             allowPM = true)
     public static void updateHeroCommand(CommandContext command) {
@@ -28,7 +28,7 @@ public class UpdateHeroCommand {
             Logger.logCommand(command, "BANNED");
             return;
         }
-        if(command.getArgCount() != 8) {
+        if(command.getArgCount() != 9) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");
             return;
@@ -38,10 +38,12 @@ public class UpdateHeroCommand {
         String heroName = command.getArgument(5);
         String heroRarity = command.getArgument(6).toUpperCase();
         int heroLevel;
+        int uwLevel;
         try {
             heroLevel = Integer.parseInt(command.getArgument(7));
+            uwLevel = Integer.parseInt(command.getArgument(8));
         } catch(NumberFormatException nfe) {
-            command.replyWith(String.format(Utilities.getProperty("userdata.numberFormatException"), "hero level"));
+            command.replyWith(String.format(Utilities.getProperty("userdata.numberFormatException"), nfe.getMessage().substring(nfe.getMessage().indexOf("\""))));
             Logger.logCommand(command, "Number Format Exception");
             return;
         }
@@ -86,6 +88,13 @@ public class UpdateHeroCommand {
         if(heroLevel < 1 || heroLevel > 80) {
             command.replyWith(Utilities.getProperty("userdata.illegalHeroLevel"));
             Logger.logCommand(command, "Illegal Hero Level Argument");
+            return;
+        }
+
+        // Check if uwLevel is legit
+        if(uwLevel < -1 || uwLevel > 5) {
+            command.replyWith(Utilities.getProperty("userdata.illegalUwLevel"));
+            Logger.logCommand(command, "Illegal UW Level Argument");
             return;
         }
 
@@ -147,11 +156,12 @@ public class UpdateHeroCommand {
                 .getJSONObject(heroIndex);
         String oldHeroRarity = heroObj.getString("rarity").toUpperCase();
         int oldHeroLevel = (int)heroObj.get("level");
+        int oldUwLevel = (int)heroObj.get("uw");
 
 
-        // Check if entered hero level and rarity is higher than current ones
-        if(heroLevel <= oldHeroLevel && heroRarity.compareTo(oldHeroRarity) <= 0) {
-            command.replyWith(String.format(Utilities.getProperty("userdata.lowerHeroData"), heroName, oldHeroLevel, oldHeroRarity));
+        // Check if hero level, hero rarity and uw level are higher than new values
+        if(heroLevel <= oldHeroLevel && heroRarity.compareTo(oldHeroRarity) <= 0 && uwLevel <= oldUwLevel) {
+            command.replyWith(String.format(Utilities.getProperty("userdata.lowerHeroData"), heroName, oldHeroLevel, oldHeroRarity, oldUwLevel));
             Logger.logCommand(command, "Low hero data");
             return;
         }
@@ -159,6 +169,7 @@ public class UpdateHeroCommand {
         // Passed all checks update hero
         heroObj.put("level", heroLevel);
         heroObj.put("rarity", heroRarity);
+        heroObj.put("uw", uwLevel);
         Utilities.writeToJsonFile(userData, Utilities.getProperty("files.userdata"));
         command.replyWith(String.format(Utilities.getProperty("userdata.updateHeroSuccess"), heroName, accountName, serverName));
         Logger.logCommand(command);

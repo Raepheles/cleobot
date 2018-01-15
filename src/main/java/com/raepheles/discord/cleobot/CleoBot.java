@@ -2,7 +2,6 @@ package com.raepheles.discord.cleobot;
 
 import com.discordbolt.api.command.CommandManager;
 import com.raepheles.discord.cleobot.events.MyReadyEvent;
-import org.apache.commons.lang3.StringUtils;
 import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.util.DiscordException;

@@ -20,13 +20,15 @@ public class ListHeroesCommand {
 
     private static class Hero {
         int level;
+        int uwLevel;
         String rarity;
         String name;
 
-        private Hero(String name, String rarity, int level) {
+        private Hero(String name, String rarity, int level, int uwLevel) {
             this.level = level;
             this.rarity = rarity;
             this.name = name;
+            this.uwLevel = uwLevel;
         }
 
         private int getLevel() {
@@ -44,6 +46,13 @@ public class ListHeroesCommand {
 
         private String getName() {
             return name;
+        }
+
+        private String getUwLevel() {
+            if(uwLevel == -1)
+                return "no uw";
+            else
+                return uwLevel + " Star";
         }
     }
 
@@ -132,16 +141,16 @@ public class ListHeroesCommand {
         }
 
         String reply = "`" + accountName + "` at server `" + serverName.toUpperCase() + "` has the following heroes:\n```";
-        reply += String.format("%-6s | %-5s | %-15s\n\n", "Rarity", "Level", "Hero Name");
+        reply += String.format("%-6s | %-5s | %-15s | %-6s\n\n", "Rarity", "Level", "Hero Name", "Uw");
         JSONArray heroes = userData.getJSONObject(userDataIndex).getJSONArray("accounts").getJSONObject(accountIndex).getJSONArray("heroes");
         List<Hero> heroList = new ArrayList<>();
         for(int i = 0; i < heroes.length(); i++) {
             JSONObject hero = heroes.getJSONObject(i);
-            heroList.add(new Hero(hero.getString("name"), hero.getString("rarity"), (int)hero.get("level")));
+            heroList.add(new Hero(hero.getString("name"), hero.getString("rarity"), (int)hero.get("level"), (int)hero.get("uw")));
         }
         heroList.sort(Comparator.comparing(Hero::getRarity).thenComparing(Hero::getLevel).reversed());
         for(Hero hero: heroList) {
-            reply += String.format("%-6s | %-5d | %-15s\n", hero.getRarity(), hero.getLevel(), hero.getName());
+            reply += String.format("%-6s | %-5d | %-15s | %-6s\n", hero.getRarity(), hero.getLevel(), hero.getName(), hero.getUwLevel());
         }
         reply += "```";
 

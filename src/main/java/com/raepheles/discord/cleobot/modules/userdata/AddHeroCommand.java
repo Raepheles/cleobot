@@ -17,7 +17,7 @@ public class AddHeroCommand {
     @BotCommand(command = {"userdata", "add", "hero"},
             aliases = {"data", "ud"},
             description = "Adds a hero to your acount.",
-            usage = "userdata add hero *server_name* *account_name* *hero_name* *hero_rarity* *hero_level*",
+            usage = "userdata add hero *server_name* *account_name* *hero_name* *hero_rarity* *hero_level* *uw_level*",
             module = "User Data",
             allowPM = true)
     public static void addHeroCommand(CommandContext command) {
@@ -28,7 +28,7 @@ public class AddHeroCommand {
             Logger.logCommand(command, "BANNED");
             return;
         }
-        if(command.getArgCount() != 8) {
+        if(command.getArgCount() != 9) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");
             return;
@@ -38,15 +38,16 @@ public class AddHeroCommand {
         String heroName = command.getArgument(5);
         String heroRarity = command.getArgument(6).toUpperCase();
         int heroLevel;
+        int uwLevel;
         try {
             heroLevel = Integer.parseInt(command.getArgument(7));
+            uwLevel = Integer.parseInt(command.getArgument(8));
         } catch(NumberFormatException nfe) {
-            command.replyWith(String.format(Utilities.getProperty("userdata.numberFormatException"), "hero level"));
+            command.replyWith(String.format(Utilities.getProperty("userdata.numberFormatException"), nfe.getMessage().substring(nfe.getMessage().indexOf("\""))));
             Logger.logCommand(command, "Number Format Exception");
             return;
         }
 
-        // Check if serverName is valid
         // Check if serverName is valid
         if(!serverName.equalsIgnoreCase("eu") &&
                 !serverName.equalsIgnoreCase("america") &&
@@ -97,6 +98,12 @@ public class AddHeroCommand {
             command.replyWith(Utilities.getProperty("userdata.illegalHeroLevel"));
             Logger.logCommand(command, "Illegal Hero Level Argument");
             return;
+        }
+
+        // Check if uwLevel is legit
+        if(uwLevel < -1 || uwLevel > 5) {
+            command.replyWith(Utilities.getProperty("userdata.illegalUwLevel"));
+            Logger.logCommand(command, "Illegal UW Level Argument");
         }
 
         // Check if user has the accountName in serverName and doesn't have the hero
@@ -153,6 +160,7 @@ public class AddHeroCommand {
         newHeroObj.put("name", heroName);
         newHeroObj.put("level", heroLevel);
         newHeroObj.put("rarity", heroRarity);
+        newHeroObj.put("uw", uwLevel);
         userData.getJSONObject(index).getJSONArray("accounts").getJSONObject(accountIndex).getJSONArray("heroes").put(newHeroObj);
         Utilities.writeToJsonFile(userData, Utilities.getProperty("files.userdata"));
         command.replyWith(String.format(Utilities.getProperty("userdata.addHeroSuccess"), heroName, accountName, serverName));

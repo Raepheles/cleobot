@@ -11,7 +11,7 @@ import org.json.JSONArray;
  * Command for listing user's accounts
  */
 @SuppressWarnings("unused")
-public class ListAccounts {
+public class ListAccountsCommand {
 
     @BotCommand(command = {"userdata", "list", "accounts"},
             aliases = {"data", "ud"},
