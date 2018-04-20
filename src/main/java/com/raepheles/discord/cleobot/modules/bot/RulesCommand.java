@@ -18,6 +18,9 @@ public class RulesCommand {
             module = "Bot",
             allowPM = true)
     public static void rulesCommand(CommandContext command) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
+            return;
+        }
         if(command.getArgCount() > 1) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");

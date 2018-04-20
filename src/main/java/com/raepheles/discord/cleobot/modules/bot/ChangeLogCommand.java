@@ -18,6 +18,9 @@ public class ChangeLogCommand {
             module = "Bot",
             allowPM = true)
     public static void changelogCommand(CommandContext command) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
+            return;
+        }
         if(command.getArgCount() > 1) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");

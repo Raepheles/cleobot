@@ -2,9 +2,11 @@ package com.raepheles.discord.cleobot.modules.heroes;
 
 import com.discordbolt.api.command.BotCommand;
 import com.discordbolt.api.command.CommandContext;
+import com.raepheles.discord.cleobot.Language;
 import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +33,32 @@ public class ClassCommand {
             Logger.logCommand(command, "Arg count");
             return;
         }
-        String arg = String.join(" ", command.getArguments());
-        arg = arg.substring(arg.indexOf(" ")+1, arg.length());
+        JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
+        if(guilds == null) {
+            command.replyWith(String.format(Utilities.getProperty("misc.fileReadError"), "guilds"));
+            return;
+        }
+
+        long guildId = command.getGuild().getLongID();
+        JSONObject guild = null;
+        for(int i = 0; i < guilds.length(); i++) {
+            long currentId = ((Number)guilds.getJSONObject(i).get("id")).longValue();
+            if(guildId == currentId) {
+                guild = guilds.getJSONObject(i);
+                break;
+            }
+        }
+
+        if(guild == null)
+            return;
+
+        String defaultLanguage = guild.getString("language");
+
+        String arg = command.getArgument(1);
+        String languageArg = command.getArgCount() == 3 ? command.getArgument(2) : defaultLanguage;
+        Language language = Utilities.getLanguageForCode(languageArg);
+        JSONArray array = Utilities.getHeroesArray(language);
         String heroClass = arg;
-        JSONArray array = Utilities.getHeroesArray();
         List<String> heroes = new ArrayList<>();
 
         for(int i = 0; i < array.length(); i++) {
@@ -46,18 +70,18 @@ public class ClassCommand {
         }
         if(heroes.isEmpty()) {
             String didYouMean = Utilities.getSimilarClass(arg);
-            String reply = "Could not found any hero matches the class: `" + arg + "`.";
+            String reply = "Could not find any hero matches the class: `" + arg + "`.";
             reply += didYouMean == null ? "" : " Did you mean: `" + didYouMean + "`?";
             command.replyWith(reply);
             Logger.logCommand(command, "Illegal argument");
             return;
         }
 
-        String resultHeroes = "List of heroes matches with the class: " + heroClass + "\n\n";
+        StringBuilder resultHeroes = new StringBuilder("List of heroes matches with the class: " + heroClass + "\n\n");
         for(String hero: heroes)
-            resultHeroes += "- " + hero + "\n";
+            resultHeroes.append("- ").append(hero).append("\n");
 
-        command.replyWith(resultHeroes);
-        Logger.logCommand(command);
+        command.replyWith(resultHeroes.toString());
+        Logger.logCommand(command, language);
     }
 }

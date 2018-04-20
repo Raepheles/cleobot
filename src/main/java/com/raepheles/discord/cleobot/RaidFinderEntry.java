@@ -2,8 +2,10 @@ package com.raepheles.discord.cleobot;
 
 import sx.blah.discord.handle.obj.IUser;
 
+import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by Rae on 27/12/2017.
@@ -19,7 +21,6 @@ public class RaidFinderEntry {
     private String userNote;
     private boolean found;
     private IUser user;
-
 
     public RaidFinderEntry(long epochTime,
                            String serverName,

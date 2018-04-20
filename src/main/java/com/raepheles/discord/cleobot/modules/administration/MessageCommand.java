@@ -29,18 +29,30 @@ public class MessageCommand {
             command.sendUsage();
             return;
         }
-        long userId = Long.parseLong(command.getArgument(1));
-        if(command.getClient().getUserByID(userId) == null) {
-            command.replyWith(String.format(Utilities.getProperty("administration.userNotFound"), command.getArgument(1)));
+        long id = Long.parseLong(command.getArgument(1));
+        boolean channel = false;
+        StringBuilder msg = new StringBuilder();
+
+        if(command.getClient().getChannelByID(id) == null && command.getClient().getUserByID(id) == null) {
+            command.replyWith(String.format(Utilities.getProperty("administration.notUserOrChannel"), id));
             return;
         }
-        String msg = "";
+
         for(int i = 2; i < command.getArguments().size(); i++) {
             if(i == command.getArguments().size()-1)
-                msg += command.getArgument(i);
+                msg.append(command.getArgument(i));
             else
-                msg += command.getArgument(i) + " ";
+                msg.append(command.getArgument(i)).append(" ");
         }
-        Utilities.sendMessage(command.getClient().getUserByID(userId).getOrCreatePMChannel(), msg);
+
+        if(command.getClient().getChannelByID(id) != null)
+            channel = true;
+
+        if(channel) {
+            Utilities.sendMessage(command.getClient().getChannelByID(id), msg.toString());
+        } else {
+            Utilities.sendMessage(command.getClient().getUserByID(id).getOrCreatePMChannel(), msg.toString());
+        }
+
     }
 }

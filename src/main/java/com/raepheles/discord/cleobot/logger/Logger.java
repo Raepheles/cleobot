@@ -1,6 +1,7 @@
 package com.raepheles.discord.cleobot.logger;
 
 import com.discordbolt.api.command.CommandContext;
+import com.raepheles.discord.cleobot.Language;
 import com.raepheles.discord.cleobot.Utilities;
 import org.json.JSONArray;
 import sx.blah.discord.handle.impl.events.guild.GuildCreateEvent;
@@ -33,6 +34,22 @@ public class Logger {
         Utilities.sendMessage(logChannel, log);
     }
 
+    public static void logCommand(CommandContext command, Language language) {
+        if(Logger.logChannel == null) {
+            return;
+        }
+        String log = String.format("`%s (%d)` used command `%s` in %s. Channel: `%s` | Guild: `%s (%d)` | SUCCESS!",
+                command.getAuthor().getName(),
+                command.getAuthor().getLongID(),
+                String.join(" ", command.getArguments()),
+                language,
+                command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
+                command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
+                command.isPrivateMessage() ? 0 : command.getGuild().getLongID());
+
+        Utilities.sendMessage(logChannel, log);
+    }
+
     public static void logCommand(CommandContext command, String failReason) {
         if(Logger.logChannel == null) {
             return;
@@ -41,6 +58,23 @@ public class Logger {
                 command.getAuthor().getName(),
                 command.getAuthor().getLongID(),
                 String.join(" ", command.getArguments()),
+                command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
+                command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
+                command.isPrivateMessage() ? 0 : command.getGuild().getLongID(),
+                failReason);
+
+        Utilities.sendMessage(logChannel, log);
+    }
+
+    public static void logCommand(CommandContext command, Language language, String failReason) {
+        if(Logger.logChannel == null) {
+            return;
+        }
+        String log = String.format("`%s (%d)` used command `%s` in %s. Channel: `%s` | Guild: `%s (%d)` | FAIL with reason: `%s`",
+                command.getAuthor().getName(),
+                command.getAuthor().getLongID(),
+                String.join(" ", command.getArguments()),
+                language,
                 command.isPrivateMessage() ? command.getAuthor().getName() : command.getChannel().getName(),
                 command.isPrivateMessage() ? "PRIVATE" : command.getGuild().getName(),
                 command.isPrivateMessage() ? 0 : command.getGuild().getLongID(),

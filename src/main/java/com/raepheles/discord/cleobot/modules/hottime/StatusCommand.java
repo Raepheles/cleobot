@@ -58,17 +58,19 @@ public class StatusCommand {
         int statusEu = (int)guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeStatus")).get("EUROPE");
         int statusAmerica = (int)guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeStatus")).get("AMERICA");
         int statusAsia = (int)guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeStatus")).get("ASIA");
+        int statusJapan = (int)guilds.getJSONObject(index).getJSONObject(Utilities.getProperty("guilds.hotTimeStatus")).get("JAPAN");
         String eu = "OFF";
         String america = "OFF";
         String asia = "OFF";
+        String japan = "OFF";
         if(statusEu == 1)
             eu = "ON";
         if(statusAmerica == 1)
             america = "ON";
         if(statusAsia == 1)
             asia = "ON";
-        String str = "Hot time notifications channel: " + hotTimeIChannel.mention() + "\nEUROPE: " + eu + "\nAMERICA: " +
-                america + "\nASIA: " + asia;
-        command.replyWith(str);
+        if(statusJapan == 1)
+            japan = "ON";
+        command.replyWith(String.format("Hot time notifications channel: %s\nEUROPE: %s\nAMERICA: %s\nASIA: %s\nJAPAN: %s", hotTimeIChannel.mention(), eu, america, asia, japan));
     }
 }

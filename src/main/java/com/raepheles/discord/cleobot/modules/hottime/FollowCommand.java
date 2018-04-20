@@ -32,6 +32,8 @@ public class FollowCommand {
             serverName = "AMERICA";
         } else if(command.getArgument(2).equalsIgnoreCase("asia")) {
             serverName = "ASIA";
+        } else if(command.getArgument(2).equalsIgnoreCase("japan")) {
+            serverName = "JAPAN";
         } else {
             command.replyWith(String.format(Utilities.getProperty("notifications.illegalServerArg"), command.getArgument(2)));
             return;
@@ -102,6 +104,8 @@ public class FollowCommand {
             serverName = "AMERICA";
         } else if(command.getArgument(2).equalsIgnoreCase("asia")) {
             serverName = "ASIA";
+        } else if(command.getArgument(2).equalsIgnoreCase("japan")) {
+            serverName = "JAPAN";
         } else {
             command.replyWith(String.format(Utilities.getProperty("notifications.illegalServerArg"), command.getArgument(2)));
             return;

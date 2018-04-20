@@ -6,13 +6,11 @@
 
     <groupId>com.raepheles.discord</groupId>
     <artifactId>cleobot</artifactId>
-    <version>v0.63-beta</version>
+    <version>v0.72-beta</version>
     <properties>
         <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-
 
     <build>
         <resources>
@@ -74,13 +72,13 @@
         <dependency>
             <groupId>com.github.austinv11</groupId>
             <artifactId>Discord4J</artifactId>
-            <version>2.9.3</version>
+            <version>2.10.0</version>
         </dependency>
         <!-- CommandAPI for Discord4j -->
         <dependency>
             <groupId>com.github.Raepheles</groupId>
             <artifactId>CommandAPI</artifactId>
-            <version>dc14096f35</version>
+            <version>3fbd4e5813</version>
         </dependency>
 
         <!-- LOGGER -->

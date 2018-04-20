@@ -5,8 +5,15 @@ import com.discordbolt.api.command.CommandContext;
 import com.raepheles.discord.cleobot.Utilities;
 import com.raepheles.discord.cleobot.logger.Logger;
 import org.json.JSONArray;
+import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.handle.obj.IGuild;
 import sx.blah.discord.handle.obj.IUser;
+import sx.blah.discord.handle.obj.Permissions;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.stream.Collectors;
 
 /**
  * Created by Rae on 28/12/2017.
@@ -43,12 +50,21 @@ public class GuildCommand {
             command.replyWith(String.format(Utilities.getProperty("administration.guildNotFound"), guildId));
             return;
         }
+        StringBuilder channels = new StringBuilder();
+        for(IChannel channel: guild.getChannels()) {
+            channels.append(String.format("%s - %d\n", channel.getName(), channel.getLongID()));
+        }
+
 
         String owner = String.format("Owner: %s - %d", guild.getOwner().getName(), guild.getOwnerLongID());
         String users = String.format("Users: %d", guild.getUsers().stream().filter(u -> !u.isBot()).count());
         String botUsers = String.format("Bot Users: %d", guild.getUsers().stream().filter(IUser::isBot).count());
+        StringJoiner perms = new StringJoiner(", ", "Permissions: \n", "");
+        command.getClient().getOurUser().getPermissionsForGuild(guild).forEach(perm -> perms.add(perm.name()));
+
 
         String botChannel = "Couldn't find guild entry in guilds file!";
+
         JSONArray guilds = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
         if(guilds != null) {
             for(int i = 0; i < guilds.length(); i++) {
@@ -76,6 +92,6 @@ public class GuildCommand {
             botChannel = "Error reading guilds file!";
         }
 
-        command.replyWith(String.format("%s\n%s\n%s\n%s", owner, users, botUsers, botChannel));
+        command.replyWith(String.format("%s\n%s\n%s\n%s\n\n%s\n\n%s", owner, users, botUsers, botChannel, perms.toString(), channels.toString()));
     }
 }

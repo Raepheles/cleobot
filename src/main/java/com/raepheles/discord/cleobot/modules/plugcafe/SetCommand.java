@@ -124,11 +124,12 @@ public class SetCommand {
     }
 
     private static boolean newNotificationChannel(JSONObject guild) {
-        Document patchNotes, notices, events;
+        Document patchNotes, notices, events, greenNotes;
         try {
             patchNotes = Jsoup.connect(Utilities.PLUG_CAFE_PATCH_NOTES).get();
             notices = Jsoup.connect(Utilities.PLUG_CAFE_NOTICES).get();
             events = Jsoup.connect(Utilities.PLUG_CAFE_EVENTS).get();
+            greenNotes = Jsoup.connect(Utilities.PLUG_CAFE_GREEN_NOTES).get();
         } catch(IOException e) {
             e.printStackTrace();
             return false;
@@ -139,11 +140,14 @@ public class SetCommand {
         String articleIdNotices = elementsNotices.get(0).attributes().get("data-articleid");
         Elements elementsEvents = events.getElementsByAttribute("data-articleid");
         String articleIdEvents = elementsEvents.get(0).attributes().get("data-articleid");
-        long noticeId, eventId, patchNoteId;
+        Elements elementsGreenNotes = greenNotes.getElementsByAttribute("data-articleid");
+        String articleIdGreenNotes = elementsGreenNotes.get(0).attributes().get("data-articleid");
+        long noticeId, eventId, patchNoteId, greenNoteId;
         try {
             noticeId = Long.parseLong(articleIdNotices);
             eventId = Long.parseLong(articleIdEvents);
             patchNoteId = Long.parseLong(articleIdPatchNotes);
+            greenNoteId = Long.parseLong(articleIdGreenNotes);
         } catch(NumberFormatException nfe) {
             nfe.printStackTrace();
             return false;
@@ -151,6 +155,7 @@ public class SetCommand {
         guild.put(Utilities.getProperty("guilds.lastNotice"), noticeId);
         guild.put(Utilities.getProperty("guilds.lastPatchNote"), patchNoteId);
         guild.put(Utilities.getProperty("guilds.lastEvent"), eventId);
+        guild.put(Utilities.getProperty("guilds.lastGreenNote"), greenNoteId);
         guild.put(Utilities.getProperty("guilds.plugCafeMode"), 0);
         return true;
     }

@@ -44,11 +44,8 @@ public class BotChannelCommand {
             }
         }
 
-        if(index == -1) {
-            JSONObject newGuild = Utilities.newGuildEntry(command.getGuild().getLongID());
-            guilds.put(newGuild);
-            Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
-        }
+        if(index == -1)
+            return;
 
         if(!Utilities.hasPerms(command.getChannel(), command.getClient().getOurUser())) {
             command.replyWith(String.format(Utilities.getProperty("botchannel.noPerms"), command.getChannel().mention()));

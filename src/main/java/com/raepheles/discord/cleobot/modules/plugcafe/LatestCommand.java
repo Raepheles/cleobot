@@ -12,6 +12,7 @@ import sx.blah.discord.handle.obj.Permissions;
 import sx.blah.discord.util.EmbedBuilder;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 /**
@@ -95,7 +96,7 @@ public class LatestCommand {
             EmbedBuilder embed = new EmbedBuilder();
             embed.withTitle(articleTitle);
             embed.withAuthorName(articleAuthor);
-            embed.withTimestamp(LocalDateTime.now());
+            embed.withTimestamp(Instant.now());
             embed.withThumbnail(articleThumbnail);
             embed.withAuthorIcon(articleAuthorIcon);
             embed.withAuthorUrl(articleAuthorUrl);

@@ -7,7 +7,15 @@ import com.raepheles.discord.cleobot.logger.Logger;
 import sx.blah.discord.handle.obj.IGuild;
 import sx.blah.discord.handle.obj.IUser;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Created by Rae on 26/12/2017.
@@ -35,27 +43,22 @@ public class ListCommand {
             usersCount += guild.getUsers().stream().filter(user -> !user.isBot()).count();
         }
         long uniqueUsersCount = command.getClient().getUsers().stream().filter(u -> !u.isBot()).count();
-
-
-        String result = "Connected Guilds: " + guilds.size() + "\n" +
-                "Total Users: " + usersCount + "\n" +
-                "Total Unique Users: " + uniqueUsersCount + "```";
-        int counter = 0;
+        String result = String.format("Connected Guilds: %d\n" +
+                "Total Users: %d\n" +
+                "Total Unique Users: %d\n", guilds.size(), usersCount, uniqueUsersCount);
+        List<String> lines = new ArrayList<>();
         for(IGuild guild: guilds) {
-            result += String.format("%-50s | %-20s | %-15s\n", guild.getName().length() > 50 ? guild.getName().substring(0, 46) + "..." : guild.getName(),
+            lines.add(String.format("%-50s | %-20s | %-15s", guild.getName().length() > 50 ? guild.getName().substring(0, 46) + "..." : guild.getName(),
                     guild.getLongID(),
-                    "Users: " + guild.getUsers().stream().filter(user -> !user.isBot()).count());
-            counter++;
-            if(counter == 20) {
-                result += "```";
-                command.replyWith(result);
-                result = "```";
-                counter = 0;
-            }
+                    "User count: " + guild.getUsers().stream().filter(user -> !user.isBot()).count()));
         }
-        if(result.length() > 0) {
-            result += "```";
-            command.replyWith(result);
+        Path file = Paths.get("send-file.txt");
+        try {
+            Files.write(file, lines, Charset.forName("UTF-8"));
+        } catch(IOException e) {
+            e.printStackTrace();
         }
+
+        Utilities.sendFile(command.getChannel(), result, file.toFile());
     }
 }

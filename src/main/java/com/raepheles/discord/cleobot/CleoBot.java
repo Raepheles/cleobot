@@ -7,6 +7,7 @@ import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.util.DiscordException;
 
+import javax.rmi.CORBA.Util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,6 +23,7 @@ public class CleoBot {
     public static void main(String[] args) {
         String token = null;
         String prefix = null;
+        String lastUpdate = null;
         long privateChannelListenerId = -1;
         long feedbackChannel = -1;
         long loggerChannel = -1;
@@ -34,6 +36,7 @@ public class CleoBot {
             // Get token and prefix. These are must have
             token = prop.getProperty("token");
             prefix = prop.getProperty("prefix");
+            lastUpdate = prop.getProperty("last_update");
             // Set private channel listener if it's not empty
             if(!prop.getProperty("private_channel_listener").isEmpty())
                 privateChannelListenerId = Long.parseLong(prop.getProperty("private_channel_listener"));
@@ -83,10 +86,11 @@ public class CleoBot {
         Utilities.setDefaultPrefix(prefix);
         Utilities.setRaidFinderTimeOut(raidFinderTimeOut);
         Utilities.setPrivateChannelListenerId(privateChannelListenerId);
+        Utilities.setLastUpdate(lastUpdate);
 
         IDiscordClient client = new ClientBuilder().withToken(token).build();
         CommandManager manager = new CommandManager(client, "com.raepheles.discord.cleobot", prefix);
-        client.getDispatcher().registerListener(new MyReadyEvent());
+        client.getDispatcher().registerListeners(new MyReadyEvent(), Utilities.getAutoDeleter());
         try {
             client.login();
         } catch(DiscordException de) {

@@ -8,6 +8,7 @@ import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.util.DiscordException;
 import sx.blah.discord.util.EmbedBuilder;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 /**
@@ -24,6 +25,9 @@ public class FeedbackCommand {
             module = "Bot",
             allowPM = true)
     public static void feedbackCommand(CommandContext command) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
+            return;
+        }
         if(command.getArgCount() <= 1) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");
@@ -65,7 +69,7 @@ public class FeedbackCommand {
         embed.withAuthorIcon(command.getAuthor().getAvatarURL());
         embed.withThumbnail(command.getAuthor().getAvatarURL());
         embed.appendField("Feedback", arg, false);
-        embed.withTimestamp(LocalDateTime.now());
+        embed.withTimestamp(Instant.now());
 
         try {
             Utilities.sendMessage(command.getClient().getChannelByID(Utilities.getFeedbackChannelId()), embed.build());

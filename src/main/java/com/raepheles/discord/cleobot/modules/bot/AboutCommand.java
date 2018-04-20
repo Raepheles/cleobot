@@ -19,6 +19,9 @@ public class AboutCommand {
             module = "Bot",
             allowPM = true)
     public static void aboutCommand(CommandContext command) {
+        if(!command.isPrivateMessage() && !Utilities.checkBotChannel(command)) {
+            return;
+        }
         if(command.getArgCount() > 1) {
             command.sendUsage();
             Logger.logCommand(command, "Arg count");
@@ -35,9 +38,9 @@ public class AboutCommand {
         embed.withAuthorUrl("https://discord.gg/dXcVDYU");
         embed.withColor(0,0,0);
         String desc =  "**" + command.getClient().getOurUser().getName() + "** is a bot I made for mobile game called **King's Raid**. " +
-                "All the information is provided statically except for the images which are taken from wiki. " +
+                "All the information is datamined from the game. " +
                 "For command list use **" + command.getPrefix() + "help** command. " +
-                "You can contact me via `feedback` command or by simply sending direct message to the bot. If you have " +
+                "You can contact me via **"+ command.getPrefix() + "feedback** command or by simply sending direct message to the bot. If you have " +
                 "servers in common with me like reddit community server you can also DM me. I also have private server " +
                 "where I test my stuff if you want you can also join there by clicking my name above.";
         embed.withDesc(desc);

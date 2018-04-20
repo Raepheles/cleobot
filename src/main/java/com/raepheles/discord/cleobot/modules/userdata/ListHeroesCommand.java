@@ -121,7 +121,7 @@ public class ListHeroesCommand {
         // If account is not saved return
         if(!accountSaved) {
             command.replyWith(String.format(Utilities.getProperty("userdata.couldNotFoundAccount"), accountName, serverName));
-            Logger.logCommand(command, "Could not found account");
+            Logger.logCommand(command, "Could not find account");
             return;
         }
 

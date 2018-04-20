@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import sx.blah.discord.handle.obj.Permissions;
 import sx.blah.discord.util.EmbedBuilder;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 /**
@@ -87,7 +88,7 @@ public class ModeCommand {
 
     private static void sendSampleNotification(CommandContext command, int mode) {
         EmbedBuilder embed = new EmbedBuilder();
-        embed.withTimestamp(LocalDateTime.now());
+        embed.withTimestamp(Instant.now());
         embed.withAuthorName(command.getClient().getOurUser().getName());
         embed.withThumbnail(command.getClient().getOurUser().getAvatarURL());
         embed.withAuthorIcon(command.getClient().getOurUser().getAvatarURL());

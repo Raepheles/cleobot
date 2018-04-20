@@ -9,13 +9,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import sx.blah.discord.api.events.EventSubscriber;
 import sx.blah.discord.handle.impl.events.ReadyEvent;
-import sx.blah.discord.handle.obj.IChannel;
-import sx.blah.discord.handle.obj.IGuild;
-import sx.blah.discord.handle.obj.IUser;
+import sx.blah.discord.handle.obj.*;
 import sx.blah.discord.util.EmbedBuilder;
 
 import java.io.IOException;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -30,6 +29,7 @@ public class MyReadyEvent {
 
     @EventSubscriber
     public void onReady(ReadyEvent event) {
+        System.out.println(String.format("[%s]Ready event fired!", Instant.now().atZone(ZoneId.of("UTC+3")).format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss"))));
         List<IGuild> guilds = event.getClient().getGuilds();
         JSONArray guildsJson = Utilities.readJsonFromFile(Utilities.getProperty("files.guilds"));
         if(guildsJson == null) {
@@ -82,13 +82,16 @@ public class MyReadyEvent {
             sendNotification(event, Utilities.PLUG_CAFE_PATCH_NOTES, Utilities.getProperty("guilds.lastPatchNote"));
             sendNotification(event, Utilities.PLUG_CAFE_EVENTS, Utilities.getProperty("guilds.lastEvent"));
             sendNotification(event, Utilities.PLUG_CAFE_NOTICES, Utilities.getProperty("guilds.lastNotice"));
+            sendNotification(event, Utilities.PLUG_CAFE_GREEN_NOTES, Utilities.getProperty("guilds.lastGreenNote"));
         };
         Runnable euNewDay = () -> sendNewDayNotification(event, "EUROPE");
         Runnable americaNewDay = () -> sendNewDayNotification(event, "AMERICA");
         Runnable asiaNewDay = () -> sendNewDayNotification(event, "ASIA");
+        Runnable japanNewDay = () -> sendNewDayNotification(event, "JAPAN");
         Runnable euHotTime = () -> sendHotTimeNotification(event, "EUROPE");
         Runnable americaHotTime = () -> sendHotTimeNotification(event, "AMERICA");
         Runnable asiaHotTime = () -> sendHotTimeNotification(event, "ASIA");
+        Runnable japanHotTime = () -> sendHotTimeNotification(event, "JAPAN");
 
         /*
          * EU - UTC+1
@@ -101,18 +104,23 @@ public class MyReadyEvent {
         LocalTime localHotTime2 = LocalTime.of(20, 0, 0, 0);
 
         ZonedDateTime euTime = ZonedDateTime.now(ZoneId.of("UTC+1"));
-        ZonedDateTime americaTime = ZonedDateTime.now(ZoneId.of("UTC-5"));
+        ZonedDateTime americaTime = ZonedDateTime.now(ZoneId.of("UTC-4"));
         ZonedDateTime asiaTime = ZonedDateTime.now(ZoneId.of("UTC+7"));
+        ZonedDateTime japanTime = ZonedDateTime.now(ZoneId.of("UTC+9"));
         ZonedDateTime eu2300 = ZonedDateTime.of(localDate, localTime, ZoneId.of("UTC+1"));
-        ZonedDateTime america2300 = ZonedDateTime.of(localDate, localTime, ZoneId.of("UTC-5"));
+        ZonedDateTime america2300 = ZonedDateTime.of(localDate, localTime, ZoneId.of("UTC-4"));
         ZonedDateTime asia2300 = ZonedDateTime.of(localDate, localTime, ZoneId.of("UTC+7"));
+        ZonedDateTime japan2300 = ZonedDateTime.of(localDate, localTime, ZoneId.of("UTC+9"));
+
 
         ZonedDateTime euHotTime1 = ZonedDateTime.of(localDate, localHotTime1, ZoneId.of("UTC+1"));
-        ZonedDateTime americaHotTime1 = ZonedDateTime.of(localDate, localHotTime1, ZoneId.of("UTC-5"));
+        ZonedDateTime americaHotTime1 = ZonedDateTime.of(localDate, localHotTime1, ZoneId.of("UTC-4"));
         ZonedDateTime asiaHotTime1 = ZonedDateTime.of(localDate, localHotTime1, ZoneId.of("UTC+7"));
+        ZonedDateTime japanHotTime1 = ZonedDateTime.of(localDate, localHotTime1, ZoneId.of("UTC+9"));
         ZonedDateTime euHotTime2 = ZonedDateTime.of(localDate, localHotTime2, ZoneId.of("UTC+1"));
-        ZonedDateTime americaHotTime2 = ZonedDateTime.of(localDate, localHotTime2, ZoneId.of("UTC-5"));
+        ZonedDateTime americaHotTime2 = ZonedDateTime.of(localDate, localHotTime2, ZoneId.of("UTC-4"));
         ZonedDateTime asiaHotTime2 = ZonedDateTime.of(localDate, localHotTime2, ZoneId.of("UTC+7"));
+        ZonedDateTime japanHotTime2 = ZonedDateTime.of(localDate, localHotTime2, ZoneId.of("UTC+9"));
 
         long euInitialDelayNewDay = eu2300.toEpochSecond() - euTime.toEpochSecond();
         if(euInitialDelayNewDay < 0)
@@ -132,6 +140,12 @@ public class MyReadyEvent {
         if(asiaInitialDelayNewDay > 86400L)
             asiaInitialDelayNewDay -= 86400L;
 
+        long japanInitialDelayNewDay = japan2300.toEpochSecond() - japanTime.toEpochSecond();
+        if(japanInitialDelayNewDay < 0)
+            japanInitialDelayNewDay += 86400L;
+        if(japanInitialDelayNewDay > 86400L)
+            japanInitialDelayNewDay -= 86400L;
+
         long euHotTimeDelay1 = euHotTime1.toEpochSecond() - euTime.toEpochSecond();
         if(euHotTimeDelay1 < 0)
             euHotTimeDelay1 += 86400L;
@@ -149,6 +163,12 @@ public class MyReadyEvent {
             asiaHotTimeDelay1 += 86400L;
         if(asiaHotTimeDelay1 > 86400L)
             asiaHotTimeDelay1 -= 86400L;
+
+        long japanHotTimeDelay1 = japanHotTime1.toEpochSecond() - japanTime.toEpochSecond();
+        if(japanHotTimeDelay1 < 0)
+            japanHotTimeDelay1 += 86400L;
+        if(japanHotTimeDelay1 > 86400L)
+            japanHotTimeDelay1 -= 86400L;
 
         long euHotTimeDelay2 = euHotTime2.toEpochSecond() - euTime.toEpochSecond();
         if(euHotTimeDelay2 < 0)
@@ -168,30 +188,41 @@ public class MyReadyEvent {
         if(asiaHotTimeDelay2 > 86400L)
             asiaHotTimeDelay2 -= 86400L;
 
+        long japanHotTimeDelay2 = japanHotTime2.toEpochSecond() - japanTime.toEpochSecond();
+        if(japanHotTimeDelay2 < 0)
+            japanHotTimeDelay2 += 86400L;
+        if(japanHotTimeDelay2 > 86400L)
+            japanHotTimeDelay2 -= 86400L;
+
         ScheduledExecutorService euNewDayScheduler = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService americaNewDayScheduler = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService asiaNewDayScheduler = Executors.newSingleThreadScheduledExecutor();
+        ScheduledExecutorService japanNewDayScheduler = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService notificationCheckScheduler = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService euHotTimeScheduler1 = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService americaHotTimeScheduler1 = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService asiaHotTimeScheduler1 = Executors.newSingleThreadScheduledExecutor();
+        ScheduledExecutorService japanHotTimeScheduler1 = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService euHotTimeScheduler2 = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService americaHotTimeScheduler2 = Executors.newSingleThreadScheduledExecutor();
         ScheduledExecutorService asiaHotTimeScheduler2 = Executors.newSingleThreadScheduledExecutor();
+        ScheduledExecutorService japanHotTimeScheduler2 = Executors.newSingleThreadScheduledExecutor();
 
         notificationCheckScheduler.scheduleWithFixedDelay(notificationCheck, 0, 60, TimeUnit.SECONDS);
         euNewDayScheduler.scheduleWithFixedDelay(euNewDay, euInitialDelayNewDay, 86400L, TimeUnit.SECONDS);
         americaNewDayScheduler.scheduleWithFixedDelay(americaNewDay, americaInitialDelayNewDay, 86400L, TimeUnit.SECONDS);
         asiaNewDayScheduler.scheduleWithFixedDelay(asiaNewDay, asiaInitialDelayNewDay, 86400L, TimeUnit.SECONDS);
+        japanNewDayScheduler.scheduleWithFixedDelay(japanNewDay, japanInitialDelayNewDay, 86400L, TimeUnit.SECONDS);
         euHotTimeScheduler1.scheduleWithFixedDelay(euHotTime, euHotTimeDelay1, 86400L, TimeUnit.SECONDS);
         americaHotTimeScheduler1.scheduleWithFixedDelay(americaHotTime, americaHotTimeDelay1, 86400L, TimeUnit.SECONDS);
         asiaHotTimeScheduler1.scheduleWithFixedDelay(asiaHotTime, asiaHotTimeDelay1, 86400L, TimeUnit.SECONDS);
+        japanHotTimeScheduler1.scheduleWithFixedDelay(japanHotTime, japanHotTimeDelay1, 86400L, TimeUnit.SECONDS);
         euHotTimeScheduler2.scheduleWithFixedDelay(euHotTime, euHotTimeDelay2, 86400L, TimeUnit.SECONDS);
         americaHotTimeScheduler2.scheduleWithFixedDelay(americaHotTime, americaHotTimeDelay2, 86400L, TimeUnit.SECONDS);
         asiaHotTimeScheduler2.scheduleWithFixedDelay(asiaHotTime, asiaHotTimeDelay2, 86400L, TimeUnit.SECONDS);
+        japanHotTimeScheduler2.scheduleWithFixedDelay(japanHotTime, japanHotTimeDelay2, 86400L, TimeUnit.SECONDS);
 
-
-        event.getClient().changePlayingText(Utilities.getDefaultPrefix() + "help");
+        event.getClient().changePresence(StatusType.ONLINE, ActivityType.PLAYING, Utilities.getDefaultPrefix() + "help");
 
         if(event.getClient().getChannelByID(Utilities.getLoggerChannelId()) == null) {
             Logger.setLogger(null);
@@ -361,9 +392,11 @@ public class MyReadyEvent {
                 // For every single element check every guild
                 for(int j = 0; j < guilds.length(); j++) {
                     long guildId = ((Number)guilds.getJSONObject(j).get("id")).longValue();
+                    String guildLanguage = String.format("[%s]", guilds.getJSONObject(j).getString("language").toUpperCase());
                     // Check if guild exists
                     if(event.getClient().getGuildByID(guildId) == null) {
                         guilds.remove(j);
+                        Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
                         j--;
                         continue;
                     }
@@ -374,7 +407,7 @@ public class MyReadyEvent {
                     int lastId = (int)guilds.getJSONObject(j).get(idName);
                     int currentId = Integer.parseInt(articleId);
                     int mode = (int) guilds.getJSONObject(j).get(Utilities.getProperty("guilds.plugCafeMode"));
-                    IUser owner = event.getClient().getChannelByID(channelId).getGuild().getOwner();
+                    IUser owner = event.getClient().getGuildByID(guildId).getOwner();
                     IUser bot = event.getClient().getOurUser();
                     //Check if channel exists
                     if(event.getClient().getChannelByID(channelId) == null) {
@@ -389,6 +422,13 @@ public class MyReadyEvent {
                     }
                     // There is new article
                     if(currentId > lastId) {
+                        // For green notes if article isn't guild language or english continue
+                        if(idName.equalsIgnoreCase("last green note")
+                                && ( !articleTitle.startsWith(guildLanguage) && !articleTitle.startsWith("[EN]"))) {
+                            guilds.getJSONObject(j).put(idName, currentId);
+                            Utilities.writeToJsonFile(guilds, Utilities.getProperty("files.guilds"));
+                            continue;
+                        }
                         IChannel channel = event.getClient().getChannelByID(channelId);
                         IGuild guild = event.getClient().getGuildByID(guildId);
                         // Check if bot has perms
@@ -404,7 +444,7 @@ public class MyReadyEvent {
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.withTitle(articleTitle);
                         embed.withAuthorName(articleAuthor);
-                        embed.withTimestamp(LocalDateTime.now());
+                        embed.withTimestamp(Instant.now());
                         if(!articleThumbnail.isEmpty())
                             embed.withThumbnail(articleThumbnail);
                         embed.withAuthorIcon(articleAuthorIcon);
@@ -423,7 +463,6 @@ public class MyReadyEvent {
                                 k--;
                             }
                         }
-
                         if(mode == 0) {
                             Utilities.sendMessage(channel, embed.build(), String.join(", ", followList));
                         } else if(mode == 1) {
